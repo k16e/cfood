@@ -1,11 +1,5 @@
 <template>
-    <div>
-        <header>
-            <h1>
-                {{ product.title }}
-            </h1>
-        </header>
-    </div>
+    <ProductDetails :product="product"/>
 </template>
 
 <script setup>
