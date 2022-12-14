@@ -3,7 +3,7 @@
         <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:grid-cols-4">
             <li v-for="i in products" :key="i.id">
                 <NuxtLink :to="`/order/${i.id}`">
-                    {{ i.title }}
+                    <CardProduct :product="i" />
                 </NuxtLink>
             </li>
         </ul>
