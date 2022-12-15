@@ -7,5 +7,5 @@ body {
 }
 
 @layer components {
-    .luna-btn { @apply bg-indigo-500; }
+    .r-btn { @apply bg-indigo-500; }
 }

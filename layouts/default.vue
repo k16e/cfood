@@ -3,11 +3,8 @@
         <NuxtLink to="/">
             Home
         </NuxtLink>
-        <NuxtLink to="/order">
+        <NuxtLink to="/products">
             Order
-        </NuxtLink>
-        <NuxtLink to="/order/abc">
-            Product ABC
         </NuxtLink>
     </header>
 

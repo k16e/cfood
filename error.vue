@@ -8,14 +8,15 @@
         </p>
 
         <!-- Button to clear the error -->
-        <button @click="handleClearError" class="luna-btn">Please go back home</button>
+        <button @click="handleError" class="r-btn">Please go back home</button>
     </div>
 </template>
 
 <script setup>
-    defineProps([ 'error' ])
-
-    const handleClearError = () => clearError({ redirect: '/' })
+    const props = defineProps({
+        error: Object
+    })
+    const handleError = () => clearError({ redirect: '/' })
 </script>
 
 <style lang="scss" scoped>

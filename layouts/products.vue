@@ -4,7 +4,7 @@
             <NuxtLink to="/">
                 Home
             </NuxtLink>
-            <NuxtLink to="/order">
+            <NuxtLink to="/products">
                 Order
             </NuxtLink>
         </header>
