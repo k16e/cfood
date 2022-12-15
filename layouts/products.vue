@@ -1,13 +1,6 @@
 <template>
     <div>
-        <header class="">
-            <NuxtLink to="/">
-                Home
-            </NuxtLink>
-            <NuxtLink to="/products">
-                Order
-            </NuxtLink>
-        </header>
+        <HeaderMain/>
         <slot/>
     </div>
 </template>
