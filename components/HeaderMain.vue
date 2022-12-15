@@ -12,7 +12,7 @@
         <NuxtLink to="/products">
             Studio
         </NuxtLink>
-        <NuxtLink to="/">
+        <NuxtLink to="/about">
             Meet c.food
         </NuxtLink>
     </header>
