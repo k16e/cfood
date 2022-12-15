@@ -1,12 +1,18 @@
 <template>
     <div>
-        {{ data }}
+        {{ myData }}
+    </div>
+    <div>
+        {{ currencyApi }}
     </div>
 </template>
 
 <script setup>
-    const { data } = await useFetch('/api/endpoints')
-
+    const { data: myData } = await useFetch('/api/bioData?name=KB', {
+        method: 'post',
+        body: { age: 30 }
+    })
+    const { data: currencyApi } = await useFetch('/api/currencyApi')
 </script>
 
 <style lang="scss" scoped>
