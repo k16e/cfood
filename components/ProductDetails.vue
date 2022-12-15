@@ -4,7 +4,7 @@
         <div>
             <h1 v-text="product.title"/>
             <div>
-                <p>Price - ${{ product.price }}</p>
+                <p>Price - ${{ product.price.toFixed(2) }}</p>
                 <p>{{ product.description }}</p>
             </div>
         </div>
