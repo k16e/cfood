@@ -10,7 +10,8 @@
     if (!product.value) {
         throw createError({
             statusCode: 404,
-            statusMessage: 'Product not found'
+            statusMessage: 'Product not found',
+            fatal: true // Forces app to show error page, useful when error is coming from browser
         })
     }
 

@@ -6,6 +6,9 @@
         <NuxtLink to="/order">
             Order
         </NuxtLink>
+        <NuxtLink to="/order/abc">
+            Product ABC
+        </NuxtLink>
     </header>
 
     <main>
