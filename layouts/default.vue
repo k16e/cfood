@@ -1,6 +1,11 @@
 <template>
     <header class="">
-        Header Here
+        <NuxtLink to="/">
+            Home
+        </NuxtLink>
+        <NuxtLink to="/order">
+            Order
+        </NuxtLink>
     </header>
 
     <main>

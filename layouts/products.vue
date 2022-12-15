@@ -1,5 +1,15 @@
 <template>
-    <slot/>
+    <div>
+        <header class="">
+            <NuxtLink to="/">
+                Home
+            </NuxtLink>
+            <NuxtLink to="/order">
+                Order
+            </NuxtLink>
+        </header>
+        <slot/>
+    </div>
 </template>
 
 <script setup>
