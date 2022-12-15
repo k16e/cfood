@@ -1,4 +1,9 @@
 <template>
+    <Head>
+        <Title>c.food Product (Condiment) | {{ product.title }}</Title>
+        <Meta name="description" :content="product.description"/>
+    </Head>
+
     <ProductDetails :product="product"/>
 </template>
 

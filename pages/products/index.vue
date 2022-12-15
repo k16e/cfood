@@ -16,6 +16,13 @@
     })
 
     const { data: products } = await useFetch('https://fakestoreapi.com/products')
+
+    useHead({
+        title: 'c.food Products (All Condiments)',
+        meta: [
+            { name: 'description', content: 'All condiments from c.food' }
+        ]
+    })
 </script>
 
 <style lang="scss" scoped>
