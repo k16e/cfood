@@ -18,9 +18,9 @@
     const { data: products } = await useFetch('https://fakestoreapi.com/products')
 
     useHead({
-        title: 'c.food Products (All Condiments)',
+        title: 'c.food Products (All Condiments & foodstuff)',
         meta: [
-            { name: 'description', content: 'All condiments from c.food' }
+            { name: 'description', content: 'All condiments and foodstuff from c.food' }
         ]
     })
 </script>
