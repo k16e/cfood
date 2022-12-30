@@ -1,7 +1,13 @@
 <template>
-    <pre>
-        {{ products }}
-    </pre>
+    <div>
+        <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:grid-cols-4">
+            <li v-for="i in products" :key="i.id">
+                <NuxtLink :to="`/products/${i.id}`">
+                    <CardProduct :product="i" />
+                </NuxtLink>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script setup>
@@ -16,7 +22,7 @@ const
         }
     )
 
-console.log(products)
+// console.log(products)
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
