@@ -2,9 +2,7 @@
     <div>
         <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5">
             <li v-for="product in products" :key="product.uuid">
-                <NuxtLink :to="`/products/${$slugify(product.name)}-${product.sku}`">
-                    <CardProduct :product="product" />
-                </NuxtLink>
+                <CardProduct :product="product" />
             </li>
         </ul>
     </div>
