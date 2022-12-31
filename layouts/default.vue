@@ -1,7 +1,6 @@
 <template>
     <HeaderMain/>
-
-    <main>
+    <main class="p-3 sm:p-5">
         <slot/>
     </main>
 
