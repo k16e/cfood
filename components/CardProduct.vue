@@ -18,8 +18,12 @@
             </div>
         </NuxtLink>
         <button class="flex items-center p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
-            <Icon name="ri:shopping-cart-fill" size="18"/>
+            <Icon name="ri:shopping-cart-fill" size="16"/>
             <span v-text="'Add to cart'" class="sr-only"/>
+        </button>
+        <button class="flex items-center p-2 rounded-full bg-green-500 text-white absolute top-3 right-3 z-10">
+            <Icon name="ri:heart-2-fill" size="16"/>
+            <span v-text="'Add to wishlist'" class="sr-only"/>
         </button>
     </div>
 </template>
