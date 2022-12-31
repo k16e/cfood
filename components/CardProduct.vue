@@ -3,10 +3,10 @@
         <div>
             <img :src="product.image" :alt="product.name" class="r-thumb w-full">
         </div>
-        <div class="p-3 sm:p-5 border-t border-gray-100">
-            <div>
+        <div class="p-3 border-t border-gray-100">
+            <div class="pr-6 sm:pr-10">
                 <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
-                <h2 v-text="product.name" class="text-lg font-medium"/>
+                <h2 v-text="product.name" class="leading-tight text-lg truncate"/>
             </div>
             <div class="pt-2 sm:pt-3 flex items-center justify-between">
                 <p
