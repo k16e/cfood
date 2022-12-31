@@ -8,11 +8,15 @@
                 <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
                 <h2 v-text="product.name" class="text-xl"/>
             </div>
-            <div class="pt-2 sm:pt-3">
+            <div class="pt-2 sm:pt-3 flex items-center justify-between">
                 <p
                     v-text="$formatPrice(product.price)"
                     class="font-bold text-gray-800"
                 />
+                <button class="flex items-center p-2 rounded-full bg-orange-600 text-white">
+                    <Icon name="ri:shopping-cart-fill" size="20"/>
+                    <span v-text="'Add to cart'" class="sr-only"/>
+                </button>
             </div>
         </div>
     </div>
