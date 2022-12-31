@@ -4,7 +4,7 @@
             Home
         </NuxtLink>
         <NuxtLink to="/products">
-            Order
+            Products
         </NuxtLink>
         <NuxtLink to="/products">
             Research

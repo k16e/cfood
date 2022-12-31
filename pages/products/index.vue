@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:grid-cols-4">
-            <li v-for="i in products" :key="i.id">
+            <li v-for="i in products" :key="i.uuid">
                 <NuxtLink :to="`/products/${i.id}`">
                     <CardProduct :product="i" />
                 </NuxtLink>
@@ -11,18 +11,25 @@
 </template>
 
 <script setup>
-    definePageMeta({
-        layout: 'products'
-    })
+const
+    client = useSupabaseClient(),
+    { data: products, error } = await useAsyncData('products',
+        async () => {
+            const { data } = await client
+                .from('products')
+                .select('*')
+            return data
+        }
+    )
 
-    const { data: products } = await useFetch('https://fakestoreapi.com/products')
+// console.log(products)
 
-    useHead({
-        title: 'c.food Products (All Condiments & foodstuff)',
-        meta: [
-            { name: 'description', content: 'All condiments and foodstuff from c.food' }
-        ]
-    })
+useHead({
+    title: 'c.food Products (All Condiments & foodstuff)',
+    meta: [
+        { name: 'description', content: 'All condiments and foodstuff from c.food' }
+    ]
+})
 </script>
 
 <style lang="scss" scoped>

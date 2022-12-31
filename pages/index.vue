@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:grid-cols-4">
-            <li v-for="i in products" :key="i.id">
+            <li v-for="i in products" :key="i.uuid">
                 <NuxtLink :to="`/products/${i.id}`">
                     <CardProduct :product="i" />
                 </NuxtLink>
@@ -13,7 +13,7 @@
 <script setup>
 const
     client = useSupabaseClient(),
-    { data: products } = await useAsyncData('products',
+    { data: products, error } = await useAsyncData('products',
         async () => {
             const { data } = await client
                 .from('products')
