@@ -9,7 +9,10 @@
                 <h2 v-text="product.name" class="text-xl"/>
             </div>
             <div class="pt-3 sm:pt-5">
-                <p v-text="product.price" class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 font-bold text-gray-800"/>
+                <p
+                    v-text="$formatPrice(product.price)"
+                    class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 font-bold text-gray-800"
+                />
             </div>
         </div>
     </div>
