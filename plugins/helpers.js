@@ -5,7 +5,8 @@ export default defineNuxtPlugin(nuxtApp => {
                 const formattedPrice = new Intl.NumberFormat('en-NG',
                     {
                         style: 'currency',
-                        currency: 'NGN'
+                        currency: 'NGN',
+                        maximumFractionDigits: 0
                     })
                     .format(price)
                 return formattedPrice

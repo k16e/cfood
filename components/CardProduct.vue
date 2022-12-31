@@ -8,10 +8,10 @@
                 <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
                 <h2 v-text="product.name" class="text-xl"/>
             </div>
-            <div class="pt-3 sm:pt-5">
+            <div class="pt-2 sm:pt-3">
                 <p
                     v-text="$formatPrice(product.price)"
-                    class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 font-bold text-gray-800"
+                    class="font-bold text-gray-800"
                 />
             </div>
         </div>
