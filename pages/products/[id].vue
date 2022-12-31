@@ -1,28 +1,27 @@
 <template>
-    <Head>
-        <Title>c.food Product (Condiment) | {{ product.title }}</Title>
-        <Meta name="description" :content="product.description"/>
-    </Head>
-
-    <ProductDetails :product="product"/>
+    <div>
+        <ProductDetails :product="product[0]"/>
+    </div>
 </template>
 
 <script setup>
-    const { id } = useRoute().params
-    const uri = `https://fakestoreapi.com/products/${id}`
+const
+    { id } = useRoute().params,
+    sku = id.substr(-8),
+    supabase = useSupabaseClient(),
+    { data: product, error } = await useAsyncData('products',
+        async () => {
+            const { data } = await supabase
+                .from('products')
+                .select('*')
+                .match({ sku })
+            return data
+        }
+    )
 
-    const { data: product } = await useFetch(uri, { key: id })
-    if (!product.value) {
-        throw createError({
-            statusCode: 404,
-            statusMessage: 'Product not found',
-            fatal: true // Forces app to show error page, useful when error is coming from browser
-        })
-    }
-
-    definePageMeta({
-        layout: 'products'
-    })
+definePageMeta({
+    layout: 'products'
+})
 </script>
 
 <style lang="scss" scoped>

@@ -1,10 +1,9 @@
 <template>
     <div>
-        <img :src="product.image" :alt="product.title" class="r-thumb"/>
+        <img :src="product.image" :alt="product.name" class=""/>
         <div>
-            <h1 v-text="product.title"/>
+            <h1 v-text="product.name"/>
             <div>
-                <p>Price - ${{ product.price.toFixed(2) }}</p>
                 <p>{{ product.description }}</p>
             </div>
         </div>

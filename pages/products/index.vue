@@ -12,17 +12,15 @@
 
 <script setup>
 const
-    client = useSupabaseClient(),
+    supabase = useSupabaseClient(),
     { data: products, error } = await useAsyncData('products',
         async () => {
-            const { data } = await client
+            const { data } = await supabase
                 .from('products')
                 .select('*')
             return data
         }
     )
-
-// console.log(products)
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
