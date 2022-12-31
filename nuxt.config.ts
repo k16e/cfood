@@ -3,7 +3,8 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
         '@nuxtjs/supabase',
-        'nuxt-icon'
+        'nuxt-icon',
+        'nuxt-lodash'
     ],
     app: {
         head: {
@@ -18,5 +19,10 @@ export default defineNuxtConfig({
         public: { // Keys that may/can be exposed to public routes
 
         }
+    },
+    lodash: {
+        prefix: '_',
+        prefixSkip: ['string'],
+        upperAfterPrefix: false
     }
 })

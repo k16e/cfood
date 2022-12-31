@@ -10,7 +10,8 @@ export default defineNuxtPlugin(nuxtApp => {
                     })
                     .format(price)
                 return formattedPrice
-            }
+            },
+            slugify: str => _kebabCase(str.replace(/&/g, '-and-'))
         }
     }
 })
