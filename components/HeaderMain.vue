@@ -6,10 +6,10 @@
         <NuxtLink to="/products">
             Products
         </NuxtLink>
-        <NuxtLink to="/products">
+        <NuxtLink to="/research">
             Research
         </NuxtLink>
-        <NuxtLink to="/products">
+        <NuxtLink to="/studio">
             Studio
         </NuxtLink>
         <NuxtLink to="/about">
