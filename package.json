@@ -17,6 +17,8 @@
     "nuxt-lodash": "^2.4.1"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.2.2"
+    "@pinia/nuxt": "^0.4.6",
+    "@supabase/supabase-js": "^2.2.2",
+    "pinia": "^2.0.28"
   }
 }

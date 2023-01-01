@@ -1,10 +1,11 @@
 export default defineNuxtConfig({
     modules: [
-        '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
+        '@nuxtjs/tailwindcss',
         '@nuxtjs/supabase',
         'nuxt-icon',
-        'nuxt-lodash'
+        'nuxt-lodash',
+        [ '@pinia/nuxt', { autoImports: [ 'defineStore' ] } ],
     ],
     app: {
         head: {

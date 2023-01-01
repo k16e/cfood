@@ -9,6 +9,7 @@
 </template>
 
 <script setup>
+// import { useProducts } from '~~/store/products'
 const
     supabase = useSupabaseClient(),
     { data: products, error } = await useAsyncData('products',
@@ -20,6 +21,9 @@ const
             return data
         }
     )
+
+// const products = useProducts()
+// console.log(products)
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
