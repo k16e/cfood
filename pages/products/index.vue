@@ -16,6 +16,7 @@ const
             const { data } = await supabase
                 .from('products')
                 .select('*')
+                .order('id')
             return data
         }
     )
