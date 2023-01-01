@@ -1,6 +1,7 @@
 export const useProductsStore = defineStore('products', {
     state: () => ({
-        products: []
+        products: [],
+        cart: []
     }),
     actions: {
         async fetchProducts() {
