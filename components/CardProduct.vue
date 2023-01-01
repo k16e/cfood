@@ -8,6 +8,7 @@
                 <div class="pr-6 sm:pr-10">
                     <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
                     <h2 v-text="product.name" class="leading-tight text-2xl sm:text-xl truncate"/>
+                    <p v-text="product.description" class="text-sm line-clamp-2"/>
                 </div>
                 <div class="pt-2 sm:pt-3 flex items-center justify-between">
                     <p
