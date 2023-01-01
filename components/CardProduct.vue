@@ -5,12 +5,12 @@
                 <img :src="product.image" :alt="product.name" class="r-thumb w-full">
             </div>
             <div class="p-3 border-t border-gray-100">
-                <div class="pr-6 sm:pr-10">
+                <div class="pr-7 sm:pr-12">
                     <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
-                    <h2 v-text="product.name" class="leading-tight text-2xl sm:text-xl truncate"/>
-                    <p v-text="product.description" class="text-sm line-clamp-2"/>
+                    <h2 v-text="product.name" class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800"/>
+                    <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
                 </div>
-                <div class="pt-2 sm:pt-3 flex items-center justify-between">
+                <div class="pt-2 sm:pt-3">
                     <p
                         v-text="$formatPrice(product.price)"
                         class="font-medium text-gray-800 text-2xl sm:text-xl"
