@@ -4,14 +4,12 @@ export const useProductsStore = defineStore('products', {
     }),
     actions: {
         async fetchProducts() {
-            const
-                supabase = useSupabaseClient(),
-                { data } = await supabase
+            const supabase = useSupabaseClient()
+                const { data } = await supabase
                     .from('products')
                     .select('*')
                     .order('id')
-            this.products = data
-            return data
+                this.products = data
         }
     },
     getters: {}
