@@ -1,6 +1,7 @@
 <template>
     <div class="r-card bg-white border border-gray-200 rounded-xl relative">
-        <NuxtLink :to="`/products/${$slugify(product.name)}-${product.sku}`">
+        <NuxtLink
+            :to="`/products/${$slugify(product.name)}-${product.sku}`">
             <div>
                 <img :src="product.image" :alt="product.name" class="r-thumb w-full">
             </div>
@@ -18,17 +19,26 @@
                 </div>
             </div>
         </NuxtLink>
-        <button class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
-            <Icon name="ri:shopping-cart-fill" size="18"/>
-            <span v-text="'Add to cart'" class="sr-only"/>
-        </button>
-        <button class="flex items-center p-3 sm:p-2 rounded-full bg-green-500 text-white absolute top-3 right-3 z-10">
-            <Icon name="ri:heart-2-fill" size="18"/>
+        <button
+            @click="log"
+            class="flex items-center p-3 sm:p-2 rounded-full bg-green-500 text-white absolute top-3 right-3 z-10">
+            <Icon name="ri:heart-2-fill" size="18" class="pointer-events-none"/>
             <span v-text="'Add to wishlist'" class="sr-only"/>
+        </button>
+        <button
+            class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
+            <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
+            <span v-text="'Add to cart'" class="sr-only"/>
         </button>
     </div>
 </template>
 
 <script setup>
-    const { product } = defineProps([ 'product' ])
+    import { useProductStore } from '~/store/products'
+
+    const { product } = defineProps(['product'])
+    const store = useProductStore()
+    const msg = 'Hello'
+    const log = () => console.log(msg)
+
 </script>

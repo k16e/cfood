@@ -8,7 +8,7 @@
         </p>
 
         <!-- Button to clear the error -->
-        <button @click="handleError" class="r-btn">Please go back home</button>
+        <button @click="handleError" class="">Please go back home</button>
     </div>
 </template>
 

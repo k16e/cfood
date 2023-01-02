@@ -1,4 +1,4 @@
-export const useProductsStore = defineStore('products', {
+export const useProductStore = defineStore('products', {
     state: () => ({
         products: [],
         cart: []
@@ -11,6 +11,9 @@ export const useProductsStore = defineStore('products', {
                     .select('*')
                     .order('id')
                 this.products = data
+        },
+        addToCart(e) {
+            console.log(e)
         }
     },
     getters: {}

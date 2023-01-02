@@ -9,11 +9,11 @@
 </template>
 
 <script setup>
-    import { useProductsStore } from '~/stores/products'
+    import { useProductStore } from '~/store/products'
 
-    const productsStore = useProductsStore()
-    await productsStore.fetchProducts()
-    const products = await productsStore.products
+    const productStore = useProductStore()
+    await productStore.fetchProducts()
+    const products = await productStore.products
 
     useHead({
         title: 'c.food Products (All Condiments & foodstuff)',

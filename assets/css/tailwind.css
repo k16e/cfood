@@ -5,7 +5,3 @@
 body {
     @apply bg-[#f2f2f2];
 }
-
-@layer components {
-    .r-btn { @apply bg-indigo-500; }
-}
