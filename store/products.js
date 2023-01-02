@@ -1,4 +1,4 @@
-export const useProductStore = defineStore('products', {
+export const useProductsStore = defineStore('productsStore', {
     state: () => ({
         products: [],
         cart: []
@@ -12,22 +12,31 @@ export const useProductStore = defineStore('products', {
                     .order('id')
                 this.products = data
         },
-        addToCart(e, sku) {
-            e.preventDefault()
-            const localCart = JSON.parse(localStorage.getItem('cartItems')) || []
-            localCart.push(sku)
-            localStorage.setItem('cartItems', JSON.stringify(localCart))
-            this.cart = [ ...localCart ]
+        async addToCart(payload) {
+            const existingItem = this.cart.find(item => item.id === payload.sku)
+            if (existingItem) {
+                let existingItemIndex = this.cart.findIndex(
+                    item => item.id === existingItem.id
+                )
+
+                existingItem.qty = existingItem.qty + 1
+                existingItem.subTotal = payload.price * existingItem.qty
+                this.cart[existingItemIndex] = existingItem
+            } else {
+                this.cart.push({
+                    id: payload.sku,
+                    name: payload.name,
+                    image: payload.image,
+                    desc: payload.description,
+                    price: payload.price,
+                    qty: 1,
+                    subTotal: payload.price
+                })
+            }
         }
     },
     getters: {
-        getCart: (state) => {
-            let cartedProducts
-            state.cart.forEach(item => {
-                cartedProducts = [...state.products.filter(product => product.sku === item)]
-            })
-            return cartedProducts
-        }
+
     },
     persist: {
         storage: persistedState.localStorage

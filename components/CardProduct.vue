@@ -25,7 +25,7 @@
             <span v-text="'Add to wishlist'" class="sr-only"/>
         </button>
         <button
-            @click="addToCart($event, product.sku)"
+            @click="addToCart(product)"
             class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
             <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
             <span v-text="'Add to cart'" class="sr-only"/>
@@ -34,10 +34,10 @@
 </template>
 
 <script setup>
-    import { useProductStore } from '~/store/products'
+    import { useProductsStore } from '~/store/products'
 
     const { product } = defineProps(['product'])
-    const store = useProductStore()
-    const addToCart = store.addToCart
+    const store = useProductsStore()
+    const addToCart = await store.addToCart
 
 </script>

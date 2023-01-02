@@ -5,12 +5,12 @@
 </template>
 
 <script setup>
-    import { useProductStore } from '~/store/products'
+    import { useProductsStore } from '~/store/products'
 
     const { product } = defineProps(['product'])
-    const store = useProductStore()
+    const store = useProductsStore()
     const products = await store.products
-    const cart = store.getCart
+    const cart = store.cart
 
 
 </script>

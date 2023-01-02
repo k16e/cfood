@@ -9,11 +9,11 @@
 </template>
 
 <script setup>
-    import { useProductStore } from '~/store/products'
+    import { useProductsStore } from '~/store/products'
 
-    const productStore = useProductStore()
-    await productStore.fetchProducts()
-    const products = await productStore.products
+    const store = useProductsStore()
+    await store.fetchProducts()
+    const products = await store.products
 
     useHead({
         title: 'c.food Products (All Condiments & foodstuff)',
@@ -22,7 +22,3 @@
         ]
     })
 </script>
-
-<style lang="scss" scoped>
-
-</style>
