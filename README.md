@@ -1,42 +1,11 @@
-# Nuxt 3 Minimal Starter
+# c.food online store
+This digital store is open-source and built openly by kb (Kabolobari Benakole) from "open-sourced" technologies and generous contributions and help from both free and premium tutorials, blogs, and courses.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Technologies
+* Nuxt 3
+* Vue 3
+* TailwindCSS
+* Gitlab
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## References
+1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
