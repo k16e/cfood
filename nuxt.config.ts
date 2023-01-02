@@ -5,7 +5,9 @@ export default defineNuxtConfig({
         '@nuxtjs/supabase',
         'nuxt-icon',
         'nuxt-lodash',
-        [ '@pinia/nuxt', { autoImports: [ 'defineStore' ] } ],
+        ['@pinia/nuxt', { autoImports: ['defineStore'] }],
+        '@pinia-plugin-persistedstate/nuxt',
+        '@vueuse/nuxt'
     ],
     app: {
         head: {
