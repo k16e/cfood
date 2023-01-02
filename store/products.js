@@ -1,7 +1,9 @@
+import { useLocalStorage } from '@vueuse/core'
+
 export const useProductStore = defineStore('products', {
     state: () => ({
         products: [],
-        cart: []
+        cart: useLocalStorage('cartItems', [])
     }),
     actions: {
         async fetchProducts() {
@@ -20,5 +22,7 @@ export const useProductStore = defineStore('products', {
             this.cart = [ ...localCart ]
         }
     },
-    getters: {}
+    getters: {
+        // getCart: state => state.cart
+    }
 })

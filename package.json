@@ -19,6 +19,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
     "@supabase/supabase-js": "^2.2.2",
+    "@vueuse/nuxt": "^9.9.0",
     "pinia": "^2.0.28"
   }
 }
