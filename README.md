@@ -1,11 +1,13 @@
 # c.food online store
 This digital store is open-source and built openly by kb (Kabolobari Benakole) from "open-sourced" technologies and generous contributions and help from both free and premium tutorials, blogs, and courses.
 
+
 ## Technologies
 * Nuxt 3
 * Vue 3
 * TailwindCSS
 * Gitlab
 
-## References
+
+## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
