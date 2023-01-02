@@ -10,7 +10,7 @@
     const { product } = defineProps(['product'])
     const store = useProductStore()
     const products = await store.products
-    const cart = store.cart
+    const cart = store.getCart
 
 
 </script>

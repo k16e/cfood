@@ -21,7 +21,13 @@ export const useProductStore = defineStore('products', {
         }
     },
     getters: {
-        // getCart: state => state.cart
+        getCart: (state) => {
+            let cartedProducts
+            state.cart.forEach(item => {
+                cartedProducts = [...state.products.filter(product => product.sku === item)]
+            })
+            return cartedProducts
+        }
     },
     persist: {
         storage: persistedState.localStorage
