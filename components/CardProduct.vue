@@ -20,12 +20,12 @@
             </div>
         </NuxtLink>
         <button
-            @click="log"
             class="flex items-center p-3 sm:p-2 rounded-full bg-green-500 text-white absolute top-3 right-3 z-10">
             <Icon name="ri:heart-2-fill" size="18" class="pointer-events-none"/>
             <span v-text="'Add to wishlist'" class="sr-only"/>
         </button>
         <button
+            @click="addToCart($event, product.sku)"
             class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
             <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
             <span v-text="'Add to cart'" class="sr-only"/>
@@ -38,7 +38,6 @@
 
     const { product } = defineProps(['product'])
     const store = useProductStore()
-    const msg = 'Hello'
-    const log = () => console.log(msg)
+    const addToCart = store.addToCart
 
 </script>

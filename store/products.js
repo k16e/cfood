@@ -12,8 +12,12 @@ export const useProductStore = defineStore('products', {
                     .order('id')
                 this.products = data
         },
-        addToCart(e) {
-            console.log(e)
+        addToCart(e, sku) {
+            e.preventDefault()
+            const localCart = JSON.parse(localStorage.getItem('cartItems')) || []
+            localCart.push(sku)
+            localStorage.setItem('cartItems', JSON.stringify(localCart))
+            this.cart = [ ...localCart ]
         }
     },
     getters: {}
