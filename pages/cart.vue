@@ -17,8 +17,9 @@
                                 <div class="flex-shrink-0">
                                     <img :src="product.image" :alt="product.name" class="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48" />
                                 </div>
-                                <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                                    <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
+
+                                <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0 ml-3 sm:ml-5">
+                                    <div class="flex justify-between flex-col">
                                         <div>
                                             <div class="flex justify-between">
                                                 <h3 class="text-sm">
@@ -36,12 +37,15 @@
                                                 class="font-medium text-gray-800 text-lg mt-1.5"
                                             />
                                         </div>
-                                        <div class="absolute top-0 right-0">
-                                            <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
-                                                <span class="sr-only">Remove</span>
-                                                <Icon name="material-symbols:close-rounded" size="18" aria-hidden="true"/>
-                                            </button>
+                                        <div>
+                                            +/-
                                         </div>
+                                    </div>
+                                    <div class="absolute top-0 right-0">
+                                        <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
+                                            <span class="sr-only">Remove</span>
+                                            <Icon name="material-symbols:close-rounded" size="18" aria-hidden="true"/>
+                                        </button>
                                     </div>
                                 </div>
                             </li>
