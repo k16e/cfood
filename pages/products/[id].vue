@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ProductsDetail :product="product[0]"/>
+        <ProductsDetails :product="product[0]"/>
     </div>
 </template>
 
