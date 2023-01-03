@@ -5,9 +5,9 @@
         <Icon name="ri:shopping-cart-fill" size="20" class="mr-1.5 text-orange-700"/>
         <span class="flex items-center">
             <span v-text="`Cart`"/>
-            <span v-if="$isEmpty(cart)" v-text="`(0)`"/>
+            <sup v-if="$isEmpty(cart)" v-text="`(0)`" class="font-medium ml-1 text-orange-700"/>
             <ClientOnly v-else>
-                <span v-text="`(${cart.length})`"/>
+                <sup v-text="`(${cart.length})`" class="font-medium ml-1 text-orange-700"/>
             </ClientOnly>
         </span>
     </NuxtLink>

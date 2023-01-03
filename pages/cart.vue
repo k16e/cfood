@@ -1,4 +1,7 @@
 <template>
+    <div class="pt-3 sm:pt-5 lg:pt-7 pb-7 sm:pb-9 lg:pb-12">
+        <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-7xl">Your Cart</h1>
+    </div>
     <ClientOnly>
         <div>
             <p v-if="cart.length >= 1">
@@ -9,6 +12,11 @@
             </p>
         </div>
     </ClientOnly>
+    <div>
+        <pre>
+            {{ cart }}
+        </pre>
+    </div>
 </template>
 
 <script setup>
