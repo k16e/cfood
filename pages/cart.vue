@@ -100,9 +100,6 @@
         <p v-else>
             You have yet to add any item to your cart. Please continue shopping at the Products page.
         </p>
-        <pre>
-            {{ cart }}
-        </pre>
     </ClientOnly>
 </template>
 
