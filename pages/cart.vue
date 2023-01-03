@@ -9,7 +9,8 @@
     <ClientOnly>
         <div v-if="cart.length >= 1" class="bg-white">
             <div class="px-3">
-                <form class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
+                <form
+                    class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
                     <section aria-labelledby="cart-heading" class="lg:col-span-7">
                         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
                         <ul role="list" class="divide-y divide-gray-200">
@@ -18,7 +19,7 @@
                                     <img :src="item.image" :alt="item.name" class="h-32 w-32 object-cover sm:h-48 sm:w-48"/>
                                 </div>
 
-                                <div class="relative pr-9 ml-3 sm:ml-5 flex-1 flex">
+                                <div class="relative ml-3 sm:ml-5 flex-1 pr-3">
                                     <div class="flex justify-between flex-col">
                                         <div>
                                             <div class="flex flex-col justify-between">
@@ -32,36 +33,46 @@
                                                 </div>
                                                 <p v-text="item.description" class="text-sm line-clamp-2 opacity-70"/>
                                             </div>
-                                            <p
-                                                v-text="$formatPrice(item.subTotal)"
-                                                class="font-medium text-gray-800 text-lg mt-1.5"
-                                            />
+                                            <p class="pt-3">
+                                                <span v-text="'Price:'" class="luna-small-caps block -mb-0.5"/>
+                                                <span class="font-medium text-gray-800 text-lg mt-1.5">
+                                                    {{ $formatPrice(item.price) }}
+                                                </span>
+                                            </p>
                                         </div>
 
-                                        <div class="number-input w-28 pt-5">
-                                            <div class="flex flex-row h-9 w-full rounded-xl relative bg-transparent">
-                                                <button
-                                                    @click="decrement"
-                                                    type="button"
-                                                    class="luna-counter rounded-l-full bg-gray-200">
-                                                    <span class="sr-only">Decrease quantity</span>
-                                                    <Icon name="ri:subtract-line" size="20" aria-hidden="true"/>
-                                                </button>
-                                                <input
-                                                    type="number"
-                                                    name="counter"
-                                                    :value="item.qty"
-                                                    min="1"
-                                                    max="9"
-                                                    class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
-                                                <button
-                                                    @click="increment"
-                                                    type="button"
-                                                    class="luna-counter rounded-r-full bg-gray-200">
-                                                    <span class="sr-only">Increase quantity</span>
-                                                    <Icon name="ri:add-line" size="20" aria-hidden="true"/>
-                                                </button>
+                                        <div class="flex items-center justify-between pt-5">
+                                            <div class="number-input w-28">
+                                                <div class="flex flex-row h-9 w-full rounded-xl relative bg-transparent">
+                                                    <button
+                                                        @click="decrement($event, item)"
+                                                        type="button"
+                                                        class="luna-counter rounded-l-full bg-gray-200">
+                                                        <span class="sr-only">Decrease quantity</span>
+                                                        <Icon name="ri:subtract-line" size="20" aria-hidden="true"/>
+                                                    </button>
+                                                    <input
+                                                        type="number"
+                                                        name="counter"
+                                                        :value="item.qty"
+                                                        min="1"
+                                                        max="9"
+                                                        class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
+                                                    <button
+                                                        @click="increment($event, item)"
+                                                        type="button"
+                                                        class="luna-counter rounded-r-full bg-gray-200">
+                                                        <span class="sr-only">Increase quantity</span>
+                                                        <Icon name="ri:add-line" size="20" aria-hidden="true"/>
+                                                    </button>
+                                                </div>
                                             </div>
+                                            <p class="text-right">
+                                                <span v-text="'Subtotal:'" class="luna-small-caps block -mb-1"/>
+                                                <span class="font-medium text-gray-800 text-lg mt-1.5">
+                                                    {{ $formatPrice(item.price) }}
+                                                </span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="absolute top-0 right-0">
@@ -112,7 +123,7 @@ const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
-const decrement = e => {
+const decrement = (e, item) => {
     const
         input = e.target.nextElementSibling,
         min = Number(input.getAttribute('min'))
@@ -121,8 +132,9 @@ const decrement = e => {
     if (value == min) return
     value--
     input.value = value
+    item.qty = value
 }
-const increment = e => {
+const increment = (e, item) => {
     const
         input = e.target.previousElementSibling,
         max = Number(input.getAttribute('max'))
@@ -131,6 +143,7 @@ const increment = e => {
     if (value == max) return
     value++
     input.value = value
+    item.qty = value
 }
 </script>
 

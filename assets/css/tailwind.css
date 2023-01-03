@@ -8,6 +8,5 @@ body {
 
 svg { @apply pointer-events-none; }
 
-.luna-btn {
-    @apply p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200;
-}
+.luna-btn { @apply p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200; }
+.luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
