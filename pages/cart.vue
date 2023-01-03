@@ -1,16 +1,18 @@
 <template>
-    <pre>
-        {{ cart }}
-    </pre>
+    <ClientOnly>
+        <pre>
+            {{ cart }}
+        </pre>
+    </ClientOnly>
 </template>
 
 <script setup>
     import { useProductsStore } from '~/store/products'
 
     const { product } = defineProps(['product'])
+
     const store = useProductsStore()
-    const products = await store.products
-    const cart = computed(() => store.cart )
+    const cart = store.cart
 
 
 </script>

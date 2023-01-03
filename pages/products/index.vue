@@ -12,7 +12,8 @@
     import { useProductsStore } from '~/store/products'
 
     const store = useProductsStore()
-    const products = computed(() => store.products)
+    await store.fetchProducts()
+    const products = await store.products
 
     useHead({
         title: 'c.food Products (All Condiments & foodstuff)',
