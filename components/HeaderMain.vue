@@ -22,9 +22,7 @@
                 <NuxtLink to="/cart" class="p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200">
                     <Icon name="ri:shopping-cart-fill" size="18" class="mr-1.5 text-orange-700"/>
                     <span class="">
-                        Cart
-                        <span v-if="cart.length == 0" v-text="'(0)'"/>
-                        <span v-else v-text="`(${cart.length})`"/>
+                        Cart <span v-text="`(${cart.length})`"/>
                     </span>
                 </NuxtLink>
             </div>
@@ -36,9 +34,5 @@
     import { useProductsStore } from '~/store/products'
 
     const store = useProductsStore()
-    const cart = store.cart
+    const cart = computed(() => store.cart)
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -39,5 +39,4 @@
     const { product } = defineProps(['product'])
     const store = useProductsStore()
     const addToCart = await store.addToCart
-
 </script>

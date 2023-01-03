@@ -14,7 +14,3 @@
     })
     const { data: currencyApi } = await useFetch('/api/currencyApi')
 </script>
-
-<style lang="scss" scoped>
-
-</style>
