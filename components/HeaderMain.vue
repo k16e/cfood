@@ -1,5 +1,5 @@
 <template>
-    <header class="p-3">
+    <header class="p-3" :key="refreshCart">
         <div class="flex items-center justify-between">
             <div class="sr-only md:not-sr-only">
                 <NuxtLink to="/">
@@ -19,12 +19,13 @@
                 </NuxtLink>
             </div>
             <div>
-                <CartLink/>
+                <ProductsCartLink/>
             </div>
         </div>
     </header>
 </template>
 
 <script setup>
-    
+const cartRef = ref(0)
+const refreshCart = () => cartRef += 1
 </script>
