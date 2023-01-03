@@ -41,8 +41,8 @@
                                         <div class="number-input w-28 pt-5">
                                             <div class="flex flex-row h-9 w-full rounded-xl relative bg-transparent">
                                                 <button
+                                                    @click="decrement"
                                                     type="button"
-                                                    data-action="decrement"
                                                     class="luna-counter rounded-l-full bg-gray-200">
                                                     <span class="sr-only">Decrease quantity</span>
                                                     <Icon name="ri:subtract-line" size="20" aria-hidden="true"/>
@@ -51,9 +51,11 @@
                                                     type="number"
                                                     name="counter"
                                                     :value="item.qty"
-                                                    class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200">
+                                                    min="1"
+                                                    max="9"
+                                                    class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
                                                 <button
-                                                    data-action="increment"
+                                                    @click="increment"
                                                     type="button"
                                                     class="luna-counter rounded-r-full bg-gray-200">
                                                     <span class="sr-only">Increase quantity</span>
@@ -109,6 +111,27 @@ import { useProductsStore } from '../stores/products'
 const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
+
+const decrement = e => {
+    const
+        input = e.target.nextElementSibling,
+        min = Number(input.getAttribute('min'))
+    let value = Number(input.value)
+
+    if (value == min) return
+    value--
+    input.value = value
+}
+const increment = e => {
+    const
+        input = e.target.previousElementSibling,
+        max = Number(input.getAttribute('max'))
+    let value = Number(input.value)
+
+    if (value == max) return
+    value++
+    input.value = value
+}
 </script>
 
 <style lang="scss" scoped>
