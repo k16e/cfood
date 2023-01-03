@@ -73,9 +73,6 @@
         <p v-else>
             You have yet to add any item to your cart. Please continue shopping at the Products page.
         </p>
-        <pre>
-            {{ cart }}
-        </pre>
     </ClientOnly>
 </template>
 
@@ -84,5 +81,5 @@ import { useProductsStore } from '../stores/products'
 
 const store = useProductsStore()
 const cart = store.cart
-const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0,)
+const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 </script>

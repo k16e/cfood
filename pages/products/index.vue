@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div class="p-3 sm:p-5 pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
+        <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-5xl truncate">Our products</h1>
+    </div>
+    <div class="px-3">
         <ul class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
             <li v-for="product in products" :key="product.uuid" class="flex">
                 <ProductsCard :product="product"/>
