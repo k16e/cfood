@@ -70,7 +70,7 @@
                                             <p class="text-right">
                                                 <span v-text="'Subtotal:'" class="luna-small-caps block -mb-1"/>
                                                 <span class="font-medium text-gray-800 text-lg mt-1.5">
-                                                    {{ $formatPrice(item.price) }}
+                                                    {{ $formatPrice(item.subTotal) }}
                                                 </span>
                                             </p>
                                         </div>
@@ -121,7 +121,7 @@ import { useProductsStore } from '../stores/products'
 
 const store = useProductsStore()
 const cart = store.cart
-const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
+let subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 const decrement = (e, item) => {
     const
@@ -133,6 +133,8 @@ const decrement = (e, item) => {
     value--
     input.value = value
     item.qty = value
+    item.subTotal = value * item.price
+    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 const increment = (e, item) => {
     const
@@ -144,6 +146,8 @@ const increment = (e, item) => {
     value++
     input.value = value
     item.qty = value
+    item.subTotal = value * item.price
+    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 </script>
 
