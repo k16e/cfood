@@ -24,12 +24,15 @@
                                                 <h3 class="text-sm">
                                                     <NuxtLink
                                                         :to="`/products/${$slugify(product.name)}-${product.sku}`"
-                                                        class="font-medium text-gray-700 hover:text-gray-800">
+                                                        class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800 hover:text-orange-900">
                                                         {{ product.name }}
                                                     </NuxtLink>
                                                 </h3>
                                             </div>
-                                            <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price }}</p>
+                                            <p
+                                                v-text="$formatPrice(product.price)"
+                                                class="font-medium text-gray-800 text-lg mt-1.5"
+                                            />
                                         </div>
                                         <div class="absolute top-0 right-0">
                                             <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
@@ -46,43 +49,20 @@
                     <!-- Order summary -->
                     <section aria-labelledby="summary-heading" class="mt-7 rounded-lg bg-gray-50 px-3 py-5 sm:p-5 lg:col-span-5 lg:mt-7 lg:p-8 lg:sticky lg:top-24 border border-gray-200">
                         <h2 id="summary-heading" class="text-lg font-medium text-gray-900">Order summary</h2>
-
                         <dl class="mt-6 space-y-4">
                             <div class="flex items-center justify-between">
-                                <dt class="text-sm text-gray-600">Subtotal</dt>
-                                <dd class="text-sm font-medium text-gray-900">$99.00</dd>
+                                <dt class="text-gray-600">Subtotal</dt>
+                                <dd class="font-medium text-gray-900">{{ $formatPrice(subTotal) }}</dd>
                             </div>
                             <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                                <dt class="flex items-center text-sm text-gray-600">
-                                    <span>Shipping estimate</span>
-                                    <a href="#" class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                                        <span class="sr-only">Learn more about how shipping is calculated</span>
-                                        <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
-                                    </a>
-                                </dt>
-                                <dd class="text-sm font-medium text-gray-900">$5.00</dd>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                                <dt class="flex text-sm text-gray-600">
-                                    <span>Tax estimate</span>
-                                    <a href="#" class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                                        <span class="sr-only">Learn more about how tax is calculated</span>
-                                        <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
-                                    </a>
-                                </dt>
-                                <dd class="text-sm font-medium text-gray-900">$8.32</dd>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                                <dt class="text-base font-medium text-gray-900">Order total</dt>
-                                <dd class="text-base font-medium text-gray-900">$112.32</dd>
+                                <dt class="font-medium text-gray-900">Order total</dt>
+                                <dd class="font-medium text-gray-900">{{ $formatPrice(subTotal) }}</dd>
                             </div>
                         </dl>
-
-                        <div class="mt-6">
+                        <div class="mt-9">
                             <button
                                 type="submit"
-                                class="w-full rounded-md border border-transparent bg-orange-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                            >
+                                class="w-full rounded-md border border-transparent bg-orange-600 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-50">
                                 Checkout
                             </button>
                         </div>
@@ -93,6 +73,9 @@
         <p v-else>
             You have yet to add any item to your cart. Please continue shopping at the Products page.
         </p>
+        <pre>
+            {{ cart }}
+        </pre>
     </ClientOnly>
 </template>
 
@@ -101,4 +84,5 @@ import { useProductsStore } from '../stores/products'
 
 const store = useProductsStore()
 const cart = store.cart
+const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0,)
 </script>
