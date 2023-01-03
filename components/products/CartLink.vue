@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
         to="/cart"
-        class="p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200">
+        class="luna-btn">
         <Icon name="ri:shopping-cart-fill" size="20" class="mr-1.5 text-orange-700"/>
         <span class="flex items-center">
             <span v-text="`Cart`"/>

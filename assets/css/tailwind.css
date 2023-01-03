@@ -5,3 +5,7 @@
 body {
     @apply bg-[#f2f2f2];
 }
+
+.luna-btn {
+    @apply p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200;
+}
