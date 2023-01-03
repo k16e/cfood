@@ -1,6 +1,6 @@
 <template>
     <div class="p-3 sm:p-5 pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
-        <h1 class="font-light text-orange-700 text-3xl sm:text-5xl truncate">Your Cart</h1>
+        <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-5xl truncate">Your Cart</h1>
         <NuxtLink to="/products" class="luna-btn text-gray-700">
             <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
             <span>Products</span>
@@ -13,11 +13,10 @@
                     <section aria-labelledby="cart-heading" class="lg:col-span-7">
                         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
                         <ul role="list" class="divide-y divide-gray-200">
-                            <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-5 sm:py-7">
+                            <li v-for="(product, idx) in products" :key="product.id + idx" class="flex py-5 sm:py-7">
                                 <div class="flex-shrink-0">
                                     <img :src="product.imageSrc" :alt="product.imageAlt" class="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48" />
                                 </div>
-
                                 <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
                                     <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                                         <div>
@@ -28,33 +27,13 @@
                                             </div>
                                             <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price }}</p>
                                         </div>
-
-                                        <div class="mt-4 sm:mt-0 sm:pr-9">
-                                            <label :for="`quantity-${productIdx}`" class="sr-only">Quantity, {{ product.name }}</label>
-                                            <select
-                                                :id="`quantity-${productIdx}`"
-                                                :name="`quantity-${productIdx}`"
-                                                class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 sm:text-sm"
-                                            >
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                            </select>
-
-                                            <div class="absolute top-0 right-0">
-                                                <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
-                                                    <span class="sr-only">Remove</span>
-                                                    <XMarkIcon class="h-5 w-5" aria-hidden="true" />
-                                                </button>
-                                            </div>
+                                        <div class="absolute top-0 right-0">
+                                            <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">Remove</span>
+                                                <Icon name="material-symbols:close-rounded" size="18" aria-hidden="true"/>
+                                            </button>
                                         </div>
                                     </div>
-
                                     <p class="mt-4 flex space-x-2 text-sm text-gray-700">
                                         <CheckIcon v-if="product.inStock" class="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
                                         <ClockIcon v-else class="h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
