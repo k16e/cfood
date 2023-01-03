@@ -35,9 +35,6 @@ export const useProductsStore = defineStore('productsStore', {
             }
         }
     },
-    getters: {
-
-    },
     persist: {
         storage: persistedState.localStorage
     }
