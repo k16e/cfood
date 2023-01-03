@@ -34,10 +34,10 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '../../store/products'
+import { useProductsStore } from '../../stores/products'
 
 const { product } = defineProps(['product'])
+
 const store = useProductsStore()
 const addToCart = await store.addToCart
-
 </script>

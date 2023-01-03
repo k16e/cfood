@@ -1,10 +1,13 @@
 <template>
-    <header class="p-3">
-        <div class="flex items-center justify-between">
-            <div class="sr-only md:not-sr-only">
+    <div class="flex items-center justify-between h-full">
+        <div class="flex items-center ">
+            <div>
                 <NuxtLink to="/">
                     Home
                 </NuxtLink>
+            </div>
+            <nav class="sr-only md:not-sr-only">
+                <h2 v-text="'Main navigation'" class="sr-only"/>
                 <NuxtLink to="/products">
                     Products
                 </NuxtLink>
@@ -17,12 +20,10 @@
                 <NuxtLink to="/about">
                     Meet c.food
                 </NuxtLink>
-            </div>
-            <ClientOnly>
-                <ProductsCartLink/>
-            </ClientOnly>
+            </nav>
         </div>
-    </header>
+        <ProductsCartLink/>
+    </div>
 </template>
 
 <script setup>
