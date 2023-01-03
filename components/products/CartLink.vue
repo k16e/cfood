@@ -10,8 +10,8 @@
 </template>
 
 <script setup>
-    import { useProductsStore } from '../../store/products'
+import { useProductsStore } from '../../store/products'
 
-    const store = useProductsStore()
-    const cart = computed(() => (store.cart))
+const store = useProductsStore()
+const cart = store.cart
 </script>
