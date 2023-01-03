@@ -16,7 +16,9 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.8",
-    "nuxt-lodash": "^2.4.1"
+    "nuxt-lodash": "^2.4.1",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",

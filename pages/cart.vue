@@ -13,38 +13,59 @@
                     <section aria-labelledby="cart-heading" class="lg:col-span-7">
                         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
                         <ul role="list" class="divide-y divide-gray-200">
-                            <li v-for="(product, idx) in cart" :key="product.id + idx" class="flex py-5 sm:py-7">
+                            <li v-for="(item, idx) in cart" :key="item.id + idx" class="flex py-5 sm:py-7">
                                 <div class="flex-shrink-0">
-                                    <img :src="product.image" :alt="product.name" class="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48" />
+                                    <img :src="item.image" :alt="item.name" class="h-32 w-32 object-cover sm:h-48 sm:w-48"/>
                                 </div>
 
-                                <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0 ml-3 sm:ml-5">
+                                <div class="relative pr-9 ml-3 sm:ml-5 flex-1 flex">
                                     <div class="flex justify-between flex-col">
                                         <div>
-                                            <div class="flex justify-between">
-                                                <h3 class="text-sm">
-                                                    <span v-text="product.id" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
+                                            <div class="flex flex-col justify-between">
+                                                <div>
+                                                    <span v-text="item.id" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
                                                     <NuxtLink
-                                                        :to="`/products/${$slugify(product.name)}-${product.id}`"
+                                                        :to="`/products/${$slugify(item.name)}-${item.id}`"
                                                         class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800 hover:text-orange-900">
-                                                        {{ product.name }}
+                                                        {{ item.name }}
                                                     </NuxtLink>
-                                                    <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
-                                                </h3>
+                                                </div>
+                                                <p v-text="item.description" class="text-sm line-clamp-2 opacity-70"/>
                                             </div>
                                             <p
-                                                v-text="$formatPrice(product.price)"
+                                                v-text="$formatPrice(item.subTotal)"
                                                 class="font-medium text-gray-800 text-lg mt-1.5"
                                             />
                                         </div>
-                                        <div>
-                                            +/-
+
+                                        <div class="number-input w-28 pt-5">
+                                            <div class="flex flex-row h-9 w-full rounded-xl relative bg-transparent">
+                                                <button
+                                                    type="button"
+                                                    data-action="decrement"
+                                                    class="luna-counter rounded-l-full bg-gray-200">
+                                                    <span class="sr-only">Decrease quantity</span>
+                                                    <Icon name="ri:subtract-line" size="20" aria-hidden="true"/>
+                                                </button>
+                                                <input
+                                                    type="number"
+                                                    name="counter"
+                                                    :value="item.qty"
+                                                    class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200">
+                                                <button
+                                                    data-action="increment"
+                                                    type="button"
+                                                    class="luna-counter rounded-r-full bg-gray-200">
+                                                    <span class="sr-only">Increase quantity</span>
+                                                    <Icon name="ri:add-line" size="20" aria-hidden="true"/>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="absolute top-0 right-0">
-                                        <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
+                                        <button type="button" class="-m-2 inline-flex p-3 text-gray-400 hover:text-gray-500">
                                             <span class="sr-only">Remove</span>
-                                            <Icon name="material-symbols:close-rounded" size="18" aria-hidden="true"/>
+                                            <Icon name="material-symbols:close-rounded" size="20" aria-hidden="true"/>
                                         </button>
                                     </div>
                                 </div>
@@ -53,7 +74,7 @@
                     </section>
 
                     <!-- Order summary -->
-                    <section aria-labelledby="summary-heading" class="mt-7 rounded-lg bg-gray-50 px-3 py-5 sm:p-5 lg:col-span-5 lg:mt-7 lg:p-8 lg:sticky lg:top-24 border border-gray-200">
+                    <section aria-labelledby="summary-heading" class="mt-3 rounded-lg bg-gray-50 px-3 py-5 sm:p-5 lg:col-span-5 lg:mt-7 lg:p-8 lg:sticky lg:top-24 border border-gray-200">
                         <h2 id="summary-heading" class="text-lg font-medium text-gray-900">Order summary</h2>
                         <dl class="mt-6 space-y-4">
                             <div class="flex items-center justify-between">
@@ -68,7 +89,7 @@
                         <div class="mt-9">
                             <button
                                 type="submit"
-                                class="w-full rounded-md border border-transparent bg-orange-600 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-50">
+                                class="w-full rounded-md border border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700 focus:ring-offset-2 focus:ring-offset-gray-50">
                                 Checkout
                             </button>
                         </div>
@@ -92,3 +113,15 @@ const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 </script>
+
+<style lang="scss" scoped>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.number-input button:focus,
+.number-input input:focus { outline: none !important; }
+
+.luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
+</style>
