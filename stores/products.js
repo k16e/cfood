@@ -27,7 +27,7 @@ export const useProductsStore = defineStore('productsStore', {
                     id: payload.sku,
                     name: payload.name,
                     image: payload.image,
-                    desc: payload.description,
+                    description: payload.description,
                     price: payload.price,
                     qty: 1,
                     subTotal: payload.price

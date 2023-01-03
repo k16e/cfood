@@ -22,11 +22,13 @@
                                         <div>
                                             <div class="flex justify-between">
                                                 <h3 class="text-sm">
+                                                    <span v-text="product.id" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
                                                     <NuxtLink
-                                                        :to="`/products/${$slugify(product.name)}-${product.sku}`"
+                                                        :to="`/products/${$slugify(product.name)}-${product.id}`"
                                                         class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800 hover:text-orange-900">
                                                         {{ product.name }}
                                                     </NuxtLink>
+                                                    <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
                                                 </h3>
                                             </div>
                                             <p
@@ -73,6 +75,9 @@
         <p v-else>
             You have yet to add any item to your cart. Please continue shopping at the Products page.
         </p>
+        <pre>
+            {{ cart }}
+        </pre>
     </ClientOnly>
 </template>
 
