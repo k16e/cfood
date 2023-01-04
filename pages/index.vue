@@ -8,7 +8,7 @@
             </div>
             <div class="prose-xl lg:prose-2xl leading-normal lg:leading-snug italic text-gray-700 max-w-screen-lg">
                 <p>
-                    Make it a goal to eat food that expires, even quickly, that you can pronounce, that your grandmother wouldn't pass up.
+                    This year, make it a goal to eat food that expires, even quickly, that you can pronounce, that your grandmother wouldn't pass up.
                 </p>
                 <p>
                     At c.food, we're proud to make such foods. Now thanks to the modern invention of the refrigerator, most of them do keep up to a week. Some even longer! Think pickling. All preservatives and funny-sounding chemicals free; only fresh, refrigerated goodnesses.
