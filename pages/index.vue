@@ -6,7 +6,7 @@
                     Welcome to c.food!
                 </h1>
             </div>
-            <div class="prose-xl lg:prose-2xl leading-normal lg:leading-snug italic text-gray-700 max-w-screen-lg">
+            <div class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-screen-lg">
                 <p>
                     This year, make it a goal to eat food that expires, even quickly, that you can pronounce, that your grandmother wouldn't pass up.
                 </p>
