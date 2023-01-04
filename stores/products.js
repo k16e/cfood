@@ -37,7 +37,8 @@ export const useProductsStore = defineStore('productsStore', {
             const existingItem = this.wishlist.find(item => item.id === payload.sku)
             if (existingItem) {
                 this.wishlist.splice(existingItem, 1)
-            } else {
+            }
+            else {
                 this.wishlist.push({
                     id: payload.sku,
                     name: payload.name,
