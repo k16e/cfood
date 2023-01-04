@@ -81,7 +81,7 @@
                                         <button
                                             @click="removeFromCart($event, idx)"
                                             type="button"
-                                            class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5">
+                                            class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
                                             <span class="sr-only">Remove</span>
                                             <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
                                         </button>

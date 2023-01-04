@@ -43,19 +43,23 @@
                             </div>
                         </div>
 
-                        <button
-                            @click="removeFromWishlist($event, idx)"
-                            type="button"
-                            class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5 -mt-1.5 absolute top-0 right-0 z-10">
-                            <span class="sr-only">Remove</span>
-                            <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
-                        </button>
-                        <button
-                            @click="addToCart(item)"
-                            class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute -bottom-1.5 right-0 z-10">
-                            <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
-                            <span v-text="'Add to cart'" class="sr-only"/>
-                        </button>
+                        <div class="-mt-1.5 sm:-mt-3 lg:-mt-1.5 absolute top-0 right-0 z-10">
+                            <button
+                                @click="removeFromWishlist($event, idx)"
+                                type="button"
+                                class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
+                                <span class="sr-only">Remove</span>
+                                <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
+                            </button>
+                        </div>
+                        <div class="absolute -bottom-1.5 right-0 z-10">
+                            <button
+                                @click="addToCart(item)"
+                                class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white">
+                                <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
+                                <span v-text="'Add to cart'" class="sr-only"/>
+                            </button>
+                        </div>
                     </div>
                 </li>
             </ul>
