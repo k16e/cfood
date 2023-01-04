@@ -14,3 +14,4 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
 3. [How To Make A Input Number / Counter With Tailwind CSS From Scratch](https://www.tailwindcsscomponent.com/number-input-counter)
 4. [How to build an E-commerce Store with Nuxt.js and Strapi](https://strapi.io/blog/how-to-build-an-e-commerce-store-with-nuxt-js-and-strapi)
+5. [Because I love crazy class/style bindings in Vue!](https://vuejs.org/guide/essentials/class-and-style.html#binding-html-classes)
