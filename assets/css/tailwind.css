@@ -12,5 +12,6 @@ p a { @apply text-orange-700 focus:text-orange-500 hover:text-orange-500 underli
 
 svg { @apply pointer-events-none; }
 
-.luna-btn { @apply p-2 px-3.5 flex items-center rounded-full bg-white border border-gray-200; }
+.luna-btn { @apply p-2 px-3.5 inline-flex items-center rounded-full bg-white border border-gray-200; }
+.luna-btn._is-neutral { @apply bg-transparent border-none focus:bg-orange-100 hover:bg-orange-100; }
 .luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }

@@ -22,7 +22,10 @@
                 </NuxtLink>
             </nav>
         </div>
-        <ProductsCartLink/>
+        <div class="flex items-center space-x-3">
+            <ProductsWishlistLink/>
+            <ProductsCartLink/>
+        </div>
     </div>
 </template>
 
