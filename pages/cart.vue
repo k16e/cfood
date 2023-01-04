@@ -74,8 +74,12 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="absolute top-0 right-0">
-                                    <button type="button" class="-m-2 inline-flex p-3 text-gray-400 hover:text-gray-500">
+                                    <button
+                                        @click="removeFromCart($event, item)"
+                                        type="button"
+                                        class="-m-2 inline-flex p-3 text-gray-400 hover:text-gray-500">
                                         <span class="sr-only">Remove</span>
                                         <Icon name="material-symbols:close-rounded" size="20" aria-hidden="true"/>
                                     </button>
@@ -119,6 +123,7 @@ import { useProductsStore } from '../stores/products'
 
 const store = useProductsStore()
 const cart = store.cart
+
 let subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 const decrement = (e, item) => {
@@ -134,6 +139,7 @@ const decrement = (e, item) => {
     item.subTotal = value * item.price
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
+
 const increment = (e, item) => {
     const
         input = e.target.previousElementSibling,
@@ -145,6 +151,11 @@ const increment = (e, item) => {
     input.value = value
     item.qty = value
     item.subTotal = value * item.price
+    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
+}
+
+const removeFromCart = (e, item) => {
+    cart.splice(item, 1)
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 </script>
