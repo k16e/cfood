@@ -6,8 +6,9 @@
             <span>Products</span>
         </NuxtLink>
     </div>
+
     <ClientOnly>
-        <div v-if="cart.length >= 1" class="bg-white px-3">
+        <div v-if="cart.length >= 1" class="bg-white px-3 sm:px-5">
             <form
                 class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
                 <section aria-labelledby="cart-heading" class="lg:col-span-7">
@@ -112,8 +113,10 @@
                 </section>
             </form>
         </div>
-        <p v-else class="px-3">
-            You have yet to add any item to your cart. Please continue shopping at the Products page.
+
+        <p v-else class="px-3 sm:px-5">
+            You have yet to add any item to your cart. Please continue shopping at
+            <NuxtLink to="/products">the Products page.</NuxtLink>
         </p>
     </ClientOnly>
 </template>
