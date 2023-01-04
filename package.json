@@ -17,9 +17,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.8",
-    "nuxt-lodash": "^2.4.1",
-    "sass": "^1.57.1",
-    "sass-loader": "^13.2.0"
+    "nuxt-lodash": "^2.4.1"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",

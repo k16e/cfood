@@ -107,7 +107,7 @@
                         <div class="mt-9">
                             <button
                                 type="submit"
-                                class="w-full rounded-md border border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700 focus:ring-offset-2 focus:ring-offset-gray-50">
+                                class="w-full rounded-md border border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-600">
                                 Checkout
                             </button>
                         </div>
@@ -164,15 +164,3 @@ const removeFromCart = (e, itemIdx) => {
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 </script>
-
-<style lang="scss" scoped>
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-.number-input button:focus,
-.number-input input:focus { outline: none !important; }
-
-.luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
-</style>
