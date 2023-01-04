@@ -78,7 +78,7 @@
 
                                 <div class="absolute top-0 right-0">
                                     <button
-                                        @click="removeFromCart($event, item)"
+                                        @click="removeFromCart($event, idx)"
                                         type="button"
                                         class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5">
                                         <span class="sr-only">Remove</span>
@@ -157,8 +157,8 @@ const increment = (e, item) => {
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 
-const removeFromCart = (e, item) => {
-    cart.splice(item, 1)
+const removeFromCart = (e, itemIdx) => {
+    cart.splice(itemIdx, 1)
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 </script>
