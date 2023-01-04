@@ -4,7 +4,11 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        color: theme('colors.gray.700')
+                        color: theme('colors.gray.700'),
+                        a: {
+                            color: theme('colors.orange.700'),
+                            '&:hover': { color: theme('colors.orange.500') }
+                        }
                     }
                 }
             })

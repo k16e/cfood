@@ -11,13 +11,13 @@
                     This year, make it a goal to eat food that expires, even quickly, that you can pronounce, that your grandmother wouldn't pass up.
                 </p>
                 <p>
-                    At c.food, we're proud to make such foods. Now thanks to the modern invention of the refrigerator, most of them do keep up to a week. Some even longer! Think pickling. All preservatives and funny-sounding chemicals free; only fresh, refrigerated goodnesses.
+                    <NuxtLink to="/studio">At c.food</NuxtLink>, we're proud to be making such foods. Thanks to the modern invention of the refrigerator, most of them do keep up to a week. Some even longer! But all of them preservatives and funny-sounding chemicals free! Only fresh, refrigerated goodnesses.
                 </p>
             </div>
         </div>
         <NuxtLink to="/products" class="luna-btn text-gray-600 font-medium">
+            <Icon name="ic:baseline-shopping-basket" size="22" class="mr-1.5 text-orange-700"/>
             <span>Shop our products</span>
-            <Icon name="ic:baseline-shopping-basket" size="22" class="ml-1.5 text-orange-700"/>
         </NuxtLink>
     </Container>
 </template>
