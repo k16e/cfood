@@ -20,6 +20,7 @@
             </div>
         </NuxtLink>
         <button
+            @click="addToWishlist(product)"
             class="flex items-center p-3 sm:p-2 rounded-full bg-gray-50 text-gray-600 border border-gray-200 absolute top-3 right-3 z-10">
             <Icon name="ri:heart-2-fill" size="18" class="pointer-events-none"/>
             <span v-text="'Add to wishlist'" class="sr-only"/>
@@ -40,4 +41,5 @@ const { product } = defineProps(['product'])
 
 const store = useProductsStore()
 const addToCart = await store.addToCart
+const addToWishlist = await store.addToWishlist
 </script>
