@@ -7,14 +7,15 @@ export const useProductsStore = defineStore('productsStore', {
     actions: {
         async fetchProducts() {
             const supabase = useSupabaseClient()
-                const { data } = await supabase
-                    .from('products')
-                    .select('*')
-                    .order('id')
-                this.products = data
+            const { data } = await supabase
+                .from('products')
+                .select('*')
+                .order('id')
+            this.products = data
         },
         async addToCart(payload) {
             const existingItem = this.cart.find(item => item.id === payload.sku)
+
             if (existingItem) {
                 let existingItemIndex = this.cart.findIndex(item => item.id === existingItem.id)
 
@@ -38,7 +39,6 @@ export const useProductsStore = defineStore('productsStore', {
 
             if (existingItem) {
                 this.wishlist.splice(existingItem, 1)
-                
             }
             else {
                 this.wishlist.push({
@@ -52,7 +52,5 @@ export const useProductsStore = defineStore('productsStore', {
             }
         }
     },
-    persist: {
-        storage: persistedState.localStorage
-    }
+    persist: { storage: persistedState.localStorage }
 })
