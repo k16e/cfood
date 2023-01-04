@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <Container center padX>
         <ProductsDetails :product="product[0]"/>
-    </div>
+    </Container>
 </template>
 
 <script setup>

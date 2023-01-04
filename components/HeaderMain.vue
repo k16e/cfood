@@ -1,5 +1,6 @@
 <template>
-    <div class="flex items-center justify-between h-full">
+    <Container center :max-width="'max-w-screen-2xl'"
+        class="flex items-center justify-between h-full">
         <div class="flex items-center ">
             <div>
                 <NuxtLink to="/">
@@ -26,7 +27,7 @@
             <ProductsWishlistLink/>
             <ProductsCartLink/>
         </div>
-    </div>
+    </Container>
 </template>
 
 <script setup>

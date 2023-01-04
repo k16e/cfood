@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <Container center padX :max-width="'max-w-screen-2xl'">
         <p>
             &copy; 2022 c.food Studio
         </p>
-    </div>
+    </Container>
 </template>
 
 <script setup>
