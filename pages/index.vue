@@ -1,10 +1,8 @@
 <template>
     <Container padX center>
-        <div class="pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12">
+        <div class="pt-7 lg:pt-12 pb-7 sm:pb-9 lg:pb-12">
             <div class="pb-5 sm:pb-7">
-                <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-5xl truncate">
-                    Welcome to c.food!
-                </h1>
+                <Heading tag="h1" content="Welcome to c.food!"/>
             </div>
             <div class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-screen-lg">
                 <p>
