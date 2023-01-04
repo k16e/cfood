@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-screen-lg mx-auto px-3 sm:px-5">
+    <Container padX center :maxWidth="'max-w-screen-lg'">
         <div class="p-3 sm:p-5 pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
             <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-5xl truncate">Your wishlist!</h1>
             <NuxtLink to="/products" class="luna-btn text-gray-700">
@@ -61,7 +61,7 @@
             You have yet to add any item to your wishlist. Please continue shopping at
             <NuxtLink to="/products">the Products page.</NuxtLink>
         </p>
-    </div>
+    </Container>
 </template>
 
 <script setup>
