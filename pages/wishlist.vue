@@ -1,7 +1,7 @@
 <template>
-    <Container padX center :maxWidth="'max-w-screen-lg'">
-        <div class="p-3 sm:p-5 pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
-            <h1 class="font-light text-orange-700 text-3xl sm:text-5xl lg:text-5xl truncate">Your wishlist!</h1>
+    <Container padX center>
+        <div class="pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
+            <Heading tag="h1" content="Your wishlist!"/>
             <NuxtLink to="/products" class="luna-btn text-gray-700">
                 <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
                 <span>Products</span>
