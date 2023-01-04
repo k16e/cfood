@@ -10,10 +10,13 @@
         <section
             v-if="wishlist.length >= 1"
             aria-labelledby="wishlist-heading"
-            class="px-3 bg-white rounded-xl border border-gray-200">
+            class="px-3 bg-white lg:bg-transparent rounded-xl border border-gray-200 lg:border-0">
             <h2 id="wishlist-heading" class="sr-only">Products in your wishlist</h2>
-            <ul role="list" class="divide-y divide-gray-200">
-                <li v-for="(item, idx) in wishlist" :key="item.id + idx" class="flex py-5 sm:py-7">
+            <ul role="list" class="divide-y divide-gray-200 lg:grid lg:grid-cols-2 lg:divide-none lg:gap-5">
+                <li
+                    v-for="(item, idx) in wishlist"
+                    :key="item.id + idx"
+                    class="flex py-5 sm:py-7 lg:bg-white lg:rounded-xl lg:p-5 lg:border lg:border-gray-200">
                     <div class="flex-shrink-0">
                         <img :src="item.image" :alt="item.name" class="h-32 w-32 object-cover sm:h-48 sm:w-48"/>
                     </div>
@@ -43,7 +46,7 @@
                         <button
                             @click="removeFromWishlist($event, idx)"
                             type="button"
-                            class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5 -mt-1.5 lg:-mt-5 absolute top-0 right-0 z-10">
+                            class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5 -mt-1.5 absolute top-0 right-0 z-10">
                             <span class="sr-only">Remove</span>
                             <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
                         </button>

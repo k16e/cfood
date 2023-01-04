@@ -12,8 +12,8 @@ const props = defineProps({
     content: { type: String, required: true }
 })
 const classes = computed(() => ({
-    h1: 'text-4xl sm:text-6xl lg:text-7xl',
-    h2: 'text-3xl sm:text-5xl',
-    h3: 'text-2xl'
+    h1: 'text-3xl sm:text-4xl lg:text-5xl',
+    h2: 'text-2xl sm:text-3xl',
+    h3: 'text-xl'
 }))
 </script>
