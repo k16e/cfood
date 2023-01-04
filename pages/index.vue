@@ -6,12 +6,12 @@
                     Welcome to c.food!
                 </h1>
             </div>
-            <div class="max-w-screen-lg text-xl">
+            <div class="prose-xl lg:prose-2xl leading-normal lg:leading-snug italic text-gray-700 max-w-screen-lg">
                 <p>
-                    This year, make it a goal to eat food that expires, even quickly, that you can pronounce, that your grand mother wouldn't pass up.
+                    Make it a goal to eat food that expires, even quickly, that you can pronounce, that your grandmother wouldn't pass up.
                 </p>
                 <p>
-                    At the c.food Studio, we're proud to be making such foods, and thanks to the modern invention of the fridge, most of them do keep for up to a week. Some even longer! But all preservatives and funny-sounding chemicals free, all fresh and refrigerated goodnesses.
+                    At c.food, we're proud to make such foods. Now thanks to the modern invention of the refrigerator, most of them do keep up to a week. Some even longer! Think pickling. All preservatives and funny-sounding chemicals free; only fresh, refrigerated goodnesses.
                 </p>
             </div>
         </div>
