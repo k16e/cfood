@@ -19,7 +19,7 @@
                                 <img :src="item.image" :alt="item.name" class="h-32 w-32 object-cover sm:h-48 sm:w-48"/>
                             </div>
 
-                            <div class="relative ml-3 sm:ml-5 flex-1 pr-3">
+                            <div class="relative ml-3 sm:ml-5 flex-1">
                                 <div class="flex justify-between flex-col">
                                     <div>
                                         <div class="flex flex-col justify-between">
@@ -49,7 +49,7 @@
                                                     type="button"
                                                     class="luna-counter rounded-l-full bg-gray-200">
                                                     <span class="sr-only">Decrease quantity</span>
-                                                    <Icon name="ri:subtract-line" size="20" aria-hidden="true"/>
+                                                    <Icon name="ri:subtract-line" size="19" aria-hidden="true"/>
                                                 </button>
                                                 <input
                                                     type="number"
@@ -57,13 +57,13 @@
                                                     :value="item.qty"
                                                     min="1"
                                                     max="9"
-                                                    class="outline-none focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
+                                                    class="outline-none focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
                                                 <button
                                                     @click="increment($event, item)"
                                                     type="button"
                                                     class="luna-counter rounded-r-full bg-gray-200">
                                                     <span class="sr-only">Increase quantity</span>
-                                                    <Icon name="ri:add-line" size="20" aria-hidden="true"/>
+                                                    <Icon name="ri:add-line" size="19" aria-hidden="true"/>
                                                 </button>
                                             </div>
                                         </div>
@@ -80,9 +80,9 @@
                                     <button
                                         @click="removeFromCart($event, item)"
                                         type="button"
-                                        class="-m-2 inline-flex p-3 text-gray-400 hover:text-gray-500">
+                                        class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5">
                                         <span class="sr-only">Remove</span>
-                                        <Icon name="material-symbols:close-rounded" size="20" aria-hidden="true"/>
+                                        <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
                                     </button>
                                 </div>
                             </div>
