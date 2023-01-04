@@ -13,3 +13,4 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
 3. [How To Make A Input Number / Counter With Tailwind CSS From Scratch](https://www.tailwindcsscomponent.com/number-input-counter)
+4. [How to build an E-commerce Store with Nuxt.js and Strapi](https://strapi.io/blog/how-to-build-an-e-commerce-store-with-nuxt-js-and-strapi)
