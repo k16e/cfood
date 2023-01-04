@@ -40,15 +40,19 @@
                             </div>
                         </div>
 
-                        <div class="absolute top-0 right-0">
-                            <button
-                                @click="removeFromWishlist($event, idx)"
-                                type="button"
-                                class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5 -mt-5">
-                                <span class="sr-only">Remove</span>
-                                <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
-                            </button>
-                        </div>
+                        <button
+                            @click="removeFromWishlist($event, idx)"
+                            type="button"
+                            class="inline-flex text-gray-400 hover:text-gray-500 pl-1.5 pb-1.5 -mt-1.5 lg:-mt-5 absolute top-0 right-0 z-10">
+                            <span class="sr-only">Remove</span>
+                            <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
+                        </button>
+                        <button
+                            @click="addToCart(item)"
+                            class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute -bottom-1.5 right-0 z-10">
+                            <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
+                            <span v-text="'Add to cart'" class="sr-only"/>
+                        </button>
                     </div>
                 </li>
             </ul>
@@ -66,6 +70,7 @@ import { useProductsStore } from '~/stores/products'
 const store = useProductsStore()
 const wishlist = await store.wishlist
 const removeFromWishlist = (e, itemIdx) => wishlist.splice(itemIdx, 1)
+const addToCart = await store.addToCart
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
