@@ -8,9 +8,10 @@
             <nav class="sr-only md:not-sr-only flex !h-[95%] items-center space-x-3">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <NuxtLink
-                    v-for="(item, idx) in mainnav" :key="item.title + idx"
+                    v-for="(item, idx) in routes" :key="item.title + idx"
                     :to="item.link"
-                    class="flex items-center h-full px-3 rounded-full focus:bg-orange-50 hover:bg-orange-50">
+                    class="flex items-center h-full px-3 rounded-full focus:bg-orange-50 hover:bg-orange-50"
+                    exact>
                     {{ item.title }}
                 </NuxtLink>
             </nav>
@@ -23,7 +24,7 @@
 </template>
 
 <script setup>
-const mainnav = [
+const routes = [
     { title: 'Products', link: '/products' },
     { title: 'Research', link: '/research' },
     { title: 'Studio', link: '/studio' },
