@@ -1,23 +1,17 @@
 <template>
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
-        <div class="flex items-center ">
-            <NuxtLink to="/" class="flex items-center justify-center">
+        <div class="flex items-center h-full">
+            <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5">
                 <HeaderLogo/>
             </NuxtLink>
-            <nav class="sr-only md:not-sr-only">
+            <nav class="sr-only md:not-sr-only flex !h-full items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
-                <NuxtLink to="/products">
-                    Products
-                </NuxtLink>
-                <NuxtLink to="/research">
-                    Research
-                </NuxtLink>
-                <NuxtLink to="/studio">
-                    Studio
-                </NuxtLink>
-                <NuxtLink to="/about">
-                    Meet c.food
+                <NuxtLink
+                    v-for="(item, idx) in mainnav" :key="item.title + idx"
+                    :to="item.link"
+                    class="flex items-center h-full px-5 rounded-full">
+                    {{ item.title }}
                 </NuxtLink>
             </nav>
         </div>
@@ -29,5 +23,10 @@
 </template>
 
 <script setup>
-
+const mainnav = [
+    { title: 'Products', link: '/products' },
+    { title: 'Research', link: '/research' },
+    { title: 'Studio', link: '/studio' },
+    { title: 'Meet c.food', link: '/about' }
+]
 </script>
