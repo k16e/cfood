@@ -3,7 +3,7 @@
         <NuxtLink
             :to="`/products/${$slugify(product.name)}-${product.sku}`"
             class="flex flex-col rounded-xl">
-            <img :src="product.image" :alt="product.name" class="r-thumb w-full">
+            <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail" class="r-thumb w-full"/>
             <div class="p-3 border-t border-gray-100">
                 <div class="pr-14">
                     <Heading tag="h2" v-text="product.name"/>

@@ -18,3 +18,5 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 5. [Because I love crazy class/style bindings in Vue!](https://vuejs.org/guide/essentials/class-and-style.html)
 6. [Shopping Carts: Two column with quantity dropdown](https://tailwindui.com/components/ecommerce/components/shopping-carts#component-62d97a81daaa3dbe21ece61a58cdd0f8)
 7. [Product Overviews: Split with image](https://tailwindui.com/components/ecommerce/components/product-overviews#component-7343b727d03bb437b9617fb26bf35021)
+8. [Promo Sections: Full-width with overlapping image tiles](https://tailwindui.com/components/ecommerce/components/promo-sections#component-a63bf3a5e5430e5ba171ad153687d87d)
+9. 

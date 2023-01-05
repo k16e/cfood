@@ -1,3 +1,5 @@
+import currencyApi from "./server/api/currencyApi";
+
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/color-mode',
@@ -7,7 +9,8 @@ export default defineNuxtConfig({
         'nuxt-lodash',
         ['@pinia/nuxt', { autoImports: ['defineStore'] }],
         '@pinia-plugin-persistedstate/nuxt',
-        '@vueuse/nuxt'
+        '@vueuse/nuxt',
+        '@nuxt/image-edge'
     ],
     app: {
         head: {
@@ -31,5 +34,15 @@ export default defineNuxtConfig({
         prefixSkip: ['string'],
         upperAfterPrefix: false
     },
-    css: [ '@/assets/css/fonts.css' ]
+    css: ['@/assets/css/fonts.css'],
+    image: {
+        domains: ['https://spidltwerguofvsjkzqn.supabase.co'],
+        presets: {
+            thumbnail: {
+                modifiers: { width: 480, height: 480 }
+            }
+        },
+        quality: 100,
+        preload: true
+    }
 })
