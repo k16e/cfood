@@ -10,7 +10,7 @@
                 <NuxtLink
                     v-for="(item, idx) in mainnav" :key="item.title + idx"
                     :to="item.link"
-                    class="flex items-center h-full px-5 rounded-full">
+                    class="flex items-center h-full px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50">
                     {{ item.title }}
                 </NuxtLink>
             </nav>
