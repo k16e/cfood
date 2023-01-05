@@ -1,7 +1,7 @@
 <template>
     <Container padX center>
-        <div class="grid md:grid-cols-3 items-center gap-12 sm:gap-14 pt-7 lg:pt-12">
-            <div class="md:col-span-2 order-2 md:order-1">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-12 sm:gap-14 pt-7 lg:pt-12">
+            <div class="lg:col-span-2 order-2 md:order-1">
                 <div class="pb-5 sm:pb-7">
                     <Heading tag="h1" content="Welcome to c.food!"/>
                 </div>
