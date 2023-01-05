@@ -1,7 +1,7 @@
 <template>
     <Container padX center>
         <!-- Product title -->
-        <div class="pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
+        <div class="py-5 flex items-center justify-between">
             <Heading tag="h1" :content="product.name"/>
             <button
                 @click="addToCart(product)"
@@ -10,39 +10,43 @@
                 <span v-text="'Add to cart'"/>
             </button>
         </div>
-        <section class="px-3 bg-white lg:bg-transparent rounded-xl border border-gray-200 lg:border-0">
-            <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-5">
+            <!-- Product image -->
+            <figure class="">
+                <NuxtImg
+                    :src="product.image"
+                    :alt="product.name"
+                    sizes="sm:576px md:768px lg:960px"
+                />
+            </figure>
             <!-- Product details -->
-                <div class="lg:max-w-lg lg:self-end">
-                    <section aria-labelledby="information-heading" class="mt-4">
-                        <h2 id="information-heading" class="sr-only">Product information</h2>
-                        <div class="pt-2 sm:pt-3">
-                            <p
-                                v-text="$formatPrice(product.price)"
-                                class="font-medium text-gray-800 text-2xl sm:text-xl"
-                            />
-                        </div>
-                        <div class="mt-4 space-y-6">
-                            <p v-text="product.description" class="text-sm opacity-70"/>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <Icon name="ic:round-check-circle" size="18" class="flex-shrink-0 text-green-700" aria-hidden="true"/>
-                            <p class="ml-2 text-sm text-gray-500">In stock, ready to ship</p>
-                        </div>
-                    </section>
+            <section
+                aria-labelledby="information-heading"
+                class="bg-white p-5 rounded-xl border border-gray-200 relative">
+                <h2 id="information-heading" class="sr-only">Product information</h2>
+                <p
+                    v-text="$formatPrice(product.price)"
+                    class="font-medium text-gray-800 text-2xl sm:text-3xl"
+                />
+                <div class="mt-5">
+                    <p v-text="product.description" class="text-xl opacity-70"/>
                 </div>
-                <!-- Product image -->
-                <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-                    <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
-                        <NuxtImg
-                            :src="product.image"
-                            :alt="product.name"
-                            sizes="sm:576px md:768px lg:1024px"
-                        />
-                    </div>
+                <div class="mt-6 flex items-center">
+                    <Icon name="ic:round-check-circle" size="18" class="flex-shrink-0 text-green-700" aria-hidden="true"/>
+                    <p class="ml-2 text-sm text-gray-500">In stock, ready to ship</p>
                 </div>
-            </div>
-        </section>
+                <!-- Add to wishlist -->
+                <ClientOnly>
+                    <button
+                        @click="addToWishlist(product)"
+                        class="flex items-center p-3 sm:p-2 rounded-full bg-gray-50 border border-gray-200 absolute top-3 right-3 z-10"
+                        :class="wishlist.some(el => el.id === product.sku) ? 'text-red-600' : 'text-gray-500'">
+                        <Icon name="ri:heart-2-fill" size="18" class="pointer-events-none"/>
+                        <span v-text="'Add to wishlist'" class="sr-only"/>
+                    </button>
+                </ClientOnly>
+            </section>
+        </div>
     </Container>
 </template>
 

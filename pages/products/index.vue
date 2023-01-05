@@ -1,6 +1,6 @@
 <template>
     <Container center padX>
-        <div class="pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
+        <div class="py-5 flex items-center justify-between">
             <Heading tag="h1" content="Our products"/>
         </div>
         <ul class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">

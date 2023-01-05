@@ -1,6 +1,6 @@
 <template>
     <Container padX center>
-        <div class="pt-5 lg:pt-9 pb-7 sm:pb-9 lg:pb-12 flex items-center justify-between">
+        <div class="py-5 flex items-center justify-between">
             <Heading tag="h1" content="Your cart"/>
             <NuxtLink to="/products" class="luna-btn text-gray-700">
                 <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
