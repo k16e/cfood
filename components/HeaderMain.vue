@@ -2,11 +2,9 @@
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
         <div class="flex items-center ">
-            <div>
-                <NuxtLink to="/">
-                    Home
-                </NuxtLink>
-            </div>
+            <NuxtLink to="/" class="flex items-center justify-center">
+                <HeaderLogo/>
+            </NuxtLink>
             <nav class="sr-only md:not-sr-only">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <NuxtLink to="/products">
