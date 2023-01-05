@@ -43,6 +43,7 @@ export default defineNuxtConfig({
             }
         },
         quality: 100,
-        preload: true
+        preload: true,
+        loading: 'lazy'
     }
 })
