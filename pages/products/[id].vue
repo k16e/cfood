@@ -1,6 +1,6 @@
 <template>
     <Container center padX>
-        <ProductsDetails :product="product[0]"/>
+        <ProductsOverview :product="product[0]"/>
     </Container>
 </template>
 

@@ -17,7 +17,12 @@
                     v-for="(item, idx) in wishlist"
                     :key="item.id + idx"
                     class="flex py-5 sm:py-7 lg:bg-white lg:rounded-xl lg:p-5 lg:border lg:border-gray-200">
-                    <img :src="item.image" :alt="item.name" class="flex-shrink-0 h-32 w-32 object-cover sm:h-48 sm:w-48"/>
+                    <NuxtImg
+                        :src="item.image"
+                        :alt="item.name"
+                        preset="thumbnail"
+                        class="flex-shrink-0 h-32 w-32 object-cover sm:h-48 sm:w-48"
+                    />
 
                     <div class="relative ml-3 sm:ml-5 flex-1">
                         <div class="flex justify-between flex-col">

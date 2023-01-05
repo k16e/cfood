@@ -3,10 +3,10 @@
         <NuxtLink
             :to="`/products/${$slugify(product.name)}-${product.sku}`"
             class="flex flex-col rounded-xl">
-            <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail" class="r-thumb w-full"/>
+            <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
             <div class="p-3 border-t border-gray-100">
                 <div class="pr-14">
-                    <Heading tag="h2" v-text="product.name"/>
+                    <Heading tag="h2" :content="product.name"/>
                     <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
                 </div>
                 <div class="pt-2 sm:pt-3">
