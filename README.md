@@ -7,6 +7,7 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 * Vue 3
 * TailwindCSS
 * Gitlab
+* Supabase (SQL, PostgreSQL)
 
 
 ## References & credits
