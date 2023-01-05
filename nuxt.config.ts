@@ -39,7 +39,7 @@ export default defineNuxtConfig({
         domains: ['https://spidltwerguofvsjkzqn.supabase.co'],
         presets: {
             thumbnail: {
-                modifiers: { width: 480, height: 480 }
+                modifiers: { width: 360, height: 360 }
             }
         },
         quality: 100,

@@ -16,7 +16,12 @@
                         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
                         <ul role="list" class="divide-y divide-gray-200">
                             <li v-for="(item, idx) in cart" :key="item.id + idx" class="flex py-5 sm:py-7">
-                                <img :src="item.image" :alt="item.name" class="flex-shrink-0 h-32 w-32 object-cover sm:h-48 sm:w-48"/>
+                                <NuxtImg
+                                    :src="item.image"
+                                    :alt="item.name"
+                                    preset="thumbnail"
+                                    class="flex-shrink-0 h-32 w-32 object-cover sm:h-48 sm:w-48"
+                                />
 
                                 <div class="relative ml-3 sm:ml-5 flex-1">
                                     <div class="flex justify-between flex-col">
@@ -65,11 +70,8 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <p class="text-right">
-                                                <span v-text="'Subtotal:'" class="luna-small-caps block -mb-1"/>
-                                                <span class="font-medium text-gray-800 text-lg mt-1.5">
-                                                    {{ $formatPrice(item.subTotal) }}
-                                                </span>
+                                            <p class="font-medium text-gray-800">
+                                                {{ $formatPrice(item.subTotal) }}
                                             </p>
                                         </div>
                                     </div>
