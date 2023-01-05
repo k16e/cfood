@@ -8,11 +8,11 @@
             <nav class="sr-only md:not-sr-only flex !h-[95%] items-center space-x-3">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <NuxtLink
-                    v-for="(item, idx) in routes" :key="item.title + idx"
-                    :to="item.link"
+                    v-for="(route, idx) in routes" :key="route.title + idx"
+                    :to="route.path"
                     class="flex items-center h-full px-3 rounded-full focus:bg-orange-50 hover:bg-orange-50"
                     exact>
-                    {{ item.title }}
+                    {{ route.title }}
                 </NuxtLink>
             </nav>
         </div>
@@ -25,9 +25,9 @@
 
 <script setup>
 const routes = [
-    { title: 'Products', link: '/products' },
-    { title: 'Research', link: '/research' },
-    { title: 'Studio', link: '/studio' },
-    { title: 'Meet c.food', link: '/about' }
+    { title: 'Products', path: '/products' },
+    { title: 'Research', path: '/research' },
+    { title: 'Studio', path: '/studio' },
+    { title: 'Meet c.food', path: '/about' }
 ]
 </script>
