@@ -1,14 +1,12 @@
 <template>
     <div class="r-card bg-white border border-gray-200 rounded-xl relative">
         <NuxtLink
-            :to="`/products/${$slugify(product.name)}-${product.sku}`">
-            <div>
-                <img :src="product.image" :alt="product.name" class="r-thumb w-full">
-            </div>
+            :to="`/products/${$slugify(product.name)}-${product.sku}`"
+            class="flex flex-col rounded-xl">
+            <img :src="product.image" :alt="product.name" class="r-thumb w-full">
             <div class="p-3 border-t border-gray-100">
                 <div class="pr-14">
-                    <span v-text="product.sku" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
-                    <h2 v-text="product.name" class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800"/>
+                    <Heading tag="h2" v-text="product.name"/>
                     <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
                 </div>
                 <div class="pt-2 sm:pt-3">

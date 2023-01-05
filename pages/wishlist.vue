@@ -17,22 +17,19 @@
                     v-for="(item, idx) in wishlist"
                     :key="item.id + idx"
                     class="flex py-5 sm:py-7 lg:bg-white lg:rounded-xl lg:p-5 lg:border lg:border-gray-200">
-                    <div class="flex-shrink-0">
-                        <img :src="item.image" :alt="item.name" class="h-32 w-32 object-cover sm:h-48 sm:w-48"/>
-                    </div>
+                    <img :src="item.image" :alt="item.name" class="flex-shrink-0 h-32 w-32 object-cover sm:h-48 sm:w-48"/>
 
                     <div class="relative ml-3 sm:ml-5 flex-1">
                         <div class="flex justify-between flex-col">
                             <div>
                                 <div class="flex flex-col justify-between">
-                                    <div>
-                                        <span v-text="item.id" class="uppercase block text-xs font-medium tracking-wider text-gray-600"/>
+                                    <Heading>
                                         <NuxtLink
                                             :to="`/products/${$slugify(item.name)}-${item.id}`"
-                                            class="leading-tight text-2xl sm:text-xl truncate pb-1.5 text-orange-800 hover:text-orange-900">
-                                            {{ item.name }}
-                                        </NuxtLink>
-                                    </div>
+                                            v-text="item.name"
+                                            class="focus:text-orange-500 hover:text-orange-500"
+                                        />
+                                    </Heading>
                                     <p v-text="item.description" class="text-sm line-clamp-2 opacity-70"/>
                                 </div>
                                 <p class="pt-3">
