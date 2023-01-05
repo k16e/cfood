@@ -1,6 +1,9 @@
 module.exports = {
     theme: {
         extend: {
+            fontFamily: {
+                'display': ['Yellowtail', 'cursive']
+            },
             typography: (theme) => ({
                 DEFAULT: {
                     css: {

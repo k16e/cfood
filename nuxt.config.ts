@@ -30,5 +30,6 @@ export default defineNuxtConfig({
         prefix: '_',
         prefixSkip: ['string'],
         upperAfterPrefix: false
-    }
+    },
+    css: [ '@/assets/css/fonts.css' ]
 })

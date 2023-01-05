@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :class="classes[tag] + ' font-light text-orange-700 truncate'">
+        :class="classes[tag] + ' font-display text-orange-700 !leading-normal'">
         {{ content }}
     </component>
 </template>
