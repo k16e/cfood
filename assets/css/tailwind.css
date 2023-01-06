@@ -7,7 +7,7 @@ html { @apply scroll-smooth; }
 body { @apply bg-[#f2f2f2] text-gray-700; }
 a, button { @apply transition duration-300 ease-in-out; }
 p a { @apply text-orange-700 focus:text-orange-500 hover:text-orange-500 underline underline-offset-2; }
-button, .luna-btn, a { @apply focus:outline-none focus:ring-2 focus:ring-orange-700 focus:ring-offset-2 focus:ring-offset-gray-50; }
+button, .luna-btn, a { @apply focus:outline-none focus:ring-2 focus:ring-orange-700 focus:ring-offset-1 focus:ring-offset-gray-50; }
 
 svg { @apply pointer-events-none; }
 
@@ -24,4 +24,4 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
 .luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
 
-.router-link-active:not(.luna-turn-off-active) { @apply ring-2 ring-offset-2 ring-offset-gray-50 outline-none ring-orange-700;}
+.router-link-active:not(.luna-turn-off-active) { @apply ring-2 ring-offset-1 ring-offset-gray-50 outline-none ring-orange-700;}
