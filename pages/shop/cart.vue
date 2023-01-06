@@ -12,7 +12,7 @@
             <div class="pt-5">
                 <div v-if="cart.length >= 1" class="bg-white px-3 sm:px-5 rounded-xl border border-gray-200">
                     <form
-                        @submit.prevent="proceedToCheckout($event, cart, subTotal)"
+                        @submit.prevent="proceedToCheckout()"
                         class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
                         <section aria-labelledby="cart-heading" class="lg:col-span-7">
                             <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
@@ -166,9 +166,10 @@ const removeFromCart = (e, itemIdx) => {
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 
-const proceedToCheckout = (e, payload, subTotal) => {
-    console.log(payload)
-    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-    console.log(subTotal)
+// const emit = defineEmits(['get-subtotal'])
+const router = useRouter()
+const proceedToCheckout = () => {
+    // emit('get-subtotal', subTotal)
+    router.push({ path: '/shop/checkout' })
 }
 </script>
