@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <dt>Shipping</dt>
-                                        <dd>$25.00</dd>
+                                        <dd>{{ $formatPrice(shipping) }}</dd>
                                     </div>
                                     <div class="flex items-center justify-between border-t border-white border-opacity-10 pt-5">
                                         <dt class="text-base">Total</dt>
@@ -84,14 +84,19 @@
                                             <input type="text" id="address" name="address" autocomplete="street-address" class="luna-input-text"/>
                                         </div>
                                         <div>
-                                            <label for="location" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                            <label for="shipping" class="block text-sm font-medium text-gray-700 mb-1.5">
                                                 Delivery area
                                             </label>
-                                            <select id="location" name="location" class="luna-input-text">
+                                            <select
+                                                id="shipping"
+                                                name="shipping"
+                                                class="luna-input-text"
+                                                v-model="shipping">
                                                 <option
                                                     v-for="item in shippingRates"
                                                     :key="item.id + item"
-                                                    :selected="item.id === 1">
+                                                    :selected="item.id === 1"
+                                                    :value="item.price">
                                                     {{ item.distance }} - {{ $formatPrice(item.price) }}
                                                 </option>
                                             </select>
@@ -111,12 +116,16 @@
                     </div>
                 </div>
             </div>
+            <pre>
+                {{ shippingRates }}
+            </pre>
         </ClientOnly>
     </Container>
 </template>
 
 <script setup>
 import { useProductsStore } from '@/stores/products'
+import { ref } from 'vue'
 
 const store = useProductsStore()
 const cart = store.cart
@@ -124,4 +133,6 @@ const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
 const shippingRates = await store.shippingRates
+
+let shipping = ref(1000)
 </script>
