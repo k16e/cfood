@@ -11,6 +11,9 @@
         <ClientOnly>
             <section class="pt-5" @get-subtotal="getSubTotal">
                 {{ subTotal }}
+                <pre>
+                    {{ cart }}
+                </pre>
             </section>
         </ClientOnly>
     </Container>
