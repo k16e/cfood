@@ -9,12 +9,14 @@
         </div>
 
         <ClientOnly>
-            <section class="pt-5" @get-subtotal="getSubTotal">
-                {{ subTotal }}
-                <pre>
-                    {{ cart }}
-                </pre>
-            </section>
+            <div class="pt-5 overflow-x-hidden">
+                <section class="p-5 bg-white rounded-xl border border-gray-200 relative">
+                    {{ subTotal }}
+                    <pre>
+                        {{ cart }}
+                    </pre>
+                </section>
+            </div>
         </ClientOnly>
     </Container>
 </template>
