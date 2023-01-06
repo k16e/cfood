@@ -1,7 +1,7 @@
 <template>
     <Container padX center>
         <!-- Product title -->
-        <div class="py-5 flex items-center justify-between">
+        <div class="flex items-center justify-between">
             <Heading tag="h1" :content="product.name"/>
             <button
                 @click="addToCart(product)"
@@ -10,7 +10,7 @@
                 <span v-text="'Add to cart'"/>
             </button>
         </div>
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="pt-5 grid md:grid-cols-2 gap-5">
             <!-- Product image -->
             <figure class="">
                 <NuxtImg
