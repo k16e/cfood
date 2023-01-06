@@ -5,7 +5,8 @@ export const useProductsStore = defineStore('productsStore', {
         wishlist: [],
         shippingRates: [],
         shipping: 1000,
-        shippingArea: '',
+        shippingZone: '',
+        shippingAmount: '',
         order: []
     }),
     actions: {
@@ -24,6 +25,8 @@ export const useProductsStore = defineStore('productsStore', {
                 .select('*')
                 .order('id')
             this.shippingRates = data
+            this.shippingAmount = this.shippingRates[0].price
+            this.shippingZone = this.shippingRates[0].distance
         },
         addToCart(payload) {
             const existingItem = this.cart.find(item => item.id === payload.sku)

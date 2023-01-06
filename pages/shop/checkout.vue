@@ -50,7 +50,7 @@
                             <h2 id="payment-and-shipping-heading" class="sr-only">Payment and shipping details</h2>
                             <!-- Complete order form -->
                             <form
-                                @submit.prevent="completeOrder()"
+                                @submit.prevent="proceedToPay()"
                                 class="mx-auto max-w-2xl lg:max-w-none">
                                 <div>
                                     <Heading tag="h3" content="Contact info" class="text-lg font-sans font-medium mb-3"/>
@@ -86,7 +86,7 @@
                                                 v-model="shipping">
                                                 <option
                                                     v-for="item in shippingRates"
-                                                    :key="item.id + item"
+                                                    :key="item.id"
                                                     :value="item.price">
                                                     {{ item.distance }} - {{ $formatPrice(item.price) }}
                                                 </option>
@@ -106,6 +106,9 @@
                 </div>
             </div>
         </ClientOnly>
+        <pre>
+            {{ order }}
+        </pre>
     </Container>
 </template>
 
@@ -118,6 +121,7 @@ const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
+const shippingRates = ref(store.shippingRates)
 const shipping = ref(store.shipping)
 const shopper = {
     username: ref(''),
@@ -125,18 +129,19 @@ const shopper = {
     phone: ref(''),
     address: ref('')
 }
-const shippingRates = ref(store.shippingRates)
 const order = store.order
 
-const completeOrder = () => {
+const proceedToPay = () => {
     order.push({
         username: shopper.username.value,
         email: shopper.email.value,
         phone: shopper.phone.value,
         address: shopper.address.value,
         shipping: shipping.value,
-        orders: cart
+        orders: cart,
+        subTotal: subTotal,
+        total: (subTotal + shipping.value)
     })
-    console.log(order)
+    return order
 }
 </script>
