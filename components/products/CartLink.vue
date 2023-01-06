@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-        to="/cart"
+        to="/shop/cart"
         class="luna-btn text-gray-700">
         <Icon name="ri:shopping-cart-fill" size="20" class="mr-1.5 text-orange-700"/>
         <span class="flex items-center">

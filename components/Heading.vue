@@ -10,7 +10,7 @@
 
 <script setup>
 const props = defineProps({
-    tag: { type: String, required: true, default: 'h2' },
+    tag: { type: String, default: 'h2' },
     content: { type: String }
 })
 const classes = computed(() => ({
