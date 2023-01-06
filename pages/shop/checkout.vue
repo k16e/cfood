@@ -105,10 +105,10 @@
                     </div>
                 </div>
             </div>
+            <pre>
+                {{ order }}
+            </pre>
         </ClientOnly>
-        <pre>
-            {{ order }}
-        </pre>
     </Container>
 </template>
 
@@ -122,7 +122,7 @@ const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
 const shippingRates = ref(store.shippingRates)
-const shipping = ref(store.shipping)
+const shipping = ref(shippingRates.value[0].price)
 const shopper = {
     username: ref(''),
     email: ref(''),

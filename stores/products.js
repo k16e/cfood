@@ -4,9 +4,6 @@ export const useProductsStore = defineStore('productsStore', {
         cart: [],
         wishlist: [],
         shippingRates: [],
-        shipping: 1000,
-        shippingZone: '',
-        shippingAmount: '',
         order: []
     }),
     actions: {
