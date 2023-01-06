@@ -2,7 +2,8 @@ export const useProductsStore = defineStore('productsStore', {
     state: () => ({
         products: [],
         cart: [],
-        wishlist: []
+        wishlist: [],
+        shippingRates: []
     }),
     actions: {
         async fetchProducts() {
@@ -12,6 +13,14 @@ export const useProductsStore = defineStore('productsStore', {
                 .select('*')
                 .order('id')
             this.products = data
+        },
+        async fetchShippingRates() {
+            const supabase = useSupabaseClient()
+            const { data } = await supabase
+                .from('shipping_rates')
+                .select('*')
+                .order('id')
+            this.shippingRates = data
         },
         addToCart(payload) {
             const existingItem = this.cart.find(item => item.id === payload.sku)

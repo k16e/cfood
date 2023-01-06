@@ -78,27 +78,9 @@
                                                     <input type="text" id="address" name="address" autocomplete="street-address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                                                 </div>
                                             </div>
-
-                                            <div>
-                                                <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                                                <div class="mt-1">
-                                                    <input type="text" id="city" name="city" autocomplete="address-level2" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
-                                                <div class="mt-1">
-                                                    <input type="text" id="region" name="region" autocomplete="address-level1" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label for="postal-code" class="block text-sm font-medium text-gray-700">Postal code</label>
-                                                <div class="mt-1">
-                                                    <input type="text" id="postal-code" name="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                                </div>
-                                            </div>
+                                            <pre>
+                                                {{ shippingRates }}
+                                            </pre>
                                         </div>
                                     </div>
 
@@ -126,12 +108,6 @@ const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
-const shippingAreas = [
-    { distance: 'Epe - Ajah', price: '1000' },
-    { distance: 'Ajah - Lekki', price: '2500' },
-    { distance: 'Oniru - VI', price: '3000' },
-    { distance: 'Ikoyi - Lagos Island', price: '3000' },
-    { distance: 'Ikeja - Mainland', price: '3000' },
-    { distance: 'Mainland - Sub-regions', price: '5000' }
-]
+await store.fetchShippingRates()
+const shippingRates = await store.shippingRates
 </script>
