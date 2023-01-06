@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="flex items-center justify-between border-t border-white border-opacity-10 pt-5">
                                         <dt class="text-base">Total</dt>
-                                        <dd class="text-base">$642.60</dd>
+                                        <dd class="text-base">{{ $formatPrice(subTotal + shipping) }}</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -132,7 +132,6 @@ const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
-const shippingRates = await store.shippingRates
-
-let shipping = ref(1000)
+const shipping = ref(1000)
+const shippingRates = ref(await store.shippingRates)
 </script>
