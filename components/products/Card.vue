@@ -41,7 +41,7 @@ import { useProductsStore } from '../../stores/products'
 const { product } = defineProps(['product'])
 
 const store = useProductsStore()
-const addToCart = await store.addToCart
-const addToWishlist = await store.addToWishlist
+const addToCart = store.addToCart
+const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist
 </script>

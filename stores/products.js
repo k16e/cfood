@@ -13,7 +13,7 @@ export const useProductsStore = defineStore('productsStore', {
                 .order('id')
             this.products = data
         },
-        async addToCart(payload) {
+        addToCart(payload) {
             const existingItem = this.cart.find(item => item.id === payload.sku)
 
             if (existingItem) {
@@ -34,12 +34,10 @@ export const useProductsStore = defineStore('productsStore', {
                 })
             }
         },
-        async addToWishlist(payload) {
+        addToWishlist(payload) {
             const existingItem = this.wishlist.find(item => item.id === payload.sku)
 
-            if (existingItem) {
-                this.wishlist.splice(existingItem, 1)
-            }
+            if (existingItem) this.wishlist.splice(existingItem, 1)
             else {
                 this.wishlist.push({
                     id: payload.sku,

@@ -166,10 +166,8 @@ const removeFromCart = (e, itemIdx) => {
     subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 }
 
-// const emit = defineEmits(['get-subtotal'])
 const router = useRouter()
 const proceedToCheckout = () => {
-    // emit('get-subtotal', subTotal)
     router.push({ path: '/shop/checkout' })
 }
 </script>
