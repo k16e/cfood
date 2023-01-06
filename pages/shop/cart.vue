@@ -167,7 +167,5 @@ const removeFromCart = (e, itemIdx) => {
 }
 
 const router = useRouter()
-const proceedToCheckout = () => {
-    router.push({ path: '/shop/checkout' })
-}
+const proceedToCheckout = () => router.push({ path: '/shop/checkout' })
 </script>

@@ -7,7 +7,7 @@
             <slot/>
         </main>
 
-        <footer>
+        <footer class="">
             <FooterMain/>
         </footer>
     </div>
