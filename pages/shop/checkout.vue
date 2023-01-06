@@ -52,7 +52,7 @@
                                 class="mx-auto max-w-2xl lg:max-w-none">
                                 <div>
                                     <Heading tag="h3" content="Contact info" class="text-lg font-sans font-medium mb-3"/>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-3">
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                                         <div>
                                             <label for="username" class="block mb-1.5 text-sm font-medium">
                                                 Name:
@@ -64,6 +64,12 @@
                                                 Email:
                                             </label>
                                             <input type="email" id="email" name="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
+                                        </div>
+                                        <div class="lg:col-span-2">
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                                Phone number:
+                                            </label>
+                                            <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
                                         </div>
                                     </div>
                                 </div>
