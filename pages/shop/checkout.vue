@@ -1,7 +1,7 @@
 <template>
     <Container padX center>
         <div class="flex items-center justify-between">
-            <Heading tag="h1" content="Checkout your order"/>
+            <Heading tag="h1" content="Checkout"/>
             <NuxtLink to="/shop/cart" class="luna-btn text-gray-700">
                 <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
                 <span>Modify cart?</span>
@@ -16,11 +16,9 @@
                     <div class="absolute top-0 right-0 hidden h-full w-1/2 bg-gray-50 lg:block border-l border-gray-200" aria-hidden="true" />
 
                     <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-x-16 lg:grid-cols-2">
-                        <h1 class="sr-only">Checkout</h1>
-
                         <section
                             aria-labelledby="summary-heading"
-                            class="bg-gray-50 p-3 py-5 lg:py-7 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:sticky lg:top-24">
+                            class="bg-gray-50 p-3 py-5 lg:py-7 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:sticky lg:top-24 border-b border-gray-200 lg:border-b-0">
                             <div class="mx-auto max-w-2xl lg:max-w-none">
                                 <h2 id="summary-heading" class="sr-only">Order summary</h2>
                                 <dl>
