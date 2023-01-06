@@ -132,6 +132,6 @@ const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
-const shipping = ref(1000)
-const shippingRates = ref(await store.shippingRates)
+const shipping = ref(store.shipping)
+const shippingRates = ref(store.shippingRates)
 </script>
