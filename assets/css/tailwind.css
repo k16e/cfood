@@ -24,4 +24,4 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
 .luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
 
-.router-link-active { @apply ring-2 ring-offset-2 ring-offset-gray-50 outline-none ring-orange-700;}
+.router-link-active:not(.luna-turn-off-active) { @apply ring-2 ring-offset-2 ring-offset-gray-50 outline-none ring-orange-700;}

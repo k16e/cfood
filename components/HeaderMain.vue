@@ -18,7 +18,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="flex items-center space-x-1.5">
+        <div class="flex items-center space-x-3">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
         </div>

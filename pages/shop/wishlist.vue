@@ -7,8 +7,9 @@
                 <span>Products</span>
             </NuxtLink>
         </div>
-        <ClientOnly v-if="wishlist.length >= 1">
+        <ClientOnly>
             <section
+                v-if="wishlist.length >= 1"
                 aria-labelledby="wishlist-heading"
                 class="px-3 bg-white lg:bg-transparent rounded-xl border border-gray-200 lg:border-0">
                 <h2 id="wishlist-heading" class="sr-only">Products in your wishlist</h2>
@@ -66,11 +67,11 @@
                     </li>
                 </ul>
             </section>
+            <p v-else class="px-3 sm:px-5">
+                You have yet to add any item to your wishlist. Please continue shopping at
+                <NuxtLink to="/products">the Products page.</NuxtLink>
+            </p>
         </ClientOnly>
-        <p v-else class="px-3 sm:px-5">
-            You have yet to add any item to your wishlist. Please continue shopping at
-            <NuxtLink to="/products">the Products page.</NuxtLink>
-        </p>
     </Container>
 </template>
 
