@@ -138,6 +138,7 @@ const proceedToPay = () => {
         phone: shopper.phone.value,
         address: shopper.address.value,
         shipping: shipping.value,
+        shippingZone: (shippingRates.value.find(el => el.price == shipping.value).distance),
         orders: cart,
         subTotal: subTotal,
         total: (subTotal + shipping.value)
