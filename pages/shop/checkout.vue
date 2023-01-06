@@ -125,4 +125,13 @@ import { useProductsStore } from '@/stores/products'
 const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
+
+const shippingAreas = [
+    { distance: 'Epe - Ajah', price: '1000' },
+    { distance: 'Ajah - Lekki', price: '2500' },
+    { distance: 'Oniru - VI', price: '3000' },
+    { distance: 'Ikoyi - Lagos Island', price: '3000' },
+    { distance: 'Ikeja - Mainland', price: '3000' },
+    { distance: 'Mainland - Sub-regions', price: '5000' }
+]
 </script>
