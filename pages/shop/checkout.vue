@@ -12,8 +12,8 @@
             <div class="pt-5 overflow-x-hidden">
                 <section class="bg-white rounded-xl border border-gray-200 relative overflow-x-hidden">
                     <!-- Background color split screen for large screens -->
-                    <div class="absolute top-0 left-0 hidden h-full w-1/2 bg-white lg:block" aria-hidden="true" />
-                    <div class="absolute top-0 right-0 hidden h-full w-1/2 bg-gray-50 lg:block border-l border-gray-200" aria-hidden="true" />
+                    <div class="absolute top-0 left-0 hidden h-full w-1/2 bg-white lg:block" aria-hidden="true"/>
+                    <div class="absolute top-0 right-0 hidden h-full w-1/2 bg-gray-50 lg:block border-l border-gray-200" aria-hidden="true"/>
 
                     <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-x-16 lg:grid-cols-2">
                         <section
@@ -29,7 +29,7 @@
                                 <dl class="space-y-6 border-t border-white border-opacity-10 pt-6 text-sm font-medium">
                                     <div class="flex items-center justify-between">
                                         <dt>Subtotal</dt>
-                                        <dd>$570.00</dd>
+                                        <dd>{{ $formatPrice(subTotal) }}</dd>
                                     </div>
 
                                     <div class="flex items-center justify-between">
