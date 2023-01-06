@@ -57,35 +57,45 @@
                                             <label for="username" class="block mb-1.5 text-sm font-medium">
                                                 Name:
                                             </label>
-                                            <input type="text" id="username" name="username" autocomplete="given-name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
+                                            <input type="text" id="username" name="username" autocomplete="given-name" class="luna-input-text"/>
                                         </div>
                                         <div>
                                             <label for="email" class="block mb-1.5 text-sm font-medium text-gray-700">
                                                 Email:
                                             </label>
-                                            <input type="email" id="email" name="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
+                                            <input type="email" id="email" name="email" autocomplete="email" class="luna-input-text"/>
                                         </div>
                                         <div class="lg:col-span-2">
                                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">
                                                 Phone number:
                                             </label>
-                                            <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
+                                            <input type="text" name="phone" id="phone" autocomplete="tel" class="luna-input-text"/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="mt-9">
                                     <Heading tag="h3" content="Shipping info" class="text-lg font-sans font-medium mb-3"/>
-                                    <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
-                                        <div class="sm:col-span-3">
+                                    <div class="grid grid-cols-1 gap-5">
+                                        <div>
                                             <label for="address" class="block text-sm font-medium text-gray-700 mb-1.5">
                                                 Street, apartment, suite no., etc.
                                             </label>
-                                            <input type="text" id="address" name="address" autocomplete="street-address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"/>
+                                            <input type="text" id="address" name="address" autocomplete="street-address" class="luna-input-text"/>
                                         </div>
-                                        <pre>
-                                            {{ shippingRates }}
-                                        </pre>
+                                        <div>
+                                            <label for="location" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                                Delivery area
+                                            </label>
+                                            <select id="location" name="location" class="luna-input-text">
+                                                <option
+                                                    v-for="item in shippingRates"
+                                                    :key="item.id + item"
+                                                    :selected="item.id === 1">
+                                                    {{ item.distance }} - {{ $formatPrice(item.price) }}
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
