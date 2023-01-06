@@ -24,7 +24,8 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
 
 .luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
-.luna-input-text { @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3 lg:p-2; }
+.luna-input { @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3 lg:p-2; }
+.luna-label { @apply block mb-1.5 text-sm font-medium text-gray-700; }
 
 .router-link-active:not(.luna-turn-off-active),
 .parent-active:not(.luna-turn-off-active) {

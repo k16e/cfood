@@ -48,28 +48,24 @@
                             aria-labelledby="payment-and-shipping-heading"
                             class="p-3 py-5 lg:py-7 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg">
                             <h2 id="payment-and-shipping-heading" class="sr-only">Payment and shipping details</h2>
+                            <!-- Complete order form -->
                             <form
+                                @submit.prevent="completeOrder()"
                                 class="mx-auto max-w-2xl lg:max-w-none">
                                 <div>
                                     <Heading tag="h3" content="Contact info" class="text-lg font-sans font-medium mb-3"/>
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                                         <div>
-                                            <label for="username" class="block mb-1.5 text-sm font-medium">
-                                                Name:
-                                            </label>
-                                            <input type="text" id="username" name="username" autocomplete="given-name" class="luna-input-text"/>
+                                            <label for="username" class="luna-label">Name:</label>
+                                            <input v-model="shopper.username.value" required type="text" id="username" autocomplete="given-name" class="luna-input"/>
                                         </div>
                                         <div>
-                                            <label for="email" class="block mb-1.5 text-sm font-medium text-gray-700">
-                                                Email:
-                                            </label>
-                                            <input type="email" id="email" name="email" autocomplete="email" class="luna-input-text"/>
+                                            <label for="email" class="luna-label">Email:</label>
+                                            <input v-model="shopper.email.value" type="email" id="email" autocomplete="email" class="luna-input"/>
                                         </div>
                                         <div class="lg:col-span-2">
-                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">
-                                                Phone number:
-                                            </label>
-                                            <input type="text" name="phone" id="phone" autocomplete="tel" class="luna-input-text"/>
+                                            <label for="phone" class="luna-label">Phone number:</label>
+                                            <input v-model="shopper.phone.value" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
                                         </div>
                                     </div>
                                 </div>
@@ -78,24 +74,19 @@
                                     <Heading tag="h3" content="Shipping info" class="text-lg font-sans font-medium mb-3"/>
                                     <div class="grid grid-cols-1 gap-5">
                                         <div>
-                                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1.5">
-                                                Street, apartment, suite no., etc.
-                                            </label>
-                                            <input type="text" id="address" name="address" autocomplete="street-address" class="luna-input-text"/>
+                                            <label for="address" class="luna-label">Street, apartment, etc.</label>
+                                            <input v-model="shopper.address.value" required type="text" id="address" autocomplete="street-address" class="luna-input"/>
                                         </div>
                                         <div>
-                                            <label for="shipping" class="block text-sm font-medium text-gray-700 mb-1.5">
-                                                Delivery area
-                                            </label>
+                                            <label for="shipping" class="luna-label">Delivery area</label>
                                             <select
                                                 id="shipping"
                                                 name="shipping"
-                                                class="luna-input-text"
+                                                class="luna-input"
                                                 v-model="shipping">
                                                 <option
                                                     v-for="item in shippingRates"
                                                     :key="item.id + item"
-                                                    :selected="item.id === 1"
                                                     :value="item.price">
                                                     {{ item.distance }} - {{ $formatPrice(item.price) }}
                                                 </option>
@@ -104,21 +95,16 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-9">
-                                    <button
-                                        type="submit"
-                                        class="w-full rounded-md border border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-600">
-                                        Proceed to pay
-                                    </button>
-                                </div>
+                                <button
+                                    type="submit"
+                                    class="mt-9 w-full rounded-md border border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm hover:bg-orange-600">
+                                    Proceed to pay
+                                </button>
                             </form>
                         </section>
                     </div>
                 </div>
             </div>
-            <pre>
-                {{ shippingRates }}
-            </pre>
         </ClientOnly>
     </Container>
 </template>
@@ -133,5 +119,24 @@ const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await store.fetchShippingRates()
 const shipping = ref(store.shipping)
+const shopper = {
+    username: ref(''),
+    email: ref(''),
+    phone: ref(''),
+    address: ref('')
+}
 const shippingRates = ref(store.shippingRates)
+const order = store.order
+
+const completeOrder = () => {
+    order.push({
+        username: shopper.username.value,
+        email: shopper.email.value,
+        phone: shopper.phone.value,
+        address: shopper.address.value,
+        shipping: shipping.value,
+        orders: cart
+    })
+    console.log(order)
+}
 </script>

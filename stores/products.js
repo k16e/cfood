@@ -5,7 +5,8 @@ export const useProductsStore = defineStore('productsStore', {
         wishlist: [],
         shippingRates: [],
         shipping: 1000,
-        shippingArea: ''
+        shippingArea: '',
+        order: []
     }),
     actions: {
         async fetchProducts() {

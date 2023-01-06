@@ -17,7 +17,7 @@
                         <section aria-labelledby="cart-heading" class="lg:col-span-7">
                             <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
                             <ul role="list" class="divide-y divide-gray-200">
-                                <li v-for="(item, idx) in cart" :key="item.id + idx" class="flex py-5 sm:py-7">
+                                <li v-for="(item, idx) in cart" :key="item.id" class="flex py-5 sm:py-7">
                                     <NuxtImg
                                         :src="item.image"
                                         :alt="item.name"
