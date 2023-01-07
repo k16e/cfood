@@ -105,9 +105,6 @@
                     </div>
                 </div>
             </div>
-            <pre>
-                {{ order }}
-            </pre>
         </ClientOnly>
     </Container>
 </template>
@@ -129,8 +126,9 @@ const shopper = {
     phone: ref(''),
     address: ref('')
 }
-const order = store.order
+let order = store.order
 
+const router = useRouter()
 const proceedToPay = () => {
     order.push({
         username: shopper.username.value,
@@ -143,6 +141,11 @@ const proceedToPay = () => {
         subTotal: subTotal,
         total: (subTotal + shipping.value)
     })
-    return order
+    store.cart = []
+    router.push({ path: '/products' })
+    setTimeout(() => {
+        globalThis.location.reload()
+    }, 500);
+    console.log(order)
 }
 </script>
