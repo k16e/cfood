@@ -142,6 +142,7 @@ const proceedToPay = () => {
         total: (subTotal + shipping.value)
     })
     store.cart = []
+    store.order = []
     router.push({ path: '/products' })
     setTimeout(() => {
         globalThis.location.reload()
