@@ -158,7 +158,7 @@ const proceedToPay = async () => {
                     phone: order[0].phone,
                     email: order[0].email
                 }
-            ])
+            ], { onConflict: 'email', ignoreDuplicates: false })
         if (customer_error) throw customer_error
     } catch (err) {
         console.log(err)
