@@ -142,22 +142,22 @@ const proceedToPay = async () => {
         subTotal: subTotal,
         total: (subTotal + shipping.value)
     })
-    // store.cart = []
-    // store.order = []
-    setTimeout(() => {
-        // globalThis.location.reload()
-    }, 500);
-    console.log(order[0])
-    const { data, error } = await supabase
-        .from('orders')
-        .insert([
-            {
-                customer_name: order[0].customer_name,
-                products: order[0].orders,
-                sub_total: order[0].subTotal,
-                total: order[0].total
-            }
-        ])
-    router.push({ path: '/shop/success' })
+    try {
+        const { data, error } = await supabase
+            .from('orders')
+            .insert([
+                {
+                    customer_name: order[0].customer_name,
+                    products: order[0].orders,
+                    sub_total: order[0].subTotal,
+                    total: order[0].total
+                }
+            ])
+    } catch (error) {
+        console.log(error)
+    } finally {
+        console.log(order)
+        router.push({ path: '/shop/success' })
+    }
 }
 </script>
