@@ -56,8 +56,8 @@
                                     <Heading tag="h3" content="Contact info" class="text-lg font-sans font-medium mb-3"/>
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                                         <div>
-                                            <label for="username" class="luna-label">Name:</label>
-                                            <input v-model="shopper.username.value" required type="text" id="username" autocomplete="given-name" class="luna-input"/>
+                                            <label for="customer_name" class="luna-label">Name:</label>
+                                            <input v-model="shopper.customer_name.value" required type="text" id="customer_name" autocomplete="given-name" class="luna-input"/>
                                         </div>
                                         <div>
                                             <label for="email" class="luna-label">Email:</label>
@@ -121,7 +121,7 @@ await store.fetchShippingRates()
 const shippingRates = ref(store.shippingRates)
 const shipping = ref(shippingRates.value[0].price)
 const shopper = {
-    username: ref(''),
+    customer_name: ref(''),
     email: ref(''),
     phone: ref(''),
     address: ref('')
@@ -129,9 +129,10 @@ const shopper = {
 let order = store.order
 
 const router = useRouter()
-const proceedToPay = () => {
+const proceedToPay = async () => {
+    const supabase = useSupabaseClient()
     order.push({
-        username: shopper.username.value,
+        customer_name: shopper.customer_name.value,
         email: shopper.email.value,
         phone: shopper.phone.value,
         address: shopper.address.value,
@@ -143,10 +144,20 @@ const proceedToPay = () => {
     })
     store.cart = []
     store.order = []
-    router.push({ path: '/products' })
     setTimeout(() => {
-        globalThis.location.reload()
+        // globalThis.location.reload()
     }, 500);
-    console.log(order)
+    console.log(order[0])
+    const { data, error } = await supabase
+        .from('orders')
+        .insert([
+            {
+                customer_name: order[0].customer_name,
+                products: order[0].orders,
+                sub_total: order[0].subTotal,
+                total: order[0].total
+            }
+        ])
+    // router.push({ path: '/products' })
 }
 </script>
