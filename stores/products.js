@@ -24,17 +24,17 @@ export const useProductsStore = defineStore('productsStore', {
             this.shippingRates = data
         },
         addToCart(payload) {
-            const existingItem = this.cart.find(item => item.id === payload.sku)
+            const existingItem = this.cart.find(item => item.sku === payload.sku)
 
             if (existingItem) {
-                let existingItemIndex = this.cart.findIndex(item => item.id === existingItem.id)
+                let existingItemIndex = this.cart.findIndex(item => item.sku === existingItem.sku)
 
                 existingItem.qty = existingItem.qty + 1
                 existingItem.subTotal = payload.price * existingItem.qty
                 this.cart[existingItemIndex] = existingItem
             } else {
                 this.cart.push({
-                    id: payload.sku,
+                    sku: payload.sku,
                     name: payload.name,
                     image: payload.image,
                     description: payload.description,
@@ -45,12 +45,12 @@ export const useProductsStore = defineStore('productsStore', {
             }
         },
         addToWishlist(payload) {
-            const existingItem = this.wishlist.find(item => item.id === payload.sku)
+            const existingItem = this.wishlist.find(item => item.sku === payload.sku)
 
             if (existingItem) this.wishlist.splice(existingItem, 1)
             else {
                 this.wishlist.push({
-                    id: payload.sku,
+                    sku: payload.sku,
                     name: payload.name,
                     image: payload.image,
                     description: payload.description,

@@ -21,7 +21,7 @@
             <button
                 @click="addToWishlist(product)"
                 class="flex items-center p-3 sm:p-2 rounded-full bg-gray-50 border border-gray-200 absolute top-3 right-3 z-10"
-                :class="wishlist.some(el => el.id === product.sku) ? 'text-red-600' : 'text-gray-500'">
+                :class="wishlist.some(el => el.sku === product.sku) ? 'text-red-600' : 'text-gray-500'">
                 <Icon name="ri:heart-2-fill" size="18" class="pointer-events-none"/>
                 <span v-text="'Add to wishlist'" class="sr-only"/>
             </button>

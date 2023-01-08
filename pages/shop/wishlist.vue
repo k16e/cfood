@@ -17,7 +17,7 @@
                     <ul role="list" class="divide-y divide-gray-200 lg:grid lg:grid-cols-2 lg:divide-none lg:gap-5">
                         <li
                             v-for="(item, idx) in wishlist"
-                            :key="item.id + idx"
+                            :key="item.sku"
                             class="flex py-5 sm:py-7 lg:bg-white lg:rounded-xl lg:p-5 lg:border lg:border-gray-200">
                             <NuxtImg
                                 :src="item.image"
