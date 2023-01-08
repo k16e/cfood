@@ -156,8 +156,9 @@ const proceedToPay = async () => {
                     shipping: order[0].shipping
                 }
             ])
-    } catch (error) {
-        console.log(error)
+        if (error) throw error
+    } catch (err) {
+        console.log(err)
     } finally {
         console.log(order)
         router.push({ path: '/shop/success' })
