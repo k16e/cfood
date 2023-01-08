@@ -150,7 +150,10 @@ const proceedToPay = async () => {
                     customer_name: order[0].customer_name,
                     products: order[0].orders,
                     sub_total: order[0].subTotal,
-                    total: order[0].total
+                    total: order[0].total,
+                    delivery_address: order[0].address,
+                    delivery_zone: order[0].shippingZone,
+                    shipping: order[0].shipping
                 }
             ])
     } catch (error) {
