@@ -158,6 +158,6 @@ const proceedToPay = async () => {
                 total: order[0].total
             }
         ])
-    // router.push({ path: '/products' })
+    router.push({ path: '/shop/success' })
 }
 </script>
