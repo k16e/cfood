@@ -1,13 +1,6 @@
 <template>
     <Container padX center>
-        <div class="flex items-center justify-between">
-            <Heading tag="h1" content="Checkout"/>
-            <NuxtLink to="/shop/cart" class="luna-btn text-gray-700">
-                <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
-                <span>Modify cart?</span>
-            </NuxtLink>
-        </div>
-
+        <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
         <ClientOnly>
             <div class="pt-5 overflow-x-hidden">
                 <div class="bg-white rounded-xl border border-gray-200 relative overflow-x-hidden">
