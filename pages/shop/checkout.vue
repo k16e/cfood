@@ -149,7 +149,6 @@ const proceedToPay = async () => {
                     shipping: order[0].shipping
                 }
             ])
-        if (order_error) throw order_error
         const { data: customer_data, error: customer_error } = await supabase
             .from('customers')
             .upsert([
@@ -159,12 +158,18 @@ const proceedToPay = async () => {
                     email: order[0].email
                 }
             ], { onConflict: 'email', ignoreDuplicates: false })
+
+        if (order_error) throw order_error
         if (customer_error) throw customer_error
+
     } catch (err) {
         console.log(err)
     } finally {
-        console.log(order)
+        store.$patch({ cart: [], order: [] })
         router.push({ path: '/shop/success' })
+        setTimeout(() => {
+            globalThis.location.reload()
+        }, 500);
     }
 }
 </script>
