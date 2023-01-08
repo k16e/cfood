@@ -57,15 +57,15 @@
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                                         <div>
                                             <label for="customer_name" class="luna-label">Name:</label>
-                                            <input v-model="shopper.customer_name.value" required type="text" id="customer_name" autocomplete="given-name" class="luna-input"/>
+                                            <input v-model="customer.customer_name.value" required type="text" id="customer_name" autocomplete="given-name" class="luna-input"/>
                                         </div>
                                         <div>
                                             <label for="email" class="luna-label">Email:</label>
-                                            <input v-model="shopper.email.value" type="email" id="email" autocomplete="email" class="luna-input"/>
+                                            <input v-model="customer.email.value" type="email" id="email" autocomplete="email" class="luna-input"/>
                                         </div>
                                         <div class="lg:col-span-2">
                                             <label for="phone" class="luna-label">Phone number:</label>
-                                            <input v-model="shopper.phone.value" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
+                                            <input v-model="customer.phone.value" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                     <div class="grid grid-cols-1 gap-5">
                                         <div>
                                             <label for="address" class="luna-label">Street, apartment, etc.</label>
-                                            <input v-model="shopper.address.value" required type="text" id="address" autocomplete="street-address" class="luna-input"/>
+                                            <input v-model="customer.address.value" required type="text" id="address" autocomplete="street-address" class="luna-input"/>
                                         </div>
                                         <div>
                                             <label for="shipping" class="luna-label">Delivery area</label>
@@ -120,22 +120,22 @@ const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 await store.fetchShippingRates()
 const shippingRates = ref(store.shippingRates)
 const shipping = ref(shippingRates.value[0].price)
-const shopper = {
+const customer = {
     customer_name: ref(''),
     email: ref(''),
     phone: ref(''),
     address: ref('')
 }
-let order = store.order
+const order = store.order
 
 const router = useRouter()
 const proceedToPay = async () => {
     const supabase = useSupabaseClient()
     order.push({
-        customer_name: shopper.customer_name.value,
-        email: shopper.email.value,
-        phone: shopper.phone.value,
-        address: shopper.address.value,
+        customer_name: customer.customer_name.value,
+        email: customer.email.value,
+        phone: customer.phone.value,
+        address: customer.address.value,
         shipping: shipping.value,
         shippingZone: (shippingRates.value.find(el => el.price == shipping.value).distance),
         orders: cart,
