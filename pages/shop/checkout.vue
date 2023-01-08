@@ -142,8 +142,8 @@ const proceedToPay = async () => {
         subTotal: subTotal,
         total: (subTotal + shipping.value)
     })
-    store.cart = []
-    store.order = []
+    // store.cart = []
+    // store.order = []
     setTimeout(() => {
         // globalThis.location.reload()
     }, 500);
