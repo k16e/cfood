@@ -136,7 +136,7 @@ const proceedToPay = async () => {
         total: (subTotal + shipping.value)
     })
     try {
-        const { data, error } = await supabase
+        const { data: order_data, error: order_error } = await supabase
             .from('orders')
             .insert([
                 {
@@ -149,7 +149,17 @@ const proceedToPay = async () => {
                     shipping: order[0].shipping
                 }
             ])
-        if (error) throw error
+        if (order_error) throw order_error
+        const { data: customer_data, error: customer_error } = await supabase
+            .from('customers')
+            .upsert([
+                {
+                    name: order[0].customer_name,
+                    phone: order[0].phone,
+                    email: order[0].email
+                }
+            ])
+        if (customer_error) throw customer_error
     } catch (err) {
         console.log(err)
     } finally {
