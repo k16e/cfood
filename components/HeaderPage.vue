@@ -1,13 +1,15 @@
 <template>
     <div class="flex items-center justify-between">
         <Heading :tag="tag" :content="content" class="flex-1"/>
-        <NuxtLink
-            v-if="link"
-            :to="link"
-            class="luna-btn text-gray-700">
-            <Icon v-if="linkIcon" :name="linkIcon" size="22" class="mr-1.5 text-orange-700"/>
-            <span v-text="linkText"/>
-        </NuxtLink>
+        <slot>
+            <NuxtLink
+                v-if="link"
+                :to="link"
+                class="luna-btn text-gray-700">
+                <Icon v-if="linkIcon" :name="linkIcon" size="22" class="mr-1.5 text-orange-700"/>
+                <span v-text="linkText"/>
+            </NuxtLink>
+        </slot>
     </div>
 </template>
 
