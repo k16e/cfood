@@ -27,7 +27,6 @@ export const useProductsStore = defineStore('productsStore', {
             const existingItem = this.cart.find(item => item.sku === payload.sku)
             const isInWishlist = this.wishlist.find(item => item.sku === payload.sku)
             if (isInWishlist) {
-                // console.log(isInWishlist)
                 this.wishlist.splice(this.wishlist.indexOf(isInWishlist), 1)
             }
 

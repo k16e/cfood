@@ -1,5 +1,5 @@
 <template>
-    <WrapperSection>
+    <WrapperSection ref="target" :class="targetIsVisible && '_is-in-viewport'">
         <div class="overflow-hidden pt-32 sm:pt-16">
             <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                 <Container center padX class="">
@@ -57,5 +57,13 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
+const target = ref(null)
+const targetIsVisible = ref(false)
+
+const { stop } = useIntersectionObserver(target, ([ { isIntersecting } ], observerElement) => {
+    targetIsVisible.value = isIntersecting
+})
 </script>
