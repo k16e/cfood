@@ -1,9 +1,9 @@
 <template>
     <WrapperSection>
-        <div class="overflow-hidden pt-32 sm:pt-14">
-            <div class="bg-orange-700">
+        <div class="overflow-hidden pt-32 sm:pt-16">
+            <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                 <Container center padX class="">
-                    <div class="relative pt-48 pb-16 sm:pb-24">
+                    <div class="relative min-h-[424px] flex items-center pt-32 sm:pt-0">
                         <div>
                             <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white md:text-5xl">
                                 Final Stock.
