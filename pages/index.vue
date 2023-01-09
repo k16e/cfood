@@ -25,6 +25,7 @@
             </figure>
         </div>
     </Container>
+    <ProductsPromo/>
 </template>
 
 <script setup>

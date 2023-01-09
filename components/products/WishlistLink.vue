@@ -6,7 +6,7 @@
         <span v-text="`Wishlist`" class="sr-only sm:not-sr-only sm:ml-1.5"/>
         <ClientOnly>
             <span v-if="wishlist.length" class="flex h-2 w-2 absolute top-1 right-1">
-                <span class="animate-ping absolute flex h-full w-full rounded-full bg-red-400 opacity-75"/>
+                <span class="animate-ping duration-300 absolute flex h-full w-full rounded-full bg-red-400 opacity-75"/>
                 <span class="relative flex rounded-full h-2 w-2 bg-red-500"/>
             </span>
         </ClientOnly>
