@@ -10,7 +10,8 @@ export default defineNuxtConfig({
         ['@pinia/nuxt', { autoImports: ['defineStore'] }],
         '@pinia-plugin-persistedstate/nuxt',
         '@vueuse/nuxt',
-        '@nuxt/image-edge'
+        '@nuxt/image-edge',
+        '@vueuse/nuxt'
     ],
     app: {
         head: {
