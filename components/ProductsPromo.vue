@@ -4,7 +4,7 @@
             <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                 <Container center padX class="">
                     <div class="relative min-h-[424px] flex items-center pt-32 sm:pt-0">
-                        <div>
+                        <div class="text-center flex flex-col items-center w-full sm:text-left sm:block">
                             <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white md:text-5xl">
                                 Final Stock.
                                 <br />
