@@ -1,8 +1,8 @@
 <template>
-    <div class="pt-16 sm:pt-20 lg:pt-24">
+    <WrapperSection>
         <div class="overflow-hidden pt-32 sm:pt-14">
             <div class="bg-orange-700">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <Container center padX class="">
                     <div class="relative pt-48 pb-16 sm:pb-24">
                         <div>
                             <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white md:text-5xl">
@@ -50,10 +50,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
-    </div>
+    </WrapperSection>
 </template>
 
 <script setup>
