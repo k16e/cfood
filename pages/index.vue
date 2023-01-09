@@ -1,5 +1,5 @@
 <template>
-    <Container padX center>
+    <Container padX center ref="target" class="luna-reveal" :class="targetIsVisible && '_is-in-viewport'">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-12 sm:gap-14">
             <div class="lg:col-span-2 order-2 md:order-1">
                 <div class="pb-5 sm:pb-7">
@@ -29,6 +29,15 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
+
+const target = ref(null)
+const targetIsVisible = ref(false)
+
+const { stop } = useIntersectionObserver(target, ([ { isIntersecting } ], observerElement) => {
+    targetIsVisible.value = isIntersecting
+})
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
     meta: [
