@@ -1,12 +1,6 @@
 <template>
     <Container padX center>
-        <div class="flex items-center justify-between">
-            <Heading tag="h1" content="Your wishlist!"/>
-            <NuxtLink to="/products" class="luna-btn text-gray-700">
-                <Icon name="ic:baseline-arrow-back" size="22" class="mr-1.5 text-orange-700"/>
-                <span>Products</span>
-            </NuxtLink>
-        </div>
+        <HeaderPage tag="h1" content="Your wishlist!" link="/products" linkIcon="ic:baseline-arrow-back" linkText="Products"/>
         <ClientOnly>
             <div class="pt-5">
                 <section
@@ -68,7 +62,7 @@
                         </li>
                     </ul>
                 </section>
-                <p v-else class="px-3 sm:px-5">
+                <p v-else class="text-xl max-w-2xl">
                     You have yet to add any item to your wishlist. Please continue shopping at
                     <NuxtLink to="/products">the Products page.</NuxtLink>
                 </p>
