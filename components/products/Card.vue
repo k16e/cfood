@@ -1,10 +1,10 @@
 <template>
-    <div class="r-card bg-white border border-gray-200 rounded-xl relative">
+    <div class="r-card bg-white border border-gray-200 rounded-xl relative h-full">
         <NuxtLink
             :to="`/products/${$slugify(product.name)}-${product.sku}`"
-            class="flex flex-col rounded-xl">
+            class="flex flex-col rounded-xl h-full">
             <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
-            <div class="p-3 border-t border-gray-100">
+            <div class="p-3 border-t border-gray-100 h-full flex flex-col justify-between">
                 <div class="pr-14">
                     <Heading tag="h2" :content="product.name"/>
                     <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
