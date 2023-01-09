@@ -1,6 +1,10 @@
 <template>
     <Container padX center>
-        <HeaderPage tag="h1" content="Your wishlist!" link="/products" linkIcon="ic:baseline-arrow-back" linkText="Products"/>
+        <HeaderPage
+            tag="h1" content="Your wishlist!"
+            link="/products" linkIcon="ic:baseline-arrow-back"
+            linkText="Products"
+        />
         <ClientOnly>
             <div class="pt-5">
                 <section
