@@ -1,8 +1,8 @@
-export const useOrderCompletion = (formActions, order, customer, shippingRates, subTotal, store, cart, router) => {
+export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, router) => {
     const proceedToPay = async () => {
         const supabase = useSupabaseClient()
 
-        formActions.sending.value = true
+        formStatus.sending.value = true
         order.push({
             customer_name: customer.customer_name.value,
             email: customer.email.value,
@@ -38,14 +38,14 @@ export const useOrderCompletion = (formActions, order, customer, shippingRates, 
                     }
                 ], { onConflict: 'email', ignoreDuplicates: false })
 
-            formActions.sending.value = false
+            formStatus.sending.value = false
             if (order_error) throw order_error
             if (customer_error) throw customer_error
 
         } catch (err) {
             console.log(err)
         } finally {
-            formActions.sent.value = true
+            formStatus.sent.value = true
             store.$patch({ cart: [], order: [] })
             router.push({ path: '/shop/success' })
             setTimeout(() => {
