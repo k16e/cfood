@@ -1,10 +1,10 @@
 <template>
     <NuxtLoadingIndicator :color="`#ea580c`"/>
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-screen overflow-x-hidden">
         <header class="p-3 fixed inset-x-0 top-0 h-16 bg-white border-b border-gray-200 z-30">
             <HeaderMain/>
         </header>
-        <main class="mt-16 flex-1 py-9 overflow-x-hidden">
+        <main class="mt-16 flex-1 pt-7 lg:pt-12">
             <slot/>
         </main>
 

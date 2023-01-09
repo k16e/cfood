@@ -116,7 +116,7 @@
                     </form>
                 </div>
 
-                <p v-else class="px-3 sm:px-5">
+                <p v-else>
                     You have yet to add any item to your cart. Please continue shopping at
                     <NuxtLink to="/products">the Products page.</NuxtLink>
                 </p>

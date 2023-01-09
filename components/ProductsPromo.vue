@@ -1,6 +1,6 @@
 <template>
     <WrapperSection ref="target" class="luna-reveal" :class="targetIsVisible && '_is-in-viewport'">
-        <div class="overflow-hidden pt-32 sm:pt-16">
+        <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
             <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                 <Container center padX class="">
                     <div class="relative min-h-[424px] flex items-center pt-32 sm:pt-0">
