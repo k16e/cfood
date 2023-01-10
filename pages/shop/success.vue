@@ -1,11 +1,13 @@
 <template>
-    <Container padX center>
-        <HeaderPage
-            tag="h1" content="Thanks, a load!"
-            link="/products" linkIcon="ic:baseline-arrow-back"
-            linkText="Buy more"
-        />
-    </Container>
+    <WrapperReveal>
+        <Container padX center>
+            <HeaderPage
+                tag="h1" content="Thanks, a load!"
+                link="/products" linkIcon="ic:baseline-arrow-back"
+                linkText="Buy more"
+            />
+        </Container>
+    </WrapperReveal>
 </template>
 
 <script setup>

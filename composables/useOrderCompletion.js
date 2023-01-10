@@ -17,6 +17,15 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
             total: (subTotal + shipping.value)
         })
         try {
+            const { data: customer_data, error: customer_error } = await supabase
+                .from('customers')
+                .upsert([
+                    {
+                        name: order[0].customer_name,
+                        phone: order[0].phone,
+                        email: order[0].email
+                    }
+                ], { onConflict: 'email', ignoreDuplicates: false })
             const { data: order_data, error: order_error } = await supabase
                 .from('orders')
                 .insert([
@@ -31,15 +40,6 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                         shipping: order[0].shipping
                     }
                 ])
-            const { data: customer_data, error: customer_error } = await supabase
-                .from('customers')
-                .upsert([
-                    {
-                        name: order[0].customer_name,
-                        phone: order[0].phone,
-                        email: order[0].email
-                    }
-                ], { onConflict: 'email', ignoreDuplicates: false })
 
             formStatus.sending.value = false
             if (order_error) throw order_error
