@@ -1,4 +1,6 @@
-export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, router) => {
+export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart) => {
+    const router = useRouter()
+    
     const proceedToPay = async () => {
         const supabase = useSupabaseClient()
 

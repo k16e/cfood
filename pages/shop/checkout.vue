@@ -133,9 +133,7 @@ let formStatus = {
 }
 const order = store.order
 
-const router = useRouter()
-
 const { proceedToPay } = useOrderCompletion(
-    formStatus, order, customer, shippingRates, subTotal, store, cart, router
+    formStatus, order, customer, shippingRates, subTotal, store, cart
 )
 </script>

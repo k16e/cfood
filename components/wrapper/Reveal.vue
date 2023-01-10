@@ -1,5 +1,8 @@
 <template>
-    <div ref="el" class="luna-reveal" :class="elIsVisible && '_is-in-viewport'">
+    <div
+        ref="el"
+        class="luna-reveal"
+        :class="elIsVisible && '_is-in-viewport'">
         <slot/>
     </div>
 </template>
