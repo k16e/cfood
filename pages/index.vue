@@ -31,7 +31,6 @@
 </template>
 
 <script setup>
-
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
     meta: [

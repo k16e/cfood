@@ -15,5 +15,9 @@ const el = ref(null)
 const elIsVisible = ref(false)
 
 const { stop } = useIntersectionObserver(el, ([{ isIntersecting }]) => elIsVisible.value = isIntersecting)
+
 const updated = onUpdated(() => stop())
+const routeLeaving = onBeforeRouteLeave((to, from) => {
+    el.value.classList.add('_on-route-leave')
+})
 </script>

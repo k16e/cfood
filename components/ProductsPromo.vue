@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal ref="target" class="luna-reveal relative" :class="targetIsVisible && '_is-in-viewport'">
+    <WrapperReveal>
         <WrapperSection>
             <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
                 <div class="bg-gradient-to-r from-orange-500 to-orange-800">
@@ -57,7 +57,3 @@
         </WrapperSection>
     </WrapperReveal>
 </template>
-
-<script setup>
-
-</script>
