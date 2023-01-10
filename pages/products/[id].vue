@@ -1,7 +1,9 @@
 <template>
-    <Container center padX>
-        <ProductsOverview :product="product[0]"/>
-    </Container>
+    <WrapperReveal>
+        <Container center padX>
+            <ProductsOverview :product="product[0]"/>
+        </Container>
+    </WrapperReveal>
 </template>
 
 <script setup>

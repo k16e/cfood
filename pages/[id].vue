@@ -1,10 +1,14 @@
 <template>
-    <div>
-        {{ myData }}
-    </div>
-    <div>
-        {{ currencyApi }}
-    </div>
+    <WrapperReveal>
+        <Container center padX>
+            <div>
+                {{ myData }}
+            </div>
+            <div>
+                {{ currencyApi }}
+            </div>
+        </Container>
+    </WrapperReveal>
 </template>
 
 <script setup>
