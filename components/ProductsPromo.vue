@@ -1,5 +1,5 @@
 <template>
-    <WrapperSection ref="target" class="luna-reveal" :class="targetIsVisible && '_is-in-viewport'">
+    <WrapperSection ref="target" class="luna-reveal relative" :class="targetIsVisible && '_is-in-viewport'">
         <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
             <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                 <Container center padX class="">
@@ -59,6 +59,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import { watchOnce } from '@vueuse/core'
 
 const target = ref(null)
 const targetIsVisible = ref(false)
