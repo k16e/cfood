@@ -1,6 +1,6 @@
 export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart) => {
     const router = useRouter()
-    
+
     const proceedToPay = async () => {
         const supabase = useSupabaseClient()
 
@@ -22,6 +22,7 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                 .insert([
                     {
                         customer_name: order[0].customer_name,
+                        customer_email: order[0].email,
                         products: order[0].orders,
                         sub_total: order[0].subTotal,
                         total: order[0].total,
@@ -50,9 +51,9 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
             formStatus.sent.value = true
             store.$patch({ cart: [], order: [] })
             router.push({ path: '/shop/success' })
-            setTimeout(() => {
-                globalThis.location.reload()
-            }, 500);
+            // setTimeout(() => {
+            //     globalThis.location.reload()
+            // }, 500);
         }
     }
 
