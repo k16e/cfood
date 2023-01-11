@@ -6,7 +6,8 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
 
         formStatus.sending.value = true
         order.push({
-            customer_name: customer.customer_name.value,
+            first_name: customer.first_name.value,
+            last_name: customer.last_name.value,
             email: customer.email.value,
             phone: customer.phone.value,
             address: customer.address.value,
@@ -21,7 +22,8 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                 .from('customers')
                 .upsert([
                     {
-                        name: order[0].customer_name,
+                        first_name: order[0].first_name,
+                        last_name: order[0].last_name,
                         phone: order[0].phone,
                         email: order[0].email
                     }
@@ -30,7 +32,7 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                 .from('orders')
                 .insert([
                     {
-                        customer_name: order[0].customer_name,
+                        customer_name: order[0].first_name + order[0].last_name,
                         customer_email: order[0].email,
                         products: order[0].orders,
                         sub_total: order[0].subTotal,

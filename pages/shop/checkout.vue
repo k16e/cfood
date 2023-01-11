@@ -49,18 +49,22 @@
                                     <div>
                                         <Heading tag="h3" content="Contact info" class="text-lg font-sans font-medium mb-3"/>
                                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
-                                            <div>
-                                                <label for="customer_name" class="luna-label">Name:</label>
-                                                <input v-model="customer.customer_name.value" required type="text" id="customer_name" autocomplete="given-name" class="luna-input"/>
-                                            </div>
-                                            <div>
+                                            <p>
+                                                <label for="first_name" class="luna-label">First name:</label>
+                                                <input v-model="customer.first_name.value" required type="text" id="first_name" autocomplete="given-name" class="luna-input"/>
+                                            </p>
+                                            <p>
+                                                <label for="last_name" class="luna-label">Last name:</label>
+                                                <input v-model="customer.last_name.value" required type="text" id="last_name" autocomplete="given-name" class="luna-input"/>
+                                            </p>
+                                            <p>
                                                 <label for="email" class="luna-label">Email:</label>
                                                 <input v-model="customer.email.value" type="email" id="email" autocomplete="email" class="luna-input"/>
-                                            </div>
-                                            <div class="lg:col-span-2">
+                                            </p>
+                                            <p>
                                                 <label for="phone" class="luna-label">Phone number:</label>
                                                 <input v-model="customer.phone.value" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
-                                            </div>
+                                            </p>
                                         </div>
                                     </div>
 
@@ -122,7 +126,8 @@ await store.fetchShippingRates()
 const shippingRates = ref(store.shippingRates)
 const shipping = ref(shippingRates.value[0].price)
 const customer = {
-    customer_name: ref(''),
+    first_name: ref(''),
+    last_name: ref(''),
     email: ref(''),
     phone: ref(''),
     address: ref('')
