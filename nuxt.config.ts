@@ -45,6 +45,7 @@ export default defineNuxtConfig({
         },
         quality: 100,
         preload: true,
-        loading: 'lazy'
+        loading: 'lazy',
+        format: 'webp'
     }
 })
