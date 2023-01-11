@@ -1,10 +1,10 @@
 <template>
     <Container padX center>
         <!-- Product title -->
-        <HeaderPage tag="h1" :content="product.name">
+        <HeaderPage tag="h1" :content="product.name" isChildPage>
             <button @click="addToCart(product)" class="luna-btn _is-primary">
                 <Icon name="ri:shopping-cart-fill" size="18" class="mr-1.5"/>
-                <span v-text="'Add to cart'"/>
+                <span v-text="'Add to cart'" class="hidden lg:block"/>
             </button>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">

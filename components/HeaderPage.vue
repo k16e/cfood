@@ -1,6 +1,9 @@
 <template>
     <div class="flex items-center justify-between">
-        <Heading :tag="tag" :content="content" class="flex-1"/>
+        <div class="flex-1" :class="isChildPage && 'flex items-center gap-x-3 lg:gap-x-5'">
+            <BackButton v-if="isChildPage" class="translate-y-1"/>
+            <Heading :tag="tag" :content="content"/>
+        </div>
         <slot>
             <NuxtLink
                 v-if="link"
@@ -19,6 +22,7 @@ const props = defineProps({
     content: { type: String, default: 'Page heading' },
     link: { type: String, default: '/' },
     linkIcon: { type: String, default: 'ic:baseline-arrow-back' },
-    linkText: { type: String, default: 'Go back' }
+    linkText: { type: String, default: 'Go back' },
+    isChildPage: { type: Boolean, default: false }
 })
 </script>
