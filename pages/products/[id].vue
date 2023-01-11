@@ -1,8 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container center padX>
-            <ProductsOverview :product="product[0]"/>
-        </Container>
+        <ProductsOverview :product="product[0]"/>
     </WrapperReveal>
 </template>
 
