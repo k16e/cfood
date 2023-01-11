@@ -1,6 +1,6 @@
 <template>
     <NuxtLoadingIndicator :color="`#ea580c`"/>
-    <div class="flex flex-col min-h-screen overflow-x-hidden">
+    <div class="flex flex-col min-h-screen">
         <header class="p-3 fixed inset-x-0 top-0 h-16 bg-white border-b border-gray-200 z-30">
             <HeaderMain/>
         </header>
