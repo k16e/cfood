@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-between">
         <div class="flex-1" :class="isChildPage && 'flex items-center gap-x-3 lg:gap-x-5'">
-            <BackButton v-if="isChildPage" class="translate-y-1"/>
+            <BackToParent v-if="isChildPage" class="translate-y-1"/>
             <Heading :tag="tag" :content="content"/>
         </div>
         <slot>
