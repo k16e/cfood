@@ -7,5 +7,5 @@
 
 <script setup>
 const route = useRoute()
-const parentPath = route.matched[0].path.substring(0, (route.matched[0].path.length - 4))
+const parentPath = route.matched[0].path.split('/:')[0]
 </script>
