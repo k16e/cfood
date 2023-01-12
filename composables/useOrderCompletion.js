@@ -47,11 +47,15 @@ export const useOrderCompletion = () => {
             formStatus.sending.value = false
             if (order_error) throw order_error
             if (customer_error) throw customer_error
+
         } catch (err) { console.log(err) }
         finally {
             formStatus.sent.value = true
             store.$patch({ cart: [], order: [] })
             router.push({ path: '/shop/success' })
+            setTimeout(() => {
+                globalThis.location.reload()
+            }, 1000);
         }
     }
 
