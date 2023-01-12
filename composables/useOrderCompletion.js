@@ -1,9 +1,9 @@
-export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
+export const useOrderCompletion = () => {
     const router = useRouter()
-    const completeOrder = async () => {
+    const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
         const supabase = useSupabaseClient()
 
-        console.log(reference)
+        console.log(reference.toUpperCase())
         formStatus.sending.value = true
         order.push({
             first_name: customer.first_name.value,
@@ -16,7 +16,7 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
             orders: cart,
             subTotal: subTotal,
             total: (subTotal + shipping.value),
-            reference: reference
+            reference: reference.toUpperCase()
         })
         try {
             const { data: customer_data, error: customer_error } = await supabase
@@ -41,7 +41,7 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                         delivery_address: order[0].address,
                         delivery_zone: order[0].shippingZone,
                         shipping: order[0].shipping,
-                        reference: order[0].reference
+                        reference: order[0].reference.toUpperCase()
                     }
                 ])
 

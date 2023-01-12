@@ -147,6 +147,9 @@ let formStatus = {
     errorMessage: ref(null)
 }
 const order = store.order
+const { completeOrder } = useOrderCompletion(
+
+            )
 
 const proceedToPay = () => {
     let handler = PaystackPop.setup({
@@ -157,9 +160,7 @@ const proceedToPay = () => {
         ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
         callback: response => {
             let reference = response.reference
-            const { completeOrder } = useOrderCompletion(
-                formStatus, order, customer, shippingRates, subTotal, store, cart, reference
-            )
+            completeOrder(formStatus, order, customer, shippingRates, subTotal, store, cart, reference)
         },
         onClose: () => {
             alert(`Sure you want to dismiss this transaction?`)
