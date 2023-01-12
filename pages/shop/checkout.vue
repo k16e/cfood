@@ -161,8 +161,9 @@ const proceedToPay = () => {
                 formStatus, order, customer, shippingRates, subTotal, store, cart, reference
             )
         },
-        onClose: () => {
+        onClose: (cancel) => {
             alert(`Sure you want to dismiss this transaction?`)
+            console.log(`Transaction was canceled`, cancel)
         }
     });
     handler.openIframe()
