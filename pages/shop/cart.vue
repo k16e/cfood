@@ -11,7 +11,7 @@
 
             <ClientOnly>
                 <div class="pt-5">
-                    <div v-if="cart.length >= 1" class="bg-white px-3 sm:px-5 rounded-xl border border-gray-200">
+                    <div v-if="cart.length" class="bg-white px-3 sm:px-5 rounded-xl border border-gray-200">
                         <form
                             @submit.prevent="proceedToCheckout()"
                             class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
@@ -117,9 +117,9 @@
                         </form>
                     </div>
 
-                    <p v-else>
-                        You have yet to add any item to your cart. Please continue shopping at
-                        <NuxtLink to="/products">the Products page.</NuxtLink>
+                    <p v-else class="">
+                        You have yet to add any item to your cart. Please continue shopping
+                        <NuxtLink to="/products">our Products.</NuxtLink>
                     </p>
                 </div>
             </ClientOnly>

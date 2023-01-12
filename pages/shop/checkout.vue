@@ -3,7 +3,7 @@
         <Container padX center>
             <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
             <ClientOnly>
-                <div class="pt-5 overflow-x-hidden">
+                <div v-if="cart.length" class="pt-5 overflow-x-hidden">
                     <div class="bg-white rounded-xl border border-gray-200 relative overflow-x-hidden">
                         <!-- Background color split screen for large screens -->
                         <div class="absolute top-0 left-0 hidden h-full w-1/2 bg-white lg:block" aria-hidden="true"/>
@@ -109,6 +109,10 @@
                         </div>
                     </div>
                 </div>
+                <p v-else>
+                    You have no items to checkout yet. Please continue shopping
+                    <NuxtLink to="/products">our Products.</NuxtLink>
+                </p>
             </ClientOnly>
         </Container>
     </WrapperReveal>
