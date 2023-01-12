@@ -117,7 +117,7 @@
                         </form>
                     </div>
 
-                    <p v-else class="">
+                    <p v-else class="text-xl">
                         You have yet to add any item to your cart. Please continue shopping
                         <NuxtLink to="/products">our Products.</NuxtLink>
                     </p>

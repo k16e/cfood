@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <p v-else>
+                <p v-else class="text-xl">
                     You have no items to checkout yet. Please continue shopping
                     <NuxtLink to="/products">our Products.</NuxtLink>
                 </p>
