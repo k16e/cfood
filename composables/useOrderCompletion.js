@@ -15,7 +15,8 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
             shippingZone: (shippingRates.value.find(el => el.price == shipping.value).distance),
             orders: cart,
             subTotal: subTotal,
-            total: (subTotal + shipping.value)
+            total: (subTotal + shipping.value),
+            reference: reference
         })
         try {
             const { data: customer_data, error: customer_error } = await supabase
@@ -40,7 +41,7 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                         delivery_address: order[0].address,
                         delivery_zone: order[0].shippingZone,
                         shipping: order[0].shipping,
-                        reference: reference
+                        reference: order[0].reference
                     }
                 ])
 
