@@ -22,7 +22,7 @@
         <div class="flex items-center space-x-3">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
-            <ProductsUserLink/>
+            <ProductsUserMenu/>
         </div>
     </Container>
 </template>
