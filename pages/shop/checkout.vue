@@ -151,7 +151,7 @@ let formStatus = {
     errorMessage: ref(null)
 }
 const order = store.order
-const { completeOrder } = await useOrderCompletion()
+const { completeOrder } = useOrderCompletion()
 
 const proceedToPay = () => {
     let handler = PaystackPop.setup({
