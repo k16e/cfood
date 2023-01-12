@@ -1,9 +1,9 @@
 export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
     const router = useRouter()
-
     const completeOrder = async () => {
         const supabase = useSupabaseClient()
 
+        console.log(reference)
         formStatus.sending.value = true
         order.push({
             first_name: customer.first_name.value,
