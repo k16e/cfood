@@ -1,7 +1,6 @@
 export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
     const router = useRouter()
 
-    console.log(reference)
     const completeOrder = async () => {
         const supabase = useSupabaseClient()
 

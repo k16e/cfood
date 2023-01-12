@@ -155,14 +155,14 @@ const proceedToPay = () => {
         amount: (subTotal + shipping.value) * 100,
         currency: 'NGN',
         ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
-        callback: function (response) {
+        callback: response => {
             let reference = response.reference
             const { completeOrder } = useOrderCompletion(
                 formStatus, order, customer, shippingRates, subTotal, store, cart, reference
             )
         },
-        onClose: function () {
-            alert("Transaction was not completed, window closed.")
+        onClose: () => {
+            alert(`Sure you want to dismiss this transaction?`)
         }
     });
     handler.openIframe()
