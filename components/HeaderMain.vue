@@ -5,7 +5,7 @@
             <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5">
                 <HeaderLogo/>
             </NuxtLink>
-            <nav class="sr-only md:not-sr-only flex !h-[95%] items-center">
+            <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <ul class="flex items-center h-full w-full space-x-3">
                     <li v-for="(route, idx) in routes" :key="route.title + idx" class="flex items-center h-full">
@@ -21,6 +21,7 @@
         </div>
         <div class="flex items-center space-x-3">
             <ProductsWishlistLink/>
+            <ProductsUserLink/>
             <ProductsCartLink/>
         </div>
     </Container>
