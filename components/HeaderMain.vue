@@ -21,8 +21,8 @@
         </div>
         <div class="flex items-center space-x-3">
             <ProductsWishlistLink/>
-            <ProductsUserLink/>
             <ProductsCartLink/>
+            <ProductsUserLink/>
         </div>
     </Container>
 </template>

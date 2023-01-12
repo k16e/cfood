@@ -1,10 +1,10 @@
 <template>
     <button
-        class="luna-btn luna-turn-off-active relative">
-        <Icon name="ri:user-smile-fill" size="24" class="text-red-600"/>
-        <span class="sr-only lg:not-sr-only lg:ml-1.5 flex items-center">
-            <span v-text="`Hey, me!`"/>
-            <Icon name="ic:baseline-arrow-drop-down" size="20" class="text-red-600 -mr-1.5"/>
+        class="luna-btn _is-padless border-none relative">
+        <Icon name="ri:user-smile-fill" size="32" class="text-red-600"/>
+        <span class="flex items-center p-1.5">
+            <span v-text="`Hey, me!`" class="sr-only lg:not-sr-only"/>
+            <Icon name="ic:baseline-arrow-drop-down" size="22" class="text-red-600 -mr-1.5"/>
         </span>
     </button>
 </template>
