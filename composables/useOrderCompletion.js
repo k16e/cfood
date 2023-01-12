@@ -1,7 +1,8 @@
-export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart) => {
+export const useOrderCompletion = (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
     const router = useRouter()
 
-    const proceedToPay = async () => {
+    console.log(reference)
+    const completeOrder = async () => {
         const supabase = useSupabaseClient()
 
         formStatus.sending.value = true
@@ -39,7 +40,8 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
                         total: order[0].total,
                         delivery_address: order[0].address,
                         delivery_zone: order[0].shippingZone,
-                        shipping: order[0].shipping
+                        shipping: order[0].shipping,
+                        reference: reference
                     }
                 ])
 
@@ -59,5 +61,5 @@ export const useOrderCompletion = (formStatus, order, customer, shippingRates, s
         }
     }
 
-    return { proceedToPay }
+    return { completeOrder }
 }

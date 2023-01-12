@@ -118,6 +118,14 @@
 import { useProductsStore } from '@/stores/products'
 import { ref } from 'vue'
 
+const config = useRuntimeConfig()
+
+useHead({
+    script: [
+        { src: 'https://js.paystack.co/v1/inline.js', async: true }
+    ]
+})
+
 const store = useProductsStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
@@ -140,7 +148,23 @@ let formStatus = {
 }
 const order = store.order
 
-const { proceedToPay } = useOrderCompletion(
-    formStatus, order, customer, shippingRates, subTotal, store, cart
-)
+const proceedToPay = () => {
+    let handler = PaystackPop.setup({
+        key: config.pKey,
+        email: email.value,
+        amount: (subTotal + shipping.value) * 100,
+        currency: 'NGN',
+        ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
+        callback: function (response) {
+            let reference = response.reference
+            const { completeOrder } = useOrderCompletion(
+                formStatus, order, customer, shippingRates, subTotal, store, cart, reference
+            )
+        },
+        onClose: function () {
+            alert("Transaction was not completed, window closed.")
+        }
+    });
+    handler.openIframe()
+}
 </script>
