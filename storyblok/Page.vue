@@ -1,0 +1,13 @@
+<template>
+  <div v-editable="blok" class="" data-test="page">
+    <StoryblokComponent
+        v-for="blok in blok.body"
+        :key="blok._uid"
+        :blok="blok"
+    />
+  </div>
+</template>
+
+<script setup>
+const props = defineProps({ blok: Object })
+</script>

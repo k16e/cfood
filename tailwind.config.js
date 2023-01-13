@@ -1,4 +1,11 @@
 module.exports = {
+    content: [
+        './components/**/*.{js,vue,ts}',
+        './storyblok/**/*.{js,vue,ts}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}'
+    ],
     theme: {
         extend: {
             fontFamily: {

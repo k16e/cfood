@@ -1,4 +1,4 @@
-import currencyApi from "./server/api/currencyApi";
+import { apiPlugin } from '@storyblok/vue'
 
 export default defineNuxtConfig({
     modules: [
@@ -11,7 +11,11 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@vueuse/nuxt',
         '@nuxt/image-edge',
-        '@vueuse/nuxt'
+        '@vueuse/nuxt',
+        ['@storyblok/nuxt', {
+            accessToken: process.env.STORYBLOK_KEY, bridge: true, use: [apiPlugin],
+            apiOtions: { region: 'EU' }
+        }]
     ],
     app: {
         head: {
