@@ -8,7 +8,7 @@
                             <Heading tag="h1" :content="blok.title"/>
                         </div>
                         <div
-                            v-html="renderer.render(blok.body)"
+                            v-html="$mdRender.render(blok.body)"
                             class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-none"
                         />
                     <div class="mt-9 lg:mt-12">
@@ -28,7 +28,5 @@
 </template>
 
 <script setup>
-import md from 'markdown-it'
 const props = defineProps({ blok: Object })
-const renderer = md()
 </script>

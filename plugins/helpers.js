@@ -1,3 +1,4 @@
+import md from 'markdown-it'
 export default defineNuxtPlugin(nuxtApp => {
     return {
         provide: {
@@ -12,7 +13,8 @@ export default defineNuxtPlugin(nuxtApp => {
                 return formattedPrice
             },
             slugify: str => _kebabCase(str.replace(/&/g, '-and-')),
-            isEmpty: str => _isEmpty(str)
+            isEmpty: str => _isEmpty(str),
+            mdRender: md()
         }
     }
 })
