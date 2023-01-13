@@ -2,7 +2,7 @@
     <NuxtLink
         to="/shop/cart"
         class="luna-btn luna-turn-off-active">
-        <Icon name="ri:shopping-cart-fill" size="22" class="mr-1.5 text-orange-700"/>
+        <Icon name="ri:shopping-cart-fill" size="22" class="mr-1.5"/>
         <span class="flex items-center">
             <span v-text="`Cart`" class="hidden lg:block mr-1"/>
             <ClientOnly>
