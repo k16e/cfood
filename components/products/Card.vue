@@ -31,7 +31,7 @@
         <button
             @click="addToCart(product)"
             class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
-            <Icon name="ri:shopping-cart-fill" size="18" class="!text-white"/>
+            <Icon name="ri:shopping-cart-fill" size="18"/>
             <span v-text="'Add to cart'" class="sr-only"/>
         </button>
     </div>
