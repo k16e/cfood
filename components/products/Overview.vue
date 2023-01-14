@@ -1,5 +1,5 @@
 <template>
-    <Container padX center>
+    <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
             <button @click="addToCart(product)" class="luna-btn _is-primary">
