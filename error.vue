@@ -13,12 +13,10 @@
 </template>
 
 <script setup>
-    const props = defineProps({
-        error: Object
-    })
+    const props = defineProps({ error: Object })
     // customise 404 message from script section
     const error = useError()
-    if (error.value.statusCode === 404) {
+    if (props.error.statusCode === 404 || props.error.statusCode === 500) {
         error.value.message = 'Oops! Page not found 😔';
     }
     const handleError = () => clearError({ redirect: '/' })

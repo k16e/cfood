@@ -11,14 +11,14 @@
                             v-html="$mdRender.render(blok.body)"
                             class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-none"
                         />
-                    <div class="mt-9 lg:mt-12">
+                    <div v-if="!$isEmpty(blok.link) || blok.link[0].cached_url" class="mt-9 lg:mt-12">
                         <NuxtLink :to="blok.link[0].link.cached_url" class="luna-btn text-gray-600 font-medium">
                             <Icon name="ic:baseline-shopping-basket" size="22" class="mr-1.5 text-orange-700"/>
                             <span v-text="blok.link[0].title"/>
                         </NuxtLink>
                     </div>
                     </div>
-                    <figure class="md:order-2">
+                    <figure v-if="!$isEmpty(blok.media) || blok.media[0].file.filename" class="md:order-2">
                         <NuxtImg
                             v-if="$mediaType((blok.media[0].file.filename), 'image')"
                             :src="blok.media[0].file.filename"

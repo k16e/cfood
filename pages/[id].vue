@@ -1,20 +1,15 @@
 <template>
     <WrapperReveal>
         <Container center padX>
-            <div>
-                {{ myData }}
-            </div>
-            <div>
-                {{ currencyApi }}
-            </div>
+            <pre>
+                {{ story }}
+            </pre>
         </Container>
     </WrapperReveal>
 </template>
 
 <script setup>
-    const { data: myData } = await useFetch('/api/bioData?name=KB', {
-        method: 'post',
-        body: { age: 30 }
-    })
-    const { data: currencyApi } = await useFetch('/api/currencyApi')
+const config = useRuntimeConfig()
+const route = useRoute()
+const story = await useAsyncStoryblok(`pages${route.path}`, { version: 'draft' })
 </script>
