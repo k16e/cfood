@@ -53,11 +53,11 @@ export const useOrderCompletion = () => {
             formStatus.sent.value = true
             store.$patch({
                 cart: [],
-                // order: []
+                order: []
             })
             route.push({ path: '/shop/success' })
             setTimeout(() => {
-                // globalThis.location.reload()
+                globalThis.location.reload()
             }, 1000);
         }
     }
