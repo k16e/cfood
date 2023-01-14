@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container padX center>
+        <Container padX center padTGrow>
             <div v-editable="blok" data-test="media-split">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-12 sm:gap-14">
                     <div class="lg:col-span-2 order-2 md:order-1">

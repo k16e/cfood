@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container padX center>
+        <Container padX center padTGrow>
             <div class="flex items-center justify-between">
                 <Heading tag="h1" content="Your cart!"/>
                 <NuxtLink to="/products" class="luna-btn text-gray-700">

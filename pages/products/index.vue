@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container center padX>
+        <Container center padX padTGrow>
             <div class="flex items-center justify-between">
                 <Heading tag="h1" content="Our products"/>
             </div>

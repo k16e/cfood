@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container padX center>
+        <Container padX center padTGrow>
             <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
             <ClientOnly>
                 <div v-if="cart.length" class="pt-5 overflow-x-hidden">

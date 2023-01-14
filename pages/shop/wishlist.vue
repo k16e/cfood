@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container padX center>
+        <Container padX center padTGrow>
             <HeaderPage
                 tag="h1" content="Your wishlist!"
                 link="/products" linkIcon="ic:baseline-arrow-back"

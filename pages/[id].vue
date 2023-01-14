@@ -1,6 +1,6 @@
 <template>
     <WrapperReveal>
-        <Container center padX>
+        <Container center padX padTGrow>
             <pre>
                 {{ story }}
             </pre>
