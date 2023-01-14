@@ -3,7 +3,9 @@
         <NuxtLink
             :to="`/products/${$slugify(product.name)}-${product.sku}`"
             class="flex flex-col rounded-xl h-full">
-            <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
+            <figure class="p-5 flex items-center justify-center">
+                <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
+            </figure>
             <div class="p-3 border-t border-gray-100 h-full flex flex-col justify-between">
                 <div class="pr-14">
                     <Heading tag="h2" :content="product.name"/>
@@ -29,7 +31,7 @@
         <button
             @click="addToCart(product)"
             class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
-            <Icon name="ri:shopping-cart-fill" size="18" class="pointer-events-none"/>
+            <Icon name="ri:shopping-cart-fill" size="18" class="!text-white"/>
             <span v-text="'Add to cart'" class="sr-only"/>
         </button>
     </div>
