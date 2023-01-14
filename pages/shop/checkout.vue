@@ -18,7 +18,7 @@
                                     <dl>
                                         <dt class="text-sm font-medium">Amount due</dt>
                                         <dd class="mt-1.5 text-3xl font-bold tracking-tight text-orange-700">
-                                            {{ $formatPrice(subTotal) }}
+                                            {{ $formatPrice(subTotal + shipping) }}
                                         </dd>
                                     </dl>
                                     <dl class="space-y-5 border-t border-white border-opacity-10 pt-5 text-sm font-medium">
@@ -137,6 +137,7 @@ const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 await store.fetchShippingRates()
 const shippingRates = ref(store.shippingRates)
 const shipping = ref(shippingRates.value[0].price)
+
 const customer = {
     first_name: ref(''),
     last_name: ref(''),
@@ -162,7 +163,7 @@ const proceedToPay = () => {
         ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
         callback: response => {
             let reference = response.reference
-            completeOrder(formStatus, order, customer, shippingRates, subTotal, store, cart, reference)
+            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, store, cart, reference)
         },
         onClose: () => {
             alert(`Sure you want to dismiss this transaction?`)

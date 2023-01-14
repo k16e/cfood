@@ -1,6 +1,6 @@
 export const useOrderCompletion = () => {
-    const router = useRouter()
-    const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, store, cart, reference) => {
+    const route = useRouter()
+    const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, shipping, store, cart, reference) => {
         const supabase = useSupabaseClient()
 
         formStatus.sending.value = true
@@ -14,7 +14,7 @@ export const useOrderCompletion = () => {
             shippingZone: (shippingRates.value.find(el => el.price == shipping.value).distance),
             orders: cart,
             subTotal: subTotal,
-            total: (subTotal + shipping.value),
+            total: subTotal + shipping.value,
             reference: reference.toUpperCase()
         })
         try {
@@ -51,8 +51,11 @@ export const useOrderCompletion = () => {
         } catch (err) { console.log(err) }
         finally {
             formStatus.sent.value = true
-            store.$patch({ cart: [], order: [] })
-            router.push({ path: '/shop/success' })
+            store.$patch({
+                cart: [],
+                // order: []
+            })
+            route.push({ path: '/shop/success' })
             setTimeout(() => {
                 // globalThis.location.reload()
             }, 1000);
