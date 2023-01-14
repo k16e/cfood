@@ -5,7 +5,10 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const story = await useAsyncStoryblok(`pages`, { version: config.STORYBLOK_VERSION })
+const story = await useAsyncStoryblok(`pages`, {
+    version: 'draft',
+    resolve_links: 'url'
+})
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
