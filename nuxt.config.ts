@@ -13,7 +13,8 @@ export default defineNuxtConfig({
         '@nuxt/image-edge',
         '@vueuse/nuxt',
         ['@storyblok/nuxt', {
-            accessToken: process.env.STORYBLOK_KEY
+            accessToken: process.env.STORYBLOK_KEY,
+            cache: { clear: 'auto', type: 'memory' }
         }]
     ],
     app: {

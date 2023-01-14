@@ -63,7 +63,7 @@
                                                                 :value="item.qty"
                                                                 min="1"
                                                                 max="9"
-                                                                class="outline-none focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 outline-none border-0 border-y-2 border-gray-200" disabled>
+                                                                class="focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 border-0 border-y-2 border-gray-200" disabled>
                                                             <button
                                                                 @click="increment($event, item)"
                                                                 type="button"
