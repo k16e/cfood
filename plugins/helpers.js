@@ -14,7 +14,12 @@ export default defineNuxtPlugin(nuxtApp => {
             },
             slugify: str => _kebabCase(str.replace(/&/g, '-and-')),
             isEmpty: str => _isEmpty(str),
-            mdRender: md()
+            mdRender: md(),
+            mediaType: (file, type) => {
+                const imageRegexp = /[\/.](gif|jpg|jpeg|tiff|png)$/i
+                type = type.toLowerCase()
+                if (imageRegexp.test(file)) return (type = 'image')
+            }
         }
     }
 })

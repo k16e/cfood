@@ -12,14 +12,19 @@
                             class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-none"
                         />
                     <div class="mt-9 lg:mt-12">
-                        <NuxtLink to="/products" class="luna-btn text-gray-600 font-medium">
+                        <NuxtLink :to="blok.link[0].link.cached_url" class="luna-btn text-gray-600 font-medium">
                             <Icon name="ic:baseline-shopping-basket" size="22" class="mr-1.5 text-orange-700"/>
-                            <span>Shop our products</span>
+                            <span v-text="blok.link[0].title"/>
                         </NuxtLink>
                     </div>
                     </div>
                     <figure class="md:order-2">
-                        <img src="/logo.png" alt="">
+                        <NuxtImg
+                            v-if="$mediaType((blok.media[0].file.filename), 'image')"
+                            :src="blok.media[0].file.filename"
+                            :alt="blok.media[0].file.alt"
+                            preset="medium"
+                        />
                     </figure>
                 </div>
             </div>
