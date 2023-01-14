@@ -54,7 +54,7 @@ export const useOrderCompletion = () => {
             store.$patch({ cart: [], order: [] })
             router.push({ path: '/shop/success' })
             setTimeout(() => {
-                globalThis.location.reload()
+                // globalThis.location.reload()
             }, 1000);
         }
     }
