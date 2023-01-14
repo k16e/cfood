@@ -15,5 +15,4 @@ const story = await useAsyncStoryblok(`pages${route.path}`, {
     version: config.storyblokVersion,
     resolve_links: 'story'
 })
-console.log(route)
 </script>
