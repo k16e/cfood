@@ -6,7 +6,7 @@
 <script setup>
 const config = useRuntimeConfig()
 const story = await useAsyncStoryblok(`pages`, {
-    version: 'draft',
+    version: config.storyblokVersion,
     resolve_links: 'url'
 })
 

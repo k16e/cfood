@@ -11,5 +11,8 @@
 <script setup>
 const config = useRuntimeConfig()
 const route = useRoute()
-const story = await useAsyncStoryblok(`pages${route.path}`, { version: 'draft' })
+const story = await useAsyncStoryblok(`pages${route.path}`, {
+    version: config.storyblokVersion,
+    resolve_links: 'story'
+})
 </script>

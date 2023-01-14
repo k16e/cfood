@@ -155,7 +155,7 @@ const { completeOrder } = useOrderCompletion()
 
 const proceedToPay = () => {
     let handler = PaystackPop.setup({
-        key: config.pKey,
+        key: config.paystackKey,
         email: email.value,
         amount: (subTotal + shipping.value) * 100,
         currency: 'NGN',
