@@ -4,7 +4,8 @@
 </template>
 
 <script setup>
-const story = await useStoryblok('pages', { version: 'draft' })
+const config = useRuntimeConfig()
+const story = await useStoryblok('pages', { version: config.STORYBLOK_VERSION })
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
     meta: [
