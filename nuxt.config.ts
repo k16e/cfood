@@ -41,7 +41,10 @@ export default defineNuxtConfig({
     },
     css: ['@/assets/css/fonts.css'],
     image: {
-        domains: ['https://spidltwerguofvsjkzqn.supabase.co', 'https://a.storyblok.com'],
+        domains: [
+            'https://spidltwerguofvsjkzqn.supabase.co',
+            'https://a.storyblok.com'
+        ],
         presets: {
             thumbnail: { modifiers: { width: 360, height: 360 } },
             medium: { modifiers: { width: 960, height: 960 } },
