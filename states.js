@@ -1,4 +1,4 @@
-export const useProductsStore = defineStore('productsStore', {
+export const useStateStore = defineStore('stateStore', {
     state: () => ({
         products: [],
         cart: [],

@@ -14,8 +14,8 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '@/stores/products'
+import { useStateStore } from '@/states.js'
 
-const store = useProductsStore()
+const store = useStateStore()
 const wishlist = store.wishlist
 </script>

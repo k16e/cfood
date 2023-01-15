@@ -128,9 +128,9 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '@/stores/products'
+import { useStateStore } from '@/states.js'
 
-const store = useProductsStore()
+const store = useStateStore()
 const cart = store.cart
 
 let subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)

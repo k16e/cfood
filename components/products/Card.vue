@@ -38,11 +38,11 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '../../stores/products'
+import { useStateStore } from '@/states'
 
 const { product } = defineProps(['product'])
 
-const store = useProductsStore()
+const store = useStateStore()
 const addToCart = store.addToCart
 const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist

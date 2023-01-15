@@ -78,9 +78,9 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '@/stores/products'
+import { useStateStore } from '@/states.js'
 
-const store = useProductsStore()
+const store = useStateStore()
 const wishlist = store.wishlist
 const removeFromWishlist = (e, itemIdx) => wishlist.splice(itemIdx, 1)
 const addToCart = store.addToCart

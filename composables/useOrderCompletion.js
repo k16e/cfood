@@ -57,7 +57,8 @@ export const useOrderCompletion = () => {
             })
             route.push({ path: '/shop/success' })
             setTimeout(() => {
-                globalThis.location.reload()
+                console.log('Purchase complete. You may refresh this page. Thanks')
+                // globalThis.location.reload()
             }, 1000);
         }
     }

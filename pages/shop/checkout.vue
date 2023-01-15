@@ -119,7 +119,7 @@
 </template>
 
 <script setup>
-import { useProductsStore } from '@/stores/products'
+import { useStateStore } from '@/states.js'
 import { ref } from 'vue'
 
 const config = useRuntimeConfig()
@@ -130,7 +130,7 @@ useHead({
     ]
 })
 
-const store = useProductsStore()
+const store = useStateStore()
 const cart = store.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
