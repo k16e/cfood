@@ -1,6 +1,5 @@
 <template>
     <StoryblokComponent v-if="story" :blok="story.content"/>
-    <ProductsPromo/>
 </template>
 
 <script setup>

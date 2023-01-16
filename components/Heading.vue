@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :class="classes[tag] + ' font-display text-orange-700 !leading-normal'">
+        :class="`${classes[tag]} ${font} ${color} ${weight} text-orange-700 !leading-normal`">
         <slot>
             {{ content }}
         </slot>
@@ -11,7 +11,10 @@
 <script setup>
 const props = defineProps({
     tag: { type: String, default: 'h2' },
-    content: { type: String }
+    content: { type: String },
+    font: { type: String, default: 'font-display' },
+    color: { type: String, default: 'text-orange-700' },
+    weight: { type: String, default: 'font-normal' },
 })
 const classes = computed(() => ({
     h1: 'text-4xl lg:text-5xl',
