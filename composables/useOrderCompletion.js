@@ -1,8 +1,9 @@
+import { bypassRls } from '@/server/api/utils'
+
 export const useOrderCompletion = () => {
     const route = useRouter()
+    const supabase = useSupabaseClient()
     const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, shipping, store, cart, reference) => {
-        const supabase = useSupabaseClient()
-
         formStatus.sending.value = true
         order.push({
             first_name: customer.first_name.value,

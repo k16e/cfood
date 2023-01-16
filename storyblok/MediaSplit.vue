@@ -12,9 +12,12 @@
                             class="prose prose-xl lg:prose-2xl leading-normal lg:leading-snug italic max-w-none"
                         />
                     <div v-if="!$isEmpty(blok.link) || blok.link[0].cached_url" class="mt-9 lg:mt-12">
-                        <NuxtLink :to="blok.link[0].link.cached_url" class="luna-btn text-gray-600 font-medium">
+                        <NuxtLink
+                            v-for="item in blok.link" :key="item._uid"
+                            :to="item.link.cached_url"
+                            class="luna-btn text-gray-600 font-medium">
                             <Icon name="ic:baseline-shopping-basket" size="22" class="mr-1.5 text-orange-700"/>
-                            <span v-text="blok.link[0].title"/>
+                            <span v-text="item.title"/>
                         </NuxtLink>
                     </div>
                     </div>

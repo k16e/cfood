@@ -1,5 +1,3 @@
-import { apiPlugin } from '@storyblok/vue'
-
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/color-mode',
@@ -31,6 +29,8 @@ export default defineNuxtConfig({
     runtimeConfig: { // configs (key) exposed to server routes
         currencyKey: process.env.CURRENCY_API_KEY,
         storyblokKey: process.env.STORYBLOK_KEY,
+        serviceKey: process.env.SUPABASE_SERVICE_KEY,
+        supabaseUrl: process.env.SUPABASE_URL,
         public: { // Keys that may/can be exposed to public routes
             paystackKey: process.env.PAYSTACK_KEY,
             storyblokVersion: process.env.STORYBLOK_VERSION
