@@ -49,7 +49,8 @@ export default defineNuxtConfig({
         ],
         presets: {
             thumbnail: { modifiers: { width: 360, height: 360 } },
-            medium: { modifiers: { width: 960, height: 960 } },
+            medium: { modifiers: { width: 768, height: 768 } },
+            small: { modifiers: { width: 576, height: 576 } },
         },
         quality: 100,
         preload: true,
