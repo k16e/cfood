@@ -1,8 +1,8 @@
 <template>
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
-        <div class="flex items-center h-full">
-            <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5">
+        <div class="flex items-center h-full translate-y-3">
+            <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
                 <HeaderLogo/>
             </NuxtLink>
             <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
