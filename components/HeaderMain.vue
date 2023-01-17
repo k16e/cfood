@@ -11,7 +11,7 @@
                     <li v-for="(route, idx) in routes" :key="route.title + idx" class="flex items-center h-full">
                         <NuxtLink
                             :to="route.path"
-                            class="flex items-center h-full px-3 rounded-full focus:bg-orange-50 hover:bg-orange-50"
+                            class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50"
                             :class="{ 'parent-active': isParentRoute(route.path) }">
                             {{ route.title }}
                         </NuxtLink>
