@@ -24,8 +24,8 @@
                                 <div class="ml-24 flex min-w-max space-x-5 sm:ml-3 lg:space-x-7">
                                     <div class="flex space-x-5 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
-                                            :src="blok.tiles[5].file.filename"
-                                            :alt="blok.tiles[5].file.alt"
+                                            :src="blok.tiles[3].file.filename"
+                                            :alt="blok.tiles[3].file.alt"
                                             preset="small"
                                         />
                                         <NuxtImg
@@ -36,8 +36,8 @@
                                     </div>
                                     <div class="flex space-x-5 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
-                                            :src="blok.tiles[3].file.filename"
-                                            :alt="blok.tiles[3].file.alt"
+                                            :src="blok.tiles[5].file.filename"
+                                            :alt="blok.tiles[5].file.alt"
                                             preset="small"
                                         />
                                         <NuxtImg
