@@ -20,41 +20,41 @@
                                 </div>
                             </div>
 
-                            <div class="absolute -top-32 left-1/2 -translate-x-1/2 transform sm:top-6 sm:translate-x-0">
-                                <div class="ml-24 flex min-w-max space-x-6 sm:ml-3 lg:space-x-8">
-                                    <div class="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                            <div class="absolute -top-24 left-1/2 -translate-x-1/2 transform sm:top-7 sm:translate-x-0">
+                                <div class="ml-24 flex min-w-max space-x-5 sm:ml-3 lg:space-x-7">
+                                    <div class="flex space-x-5 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
-                                            :src="blok.tiles[0].file.filename"
-                                            :alt="blok.tiles[0].file.alt"
+                                            :src="blok.tiles[5].file.filename"
+                                            :alt="blok.tiles[5].file.alt"
                                             preset="small"
                                         />
-                                        <NuxtImg
-                                            :src="blok.tiles[1].file.filename"
-                                            :alt="blok.tiles[1].file.alt"
-                                            preset="small"
-                                        />
-                                    </div>
-                                    <div class="flex space-x-6 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
-                                        <NuxtImg
-                                            :src="blok.tiles[2].file.filename"
-                                            :alt="blok.tiles[2].file.alt"
-                                            preset="small"
-                                        />
-                                        <NuxtImg
-                                            :src="blok.tiles[3].file.filename"
-                                            :alt="blok.tiles[3].file.alt"
-                                            preset="small"
-                                        />
-                                    </div>
-                                    <div class="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
                                         <NuxtImg
                                             :src="blok.tiles[4].file.filename"
                                             :alt="blok.tiles[4].file.alt"
                                             preset="small"
                                         />
+                                    </div>
+                                    <div class="flex space-x-5 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
-                                            :src="blok.tiles[5].file.filename"
-                                            :alt="blok.tiles[5].file.alt"
+                                            :src="blok.tiles[3].file.filename"
+                                            :alt="blok.tiles[3].file.alt"
+                                            preset="small"
+                                        />
+                                        <NuxtImg
+                                            :src="blok.tiles[2].file.filename"
+                                            :alt="blok.tiles[2].file.alt"
+                                            preset="small"
+                                        />
+                                    </div>
+                                    <div class="flex space-x-5 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
+                                        <NuxtImg
+                                            :src="blok.tiles[1].file.filename"
+                                            :alt="blok.tiles[1].file.alt"
+                                            preset="small"
+                                        />
+                                        <NuxtImg
+                                            :src="blok.tiles[0].file.filename"
+                                            :alt="blok.tiles[0].file.alt"
                                             preset="small"
                                         />
                                     </div>
@@ -73,6 +73,6 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-    img { @apply h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 flex-shrink-0; }
-    img + img { @apply mt-7 sm:mt-0; }
+    img { @apply h-48 w-48 rounded-2xl object-cover md:h-72 md:w-72 flex-shrink-0; }
+    img + img { @apply mt-7 md:mt-0; }
 </style>
