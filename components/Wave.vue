@@ -15,7 +15,7 @@
 
 <script setup>
 const props = defineProps({
-    fill: { type: String, default: '#fff' },
+    fill: { type: String, default: '#f2f2f2' },
     stroke: { type: Boolean, default: true }
 })
 </script>
