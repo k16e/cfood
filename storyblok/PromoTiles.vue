@@ -14,7 +14,7 @@
                 />
                 <div class="bg-gradient-to-r from-orange-500 to-orange-800">
                     <Container center padX>
-                        <div class="relative min-h-[480px] sm:min-h-[528px] md:min-h-[640px] flex items-center">
+                        <div class="relative min-h-[480px] sm:min-h-[528px] md:min-h-[600px] flex items-center">
                             <div class="text-center flex flex-col items-center w-full sm:text-left sm:block sm:-translate-y-7">
                                 <Heading tag="h2" font="font-sans" color="text-white" weight="font-bold"
                                     class="text-4xl md:text-5xl lg:text-6xl !leading-none">
@@ -30,8 +30,8 @@
                                 </div>
                             </div>
 
-                            <div class="absolute -top-24 left-1/2 -translate-x-1/2 transform sm:top-7 sm:translate-x-0 z-[2]">
-                                <div class="ml-24 flex min-w-max space-x-5 sm:ml-3 lg:space-x-7">
+                            <div class="absolute -top-24 left-[45%] -translate-x-[45%] transform sm:top-7 sm:translate-x-0 z-[2]">
+                                <div class="ml-9 flex min-w-max space-x-5 sm:ml-3 lg:space-x-7">
                                     <div class="flex space-x-5 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
                                             :src="blok.tiles[3].file.filename"
@@ -83,6 +83,6 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-    img { @apply h-48 w-48 rounded-2xl object-cover md:h-72 md:w-72 flex-shrink-0; }
+    img { @apply h-48 w-48 rounded-2xl object-cover md:h-64 md:w-64 flex-shrink-0; }
     img + img { @apply mt-7 md:mt-0; }
 </style>
