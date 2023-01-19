@@ -19,7 +19,8 @@ export default defineNuxtPlugin(nuxtApp => {
                 const imageRegexp = /[\/.](gif|jpg|jpeg|tiff|png)$/i
                 type = type.toLowerCase()
                 if (imageRegexp.test(file)) return (type = 'image')
-            }
+            },
+            year: () => new Date().getFullYear()
         }
     }
 })
