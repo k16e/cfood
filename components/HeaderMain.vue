@@ -8,10 +8,13 @@
             <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <ul class="flex items-center h-full w-full space-x-3">
-                    <li v-for="(route, idx) in routes" :key="route.title + idx" class="flex items-center h-full">
+                    <li
+                        v-for="(route, idx) in routes"
+                        :key="route.title + idx"
+                        class="flex items-center h-full">
                         <NuxtLink
                             :to="route.path"
-                            class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50"
+                            class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 text-lg font-medium text-orange-700"
                             :class="{ 'parent-active': isParentRoute(route.path) }">
                             {{ route.title }}
                         </NuxtLink>

@@ -9,7 +9,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'display': ['Yellowtail', 'cursive']
+                'display': ['Yellowtail', 'cursive'],
+                'sans': ['Kumbh Sans', 'sans-serif']
             },
             typography: (theme) => ({
                 DEFAULT: {

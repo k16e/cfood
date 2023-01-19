@@ -5,3 +5,31 @@
     font-display: swap;
     src: url('~/assets/fonts/yellowtail.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~/assets/fonts/KumbhSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('~/assets/fonts/KumbhSans-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('~/assets/fonts/KumbhSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('~/assets/fonts/KumbhSans-Bold.ttf') format('truetype');
+}
