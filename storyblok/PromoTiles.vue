@@ -12,7 +12,7 @@
                     :stroke="false"
                     :fill="'#f2f2f2'"
                 />
-                <div class="bg-gradient-to-r from-orange-500 to-orange-800">
+                <div class="bg-gradient-to-r from-orange-600 to-orange-800">
                     <Container center padX>
                         <div class="relative min-h-[480px] sm:min-h-[528px] md:min-h-[600px] flex items-center">
                             <div class="text-center flex flex-col items-center w-full sm:text-left sm:block sm:-translate-y-7">
