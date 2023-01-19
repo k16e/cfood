@@ -6,7 +6,7 @@
                 <HeaderMain/>
                 <Wave class="fixed z-[-1] max-h-[93px] top-0" :fill="'#fff'"/>
             </header>
-            <main class="mt-28 flex-1">
+            <main class="py-28 flex-1">
                 <NuxtPage/>
             </main>
             <footer
