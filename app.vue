@@ -9,8 +9,14 @@
             <main class="mt-24 flex-1">
                 <NuxtPage/>
             </main>
-            <footer class="py-1.5">
-                <FooterMain/>
+            <footer
+                class="relative pt-14 sm:pt-16 lg:pt-20 pb-3 bg-gradient-to-r from-orange-900 to-orange-600 text-white flex flex-col items-center">
+                <Wave
+                    class="absolute z-[1] max-h-[96px] top-[-56px] scale-x-[1]"
+                    :stroke="false"
+                    :fill="'#f2f2f2'"
+                />
+                <FooterMain class="relative z-[2]"/>
             </footer>
         </div>
     </NuxtLayout>
