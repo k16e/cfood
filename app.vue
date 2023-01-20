@@ -4,9 +4,9 @@
         <div class="flex flex-col min-h-screen">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <HeaderMain/>
-                <Wave class="fixed z-[-1] max-h-[93px] top-0" :fill="'#fff'"/>
+                <Wave class="fixed z-[-1] max-h-[88px] top-0" :fill="'#fff'"/>
             </header>
-            <main class="py-28 flex-1">
+            <main class="py-24 flex-1">
                 <NuxtPage/>
             </main>
             <footer

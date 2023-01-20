@@ -1,7 +1,7 @@
 <template>
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
-        <div class="flex items-center h-full translate-y-3">
+        <div class="flex items-center h-full translate-y-2">
             <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
                 <HeaderLogo/>
             </NuxtLink>
@@ -14,7 +14,7 @@
                         class="flex items-center h-full">
                         <NuxtLink
                             :to="route.path"
-                            class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 text-lg font-medium text-orange-700"
+                            class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700"
                             :class="{ 'parent-active': isParentRoute(route.path) }">
                             {{ route.title }}
                         </NuxtLink>
@@ -22,7 +22,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-3 -translate-y-0.5">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
             <ProductsUserMenu/>

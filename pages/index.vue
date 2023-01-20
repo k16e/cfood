@@ -9,10 +9,6 @@ const story = await useStoryblok(`pages`, {
     resolve_links: 'url'
 })
 
-// const { data: useOs } = await useFetch('/api/builtin')
-
-// console.log(useOs)
-
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
     meta: [

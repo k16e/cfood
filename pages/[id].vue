@@ -1,9 +1,12 @@
 <template>
     <WrapperReveal>
         <Container center padX padTGrow>
-            <pre>
-                {{ story }}
-            </pre>
+            <div v-if="pending">Loading...</div>
+            <div v-else>
+                <pre>
+                    {{ story }}
+                </pre>
+            </div>
         </Container>
     </WrapperReveal>
 </template>
@@ -11,18 +14,23 @@
 <script setup>
 const config = useRuntimeConfig()
 const route = useRoute()
-const story = await useStoryblok(`pages${route.path}`, {
-    version: config.storyblokVersion,
-    resolve_links: 'story'
+const path = computed(() => route.path)
+// const router = useRouter()
+
+const { pending, data: story } = useLazyAsyncData(async () => {
+    try {
+        const response = await useStoryblok(`pages${path.value}`, {
+            version: config.storyblokVersion,
+            resolve_links: 'story'
+        })
+        if(!response) {
+            throw createError({
+                statusCode: 404,
+                statusMessage: 'Page Not Found',
+                fatal: true
+            })
+        }
+        return response
+    } catch (err) { console.log('Error:', err) }
 })
-// let story = ref(null)
-// try {
-//     story = await useAsyncStoryblok(`pages${route.path}`, {
-//         version: config.storyblokVersion,
-//         resolve_links: 'story'
-//     })
-// } catch (error) {
-//     console.log(error)
-//     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
-// }
 </script>

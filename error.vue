@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Container center padX padTGrow>
         <p>
             {{ error.statusCode }}
         </p>
@@ -7,12 +7,11 @@
             {{ error.message }}
         </p>
 
-        <a href="/">Please go back home</a>
-    </div>
+        <button type="button" @click="handleError">Please go back home</button>
+    </Container>
 </template>
 
 <script setup>
-    const props = defineProps({ error: Object })
-    const error = useError()
-    error.value.message = 'Oops! Page not found 😔'
+const props = defineProps({ error: Object })
+const handleError = () => clearError({ redirect: '/' })
 </script>
