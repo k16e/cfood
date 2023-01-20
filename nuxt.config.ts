@@ -26,12 +26,12 @@ export default defineNuxtConfig({
             ]
         }
     },
-    runtimeConfig: { // configs (key) exposed to server routes
+    runtimeConfig: {
         currencyKey: process.env.CURRENCY_API_KEY,
         storyblokKey: process.env.STORYBLOK_KEY,
-        serviceKey: process.env.SUPABASE_SERVICE_KEY,
+        serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
         supabaseUrl: process.env.SUPABASE_URL,
-        public: { // Keys that may/can be exposed to public routes
+        public: {
             paystackKey: process.env.PAYSTACK_KEY,
             storyblokVersion: process.env.STORYBLOK_VERSION
         }
