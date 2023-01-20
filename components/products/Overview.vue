@@ -3,7 +3,16 @@
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
             <transition v-if="$skuIsFoundIn(product, cart)">
-                <ProductsCarting :item="cart[cart.findIndex(item => item.sku === product.sku)]"/>
+                <div class="flex items-center space-x-3">
+                    <ProductsCarting :item="cart[productIdx(product)]"/>
+                    <button
+                        @click="$removeFromCart($event, productIdx(product), cart)"
+                        type="button"
+                        class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
+                        <span class="sr-only">Remove</span>
+                        <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
+                    </button>
+                </div>
             </transition>
             <transition v-else>
                 <button @click="addToCart(product)" class="luna-btn _is-primary">
@@ -60,4 +69,5 @@ const cart = store.cart
 const addToCart = store.addToCart
 const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist
+const productIdx = product => cart.findIndex(item => item.sku === product.sku)
 </script>
