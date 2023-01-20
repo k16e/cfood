@@ -1,5 +1,3 @@
-import { bypassRls } from '@/server/api/utils'
-
 export const useOrderCompletion = () => {
     const route = useRouter()
     const supabase = useSupabaseClient()

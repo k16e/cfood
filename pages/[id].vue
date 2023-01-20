@@ -15,7 +15,6 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = computed(() => route.path)
-// const router = useRouter()
 
 const { pending, data: story } = useLazyAsyncData(async () => {
     try {

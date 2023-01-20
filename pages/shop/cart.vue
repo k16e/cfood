@@ -48,10 +48,10 @@
                                                 </div>
 
                                                 <div class="flex items-center justify-between pt-5">
-                                                    <div class="number-input w-28">
+                                                    <div class="w-28">
                                                         <div class="flex flex-row h-9 w-full rounded-xl relative bg-transparent">
                                                             <button
-                                                                @click="decrement($event, item)"
+                                                                @click="$decreaseFromCart($event, item)"
                                                                 type="button"
                                                                 class="luna-counter rounded-l-full bg-gray-200">
                                                                 <span class="sr-only">Decrease quantity</span>
@@ -65,7 +65,7 @@
                                                                 max="9"
                                                                 class="focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 border-0 border-y-2 border-gray-200" disabled>
                                                             <button
-                                                                @click="increment($event, item)"
+                                                                @click="$increaseToCart($event, item)"
                                                                 type="button"
                                                                 class="luna-counter rounded-r-full bg-gray-200">
                                                                 <span class="sr-only">Increase quantity</span>
@@ -81,7 +81,7 @@
 
                                             <div class="absolute top-0 right-0">
                                                 <button
-                                                    @click="removeFromCart($event, idx)"
+                                                    @click="$removeFromCart($event, idx, cart)"
                                                     type="button"
                                                     class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
                                                     <span class="sr-only">Remove</span>
@@ -99,11 +99,15 @@
                                 <dl class="mt-6 space-y-4">
                                     <div class="flex items-center justify-between">
                                         <dt class="text-gray-600">Subtotal</dt>
-                                        <dd class="font-medium text-gray-900">{{ $formatPrice(subTotal) }}</dd>
+                                        <dd class="font-medium text-gray-900">
+                                            {{ $formatPrice(cart.reduce((acc, cur) => acc + cur.subTotal, 0)) }}
+                                        </dd>
                                     </div>
                                     <div class="flex items-center justify-between border-t border-gray-200 pt-4">
                                         <dt class="font-medium text-gray-900">Order total</dt>
-                                        <dd class="font-medium text-gray-900">{{ $formatPrice(subTotal) }}</dd>
+                                        <dd class="font-medium text-gray-900">
+                                            {{ $formatPrice(cart.reduce((acc, cur) => acc + cur.subTotal, 0)) }}
+                                        </dd>
                                     </div>
                                 </dl>
                                 <div class="mt-9">
@@ -132,41 +136,6 @@ import { useStateStore } from '@/states.js'
 
 const store = useStateStore()
 const cart = store.cart
-
-let subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-
-const decrement = (e, item) => {
-    const
-        input = e.target.nextElementSibling,
-        min = Number(input.getAttribute('min'))
-    let value = Number(input.value)
-
-    if (value == min) return
-    value--
-    input.value = value
-    item.qty = value
-    item.subTotal = value * item.price
-    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-}
-
-const increment = (e, item) => {
-    const
-        input = e.target.previousElementSibling,
-        max = Number(input.getAttribute('max'))
-    let value = Number(input.value)
-
-    if (value == max) return
-    value++
-    input.value = value
-    item.qty = value
-    item.subTotal = value * item.price
-    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-}
-
-const removeFromCart = (e, itemIdx) => {
-    cart.splice(itemIdx, 1)
-    subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-}
 
 const router = useRouter()
 const proceedToCheckout = () => router.push({ path: '/shop/checkout' })
