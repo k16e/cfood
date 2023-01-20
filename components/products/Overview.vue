@@ -3,7 +3,7 @@
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
             <transition v-if="$skuIsFoundIn(product, cart)">
-                Look, it's already in cart, what else do you want!
+                <ProductsCarting :item="cart[cart.findIndex(item => item.sku === product.sku)]"/>
             </transition>
             <transition v-else>
                 <button @click="addToCart(product)" class="luna-btn _is-primary">
