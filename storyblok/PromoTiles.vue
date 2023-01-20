@@ -23,8 +23,8 @@
                                 </Heading>
                                 <div v-if="!$isEmpty(blok.link) || blok.link[0].cached_url" class="mt-9 lg:mt-12">
                                     <NuxtLink
-                                        :to="blok.link[0].link.cached_url" class="luna-btn border-none text-gray-600 font-medium">
-                                        <Icon name="ic:baseline-shopping-basket" size="22" class="mr-1.5 text-orange-700"/>
+                                        :to="blok.link[0].link.cached_url" class="luna-btn _is-taller _is-raised border-none text-gray-600 text-lg">
+                                        <Icon name="ic:baseline-shopping-basket" size="24" class="mr-1.5 text-orange-700"/>
                                         <span v-text="blok.link[0].title"/>
                                     </NuxtLink>
                                 </div>
