@@ -2,10 +2,15 @@
     <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
-            <button @click="addToCart(product)" class="luna-btn _is-primary">
-                <Icon name="ri:shopping-cart-fill" size="20"/>
-                <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
-            </button>
+            <transition v-if="$skuIsFoundIn(product, cart)">
+                Look, it's already in cart, what else do you want!
+            </transition>
+            <transition v-else>
+                <button @click="addToCart(product)" class="luna-btn _is-primary">
+                    <Icon name="ri:shopping-cart-fill" size="20"/>
+                    <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
+                </button>
+            </transition>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
             <!-- Product image -->
@@ -35,7 +40,7 @@
                     <button
                         @click="addToWishlist(product)"
                         class="flex items-center p-3 rounded-full bg-gray-50 border border-gray-200 absolute top-3 right-3 z-10"
-                        :class="wishlist.some(el => el.sku === product.sku) ? 'text-red-600' : 'text-gray-500'">
+                        :class="$skuIsFoundIn(product, wishlist) ? 'text-red-600' : 'text-gray-500'">
                         <Icon name="ri:heart-2-fill" size="18"/>
                         <span v-text="'Add to wishlist'" class="sr-only"/>
                     </button>
@@ -51,7 +56,8 @@ import { useStateStore } from '@/states.js'
 const { product } = defineProps(['product'])
 
 const store = useStateStore()
-const addToCart = await store.addToCart
-const addToWishlist = await store.addToWishlist
+const cart = store.cart
+const addToCart = store.addToCart
+const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist
 </script>

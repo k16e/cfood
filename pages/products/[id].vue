@@ -6,7 +6,7 @@
 
 <script setup>
 const { id } = useRoute().params
-const sku = id.substr(-8)
+const sku = id.split('-')[2]
 const supabase = useSupabaseClient()
 const { data: product, error } = await useAsyncData('products',
     async () => {
