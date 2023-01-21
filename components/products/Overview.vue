@@ -3,7 +3,7 @@
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
             <transition v-if="$skuIsFoundIn(product, cart)">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-1">
                     <ProductsCarting :item="cart[productIdx(product)]"/>
                     <button
                         @click="$removeFromCart($event, productIdx(product), cart)"
