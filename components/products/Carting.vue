@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row w-28 h-9 rounded-xl relative bg-transparent">
+    <div class="flex flex-row w-28 h-9 rounded-full relative bg-gray-200">
         <button
             @click="$decreaseFromCart($event, item)"
             type="button"
@@ -13,7 +13,7 @@
             :value="item.qty"
             min="1"
             max="9"
-            class="focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 border-0 border-y-2 border-gray-200" disabled>
+            class="focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 border-0 border-y-2 border-gray-200 rounded-md" disabled>
         <button
             @click="$increaseToCart($event, item)"
             type="button"
