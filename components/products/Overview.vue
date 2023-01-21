@@ -2,7 +2,9 @@
     <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
-            <transition v-if="$itemIsIn(product, cart)">
+            <transition
+                v-if="$itemIsIn(product, cart)"
+                name="animate-slide-in-top">
                 <div class="flex items-center space-x-3">
                     <ProductsCarting :item="cart[productIdx(product)]"/>
                     <NuxtLink
@@ -11,13 +13,6 @@
                         <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
                         <span v-text="`Go to cart`" class="hidden lg:block"/>
                     </NuxtLink>
-                    <!-- <button
-                        @click="$removeFromCart($event, productIdx(product), cart)"
-                        type="button"
-                        class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
-                        <span class="sr-only">Remove</span>
-                        <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
-                    </button> -->
                 </div>
             </transition>
             <transition v-else>
@@ -75,5 +70,5 @@ const cart = store.cart
 const addToCart = store.addToCart
 const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist
-const productIdx = product => cart.findIndex(item => item.sku === product.sku)
+const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
