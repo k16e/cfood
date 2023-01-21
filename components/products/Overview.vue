@@ -2,7 +2,7 @@
     <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
-            <transition
+            <Transition
                 v-if="$itemIsIn(product, cart)"
                 name="animate-slide-in-top">
                 <div class="flex items-center space-x-3">
@@ -14,13 +14,13 @@
                         <span v-text="`Go to cart`" class="hidden lg:block"/>
                     </NuxtLink>
                 </div>
-            </transition>
-            <transition v-else>
+            </Transition>
+            <Transition v-else>
                 <button @click="addToCart(product)" class="luna-btn _is-primary">
                     <Icon name="ri:shopping-cart-fill" size="20"/>
                     <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
                 </button>
-            </transition>
+            </Transition>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
             <!-- Product image -->
