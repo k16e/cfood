@@ -31,7 +31,8 @@ export const useOrderCompletion = () => {
                 .from('orders')
                 .insert([
                     {
-                        customer_name: order[0].first_name + ' ' + order[0].last_name,
+                        first_name: order[0].first_name,
+                        last_name: order[0].last_name,
                         customer_email: order[0].email,
                         products: order[0].orders,
                         sub_total: order[0].subTotal,
