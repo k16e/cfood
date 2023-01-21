@@ -2,16 +2,22 @@
     <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
-            <transition v-if="$skuIsFoundIn(product, cart)">
-                <div class="flex items-center space-x-1">
+            <transition v-if="$itemIsIn(product, cart)">
+                <div class="flex items-center space-x-3">
                     <ProductsCarting :item="cart[productIdx(product)]"/>
-                    <button
+                    <NuxtLink
+                        to="/shop/cart"
+                        class="luna-btn _is-primary luna-turn-off-active">
+                        <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
+                        <span v-text="`Go to cart`" class="hidden lg:block"/>
+                    </NuxtLink>
+                    <!-- <button
                         @click="$removeFromCart($event, productIdx(product), cart)"
                         type="button"
                         class="luna-btn _is-neutral _is-square text-gray-400 hover:text-red-500 focus:text-red-500">
                         <span class="sr-only">Remove</span>
                         <Icon name="material-symbols:close-rounded" size="22" aria-hidden="true"/>
-                    </button>
+                    </button> -->
                 </div>
             </transition>
             <transition v-else>
@@ -49,7 +55,7 @@
                     <button
                         @click="addToWishlist(product)"
                         class="flex items-center p-3 rounded-full bg-gray-50 border border-gray-200 absolute top-3 right-3 z-10"
-                        :class="$skuIsFoundIn(product, wishlist) ? 'text-red-600' : 'text-gray-500'">
+                        :class="$itemIsIn(product, wishlist) ? 'text-red-600' : 'text-gray-500'">
                         <Icon name="ri:heart-2-fill" size="18"/>
                         <span v-text="'Add to wishlist'" class="sr-only"/>
                     </button>

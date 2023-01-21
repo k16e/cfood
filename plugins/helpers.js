@@ -52,7 +52,7 @@ export default defineNuxtPlugin(nuxtApp => {
                 item.subTotal = value * item.price
             },
             removeFromCart: (e, idx, cart) => cart.splice(idx, 1),
-            skuIsFoundIn: (obj, arr) => arr.some(el => el.sku === obj.sku)
+            itemIsIn: (obj, arr) => arr.some(el => el.sku === obj.sku)
         }
     }
 })
