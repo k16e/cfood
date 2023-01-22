@@ -3,7 +3,8 @@
         viewBox="0 0 1600 800"
         width="100%"
         preserveAspectRatio="none"
-        class="scale-x-[-1] inset-x-0">
+        class="scale-x-[-1] inset-x-0 absolute"
+        :class="[maxHeight]">
         <path
             :fill="fill"
             :stroke="stroke && '#d1d5db'"
@@ -16,6 +17,7 @@
 <script setup>
 const props = defineProps({
     fill: { type: String, default: 'var(--body-bg)' },
-    stroke: { type: Boolean, default: true }
+    stroke: { type: Boolean, default: true },
+    maxHeight: { type: String, default: 'max-h-[96px]' }
 })
 </script>

@@ -7,13 +7,15 @@
                 linkText="Products"
             />
             <ClientOnly>
-                <div class="pt-5">
+                <div v-auto-animate class="pt-5">
                     <section
                         v-if="wishlist.length >= 1"
                         aria-labelledby="wishlist-heading"
                         class="px-3 bg-white lg:bg-transparent rounded-xl border border-gray-200 lg:border-0">
                         <h2 id="wishlist-heading" class="sr-only">Products in your wishlist</h2>
-                        <ul role="list" class="divide-y divide-gray-200 lg:grid lg:grid-cols-2 lg:divide-none lg:gap-5">
+                        <ul
+                            v-auto-animate
+                            class="divide-y divide-gray-200 lg:grid lg:grid-cols-2 lg:divide-none lg:gap-5">
                             <li
                                 v-for="(item, idx) in wishlist"
                                 :key="item.sku"

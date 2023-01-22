@@ -3,18 +3,16 @@
         <WrapperSection>
             <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
                 <Wave
-                    class="absolute z-[1] max-h-[96px] top-0"
+                    class="z-[1] top-0"
                     :stroke="false"
-                    :fill="'#f2f2f2'"
                 />
                 <Wave
-                    class="absolute z-[3] max-h-[96px] bottom-0 rotate-180 scale-x-[1]"
+                    class="z-[3] bottom-0 rotate-180 scale-x-[1]"
                     :stroke="false"
-                    :fill="'#f2f2f2'"
                 />
                 <div class="bg-gradient-to-r from-orange-600 to-orange-800">
                     <Container center padX>
-                        <div class="relative min-h-[480px] sm:min-h-[528px] md:min-h-[600px] flex items-center">
+                        <div class="relative min-h-[480px] sm:min-h-[528px] md:min-h-[680px] flex items-center">
                             <div class="text-center flex flex-col items-center w-full sm:text-left sm:block sm:-translate-y-7">
                                 <Heading tag="h2" font="font-sans" color="text-white" weight="font-bold"
                                     class="text-4xl md:text-5xl lg:text-6xl !leading-none">
