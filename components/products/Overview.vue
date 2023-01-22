@@ -2,25 +2,19 @@
     <Container padX center padTGrow>
         <!-- Product title -->
         <HeaderPage tag="h1" :content="product.name" isChildPage>
-            <Transition
-                v-if="$itemIsIn(product, cart)"
-                name="animate-slide-in-top">
-                <div class="flex items-center space-x-3">
-                    <ProductsCarting :item="cart[productIdx(product)]"/>
-                    <NuxtLink
-                        to="/shop/cart"
-                        class="luna-btn _is-primary luna-turn-off-active">
-                        <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
-                        <span v-text="`Go to cart`" class="hidden lg:block"/>
-                    </NuxtLink>
-                </div>
-            </Transition>
-            <Transition v-else>
-                <button @click="addToCart(product)" class="luna-btn _is-primary">
-                    <Icon name="ri:shopping-cart-fill" size="20"/>
-                    <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
-                </button>
-            </Transition>
+            <div v-if="$itemIsIn(product, cart)" class="flex items-center space-x-3">
+                <ProductsCarting :item="cart[productIdx(product)]"/>
+                <NuxtLink
+                    to="/shop/cart"
+                    class="luna-btn _is-primary luna-turn-off-active">
+                    <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
+                    <span v-text="`Go to cart`" class="hidden lg:block"/>
+                </NuxtLink>
+            </div>
+            <button v-else @click="addToCart(product)" class="luna-btn _is-primary">
+                <Icon name="ri:shopping-cart-fill" size="20"/>
+                <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
+            </button>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
             <!-- Product image -->
@@ -72,3 +66,7 @@ const addToWishlist = store.addToWishlist
 const wishlist = store.wishlist
 const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
+
+<style scoped>
+.drop-in-enter-active { @apply animate-slide-in-top; }
+</style>

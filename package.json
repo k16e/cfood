@@ -23,6 +23,7 @@
     "nuxt-lodash": "^2.4.1"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.5",
     "@pinia/nuxt": "^0.4.6",
     "@storyblok/nuxt": "^5.0.0",
     "@supabase/supabase-js": "^2.2.2",
