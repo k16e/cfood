@@ -18,6 +18,6 @@
 const props = defineProps({
     fill: { type: String, default: 'var(--body-bg)' },
     stroke: { type: Boolean, default: true },
-    'max-height': { type: String, default: 'max-h-[96px]' }
+    maxHeight: { type: String, default: 'max-h-[96px]' }
 })
 </script>
