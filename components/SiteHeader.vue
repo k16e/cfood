@@ -2,8 +2,11 @@
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
         <div class="flex items-center h-full translate-y-2.5">
-            <NuxtLink to="/" class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
-                <HeaderLogo/>
+            <NuxtLink
+                to="/"
+                class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
+                <span v-text="'c.food home'" class="sr-only"/>
+                <Logo/>
             </NuxtLink>
             <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
