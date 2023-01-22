@@ -4,26 +4,30 @@
         <HeaderPage
             tag="h1"
             :content="product.name" isChildPage>
-            <div>
-                <div
-                    v-if="$itemIsIn(product, cart)"
-                    class="flex items-center space-x-3">
-                    <ProductsCarting :item="cart[productIdx(product)]"/>
-                    <NuxtLink
-                        to="/shop/cart"
-                        class="luna-btn _is-primary luna-turn-off-active">
-                        <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
-                        <span v-text="`Go to cart`" class="hidden lg:block"/>
-                    </NuxtLink>
+            <Transition
+                name="switch"
+                mode="out-in">
+                <div class="">
+                    <div
+                        v-if="$itemIsIn(product, cart)"
+                        class="flex items-center space-x-3">
+                        <ProductsCarting :item="cart[productIdx(product)]"/>
+                        <NuxtLink
+                            to="/shop/cart"
+                            class="luna-btn _is-primary luna-turn-off-active">
+                            <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
+                            <span v-text="`Go to cart`" class="hidden lg:block"/>
+                        </NuxtLink>
+                    </div>
+                    <button
+                        v-else
+                        @click="addToCart(product)"
+                        class="luna-btn _is-primary">
+                        <Icon name="ri:shopping-cart-fill" size="20"/>
+                        <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
+                    </button>
                 </div>
-                <button
-                    v-else
-                    @click="addToCart(product)"
-                    class="luna-btn _is-primary">
-                    <Icon name="ri:shopping-cart-fill" size="20"/>
-                    <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
-                </button>
-            </div>
+            </Transition>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
             <!-- Product image -->
@@ -77,5 +81,12 @@ const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
 
 <style scoped>
-.drop-in-enter-active { @apply animate-slide-in-top; }
+.switch-enter-from,
+.switch-leave-to {
+    @apply opacity-0 translate-y-2;
+}
+.switch-enter-active,
+.switch-leave-active {
+    @apply transition duration-200;
+}
 </style>
