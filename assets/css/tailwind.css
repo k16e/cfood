@@ -52,15 +52,9 @@ input[type='number']::-webkit-outer-spin-button {
 
 
 /* Viewport visible animations */
-.luna-reveal {
-    @apply scale-110 opacity-0 invisible transition duration-700;
-}
-.luna-reveal._is-in-viewport {
-    @apply scale-100 opacity-100 visible;
-}
-.luna-reveal._on-route-change {
-    @apply scale-110 opacity-0;
-}
+.luna-reveal { @apply scale-110 opacity-0 invisible transition duration-700; }
+.luna-reveal._is-in-viewport { @apply scale-100 opacity-100 visible; }
+.luna-reveal._on-route-change { @apply scale-110 opacity-0 transition duration-700; }
 
 
 
