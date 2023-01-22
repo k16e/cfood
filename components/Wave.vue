@@ -4,7 +4,9 @@
         width="100%"
         preserveAspectRatio="none"
         class="scale-x-[-1] inset-x-0 absolute"
-        :class="[maxHeight]">
+        :class="[maxHeight, top, bottom, {
+            'rotate-180 scale-x-[1]': flip
+        }]">
         <path
             :fill="fill"
             :stroke="stroke && '#d1d5db'"
@@ -18,6 +20,9 @@
 const props = defineProps({
     fill: { type: String, default: 'var(--body-bg)' },
     stroke: { type: Boolean, default: true },
+    flip: { type: Boolean, default: false },
+    top: { type: String, default: 'top-0' },
+    bottom: { type: String, default: 'bottom-0' },
     maxHeight: { type: String, default: 'max-h-[96px]' }
 })
 </script>

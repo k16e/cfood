@@ -2,13 +2,13 @@
     <WrapperReveal>
         <WrapperSection>
             <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
+                <Wave :stroke="false" :bottom="'revert'" class="z-[1]"/>
                 <Wave
-                    class="z-[1] top-0"
                     :stroke="false"
-                />
-                <Wave
-                    class="z-[3] bottom-0 rotate-180 scale-x-[1]"
-                    :stroke="false"
+                    :top="'revert'"
+                    flip
+                    :maxHeight="'max-h-[104px]'"
+                    class="z-[3]"
                 />
                 <div class="bg-gradient-to-r from-orange-600 to-orange-800">
                     <Container center padX>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
 
-                            <div class="absolute -top-24 left-[45%] -translate-x-[45%] transform sm:top-7 sm:translate-x-0 z-[2]">
+                            <div class="absolute -top-24 left-[45%] -translate-x-[45%] sm:top-7 sm:translate-x-0 z-[2] lg:translate-y-1.5">
                                 <div class="ml-9 flex min-w-max space-x-5 sm:ml-3 lg:space-x-7">
                                     <div class="flex space-x-5 sm:flex-col sm:space-x-0 sm:space-y-5 lg:space-y-7">
                                         <NuxtImg
@@ -51,6 +51,11 @@
                                         <NuxtImg
                                             :src="blok.tiles[2].file.filename"
                                             :alt="blok.tiles[2].file.alt"
+                                            preset="small"
+                                        />
+                                        <NuxtImg
+                                            :src="blok.tiles[5].file.filename"
+                                            :alt="blok.tiles[5].file.alt"
                                             preset="small"
                                         />
                                     </div>
