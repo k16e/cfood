@@ -16,9 +16,9 @@
                         :key="route.title + idx"
                         class="flex items-center h-full">
                         <NuxtLink
-                            :to="route.path"
+                            :to="route.to"
                             class="flex items-center h-full py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700"
-                            :class="{ 'parent-active': isParentRoute(route.path) }">
+                            :class="{ 'parent-active': isParentRoute(route.to) }">
                             {{ route.title }}
                         </NuxtLink>
                     </li>
@@ -35,10 +35,10 @@
 
 <script setup>
 const routes = [
-    { title: 'Products', path: '/products' },
-    { title: 'Research', path: '/research' },
-    { title: 'Studio', path: '/more/studio' },
-    { title: 'Meet c.food', path: '/about' }
+    { title: 'Products', to: '/products' },
+    { title: 'Research', to: '/research' },
+    { title: 'Studio', to: '/more/studio' },
+    { title: 'Meet c.food', to: '/about' }
 ]
 const currentRoute = useRoute()
 const isParentRoute = path => currentRoute.path.startsWith(path)
