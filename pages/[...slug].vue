@@ -13,7 +13,7 @@ const url = () => {
     return `pages${path}`
 }
 
-const story = await useAsyncStoryblok(url(), {
+const story = await useStoryblok(url(), {
     version: config.storyblokVersion,
     resolve_links: 'url'
 })
