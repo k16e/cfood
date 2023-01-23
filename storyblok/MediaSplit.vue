@@ -14,7 +14,7 @@
                     <div v-if="!$isEmpty(blok.link) || blok.link[0].cached_url" class="mt-9 lg:mt-12">
                         <NuxtLink
                             v-for="item in blok.link" :key="item._uid"
-                            :to="item.link.cached_url"
+                            :to="$stripLink(item.link.cached_url)"
                             class="luna-btn _is-taller text-lg text-gray-600 font-medium">
                             <Icon name="ic:baseline-shopping-basket" size="24" class="mr-1.5 text-orange-700"/>
                             <span v-text="item.title"/>

@@ -14,6 +14,10 @@ export default defineNuxtPlugin(nuxtApp => {
             },
 
             slugify: str => _kebabCase(str.replace(/&/g, '-and-')),
+            stripLink: link => {
+                if (link.includes('pages')) return link.replace(/pages/g, '')
+                return link
+            },
 
             isEmpty: str => _isEmpty(str),
 
