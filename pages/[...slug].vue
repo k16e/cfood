@@ -3,10 +3,13 @@
 </template>
 
 <script setup>
+let { path } = useRoute()
+console.log(path)
 const { slug } = useRoute().params
 const config = useRuntimeConfig()
+
 const story = await useAsyncStoryblok(
-    slug && slug.length > 0 ? `pages/${slug[0]}` : 'pages',
+    slug && slug.length > 0 ? `pages/${slug[0]}` : 'home',
     {
         version: config.storyblokVersion,
         resolve_links: 'url'
