@@ -3,11 +3,15 @@
 </template>
 
 <script setup>
+const { slug } = useRoute().params
 const config = useRuntimeConfig()
-const story = await useStoryblok(`pages`, {
-    version: config.storyblokVersion,
-    resolve_links: 'url'
-})
+const story = await useAsyncStoryblok(
+    slug && slug.length > 0 ? `pages/${slug[0]}` : 'pages',
+    {
+        version: config.storyblokVersion,
+        resolve_links: 'url'
+    }
+)
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',

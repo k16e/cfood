@@ -6,7 +6,6 @@
         <p>
             {{ error.message }}
         </p>
-
         <button type="button" @click="handleError">Please go back home</button>
     </Container>
 </template>
