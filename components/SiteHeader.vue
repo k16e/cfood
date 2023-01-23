@@ -37,7 +37,7 @@
 const routes = [
     { title: 'Products', path: '/products' },
     { title: 'Research', path: '/research' },
-    { title: 'Studio', path: '/studio' },
+    { title: 'Studio', path: '/more/studio' },
     { title: 'Meet c.food', path: '/about' }
 ]
 const currentRoute = useRoute()
