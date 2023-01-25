@@ -14,9 +14,9 @@
                 <NuxtPage/>
             </main>
             <footer
-                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center">
+                class="relative transition-all pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center">
                 <Wave top="top-[-56px]" :stroke="false"/>
-                <SiteFooter class="relative z-[2]"/>
+                <SiteFooter/>
             </footer>
         </div>
     </NuxtLayout>

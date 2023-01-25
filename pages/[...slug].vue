@@ -42,31 +42,6 @@ const storyblok = async () => {
     } catch (e) { console.log('Storyblok error: ', e) }
 }
 story = await storyblok()
-console.log(story.value)
-
-// const { pending, data: story } = useAsyncData(async () => {
-//     try {
-//         const response = await useStoryblok(path, {
-//             version: config.storyblokVersion,
-//             resolve_links: 'story'
-//         })
-//         if(!response) {
-//             throw createError({
-//                 statusCode: 404,
-//                 statusMessage: 'Page Not Found',
-//                 fatal: true
-//             })
-//         }
-//         return response
-//     } catch (e) { console.log('Storyblok error: ', e) }
-// })
-
-// watch(story, (newStory) => { story.value = newStory })
-
-// const story = await useStoryblok(url(), {
-//     version: config.storyblokVersion,
-//     resolve_links: 'url'
-// })
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
