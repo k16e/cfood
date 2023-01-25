@@ -4,6 +4,9 @@
     "compilerOptions": {
         "types": [
             "node"
+        ],
+        "lib": [
+            "ES2021.String"
         ]
     }
 }

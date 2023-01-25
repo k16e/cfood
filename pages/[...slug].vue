@@ -14,17 +14,10 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const url = () => {
-    const
-        { path } = useRoute(),
-        pathArray = String(path).split('/')
-    if (path === '/') return 'home'
-    else if (pathArray.length > 2) return path
-    return `pages${path}`
-}
+const route = useRoute()
+const path = (route.path === '/' ? 'home' : route.path).replaceAll('//', '/')
 
 let story = ref(null)
-const path = url()
 const storyblok = async () => {
     try {
         const response = await useStoryblok(path, {
