@@ -20,11 +20,11 @@
             </footer>
         </div>
     </NuxtLayout>
-    <Overlay v-if="overlay">
-        <Sheet v-if="sheet"/>
+    <Overlay>
+        <Sheet v-show="app.sheet"/>
     </Overlay>
 </template>
 
 <script setup>
-const { overlay, sheet } = useAppStore()
+const app = useAppStore()
 </script>
