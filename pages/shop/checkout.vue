@@ -1,10 +1,11 @@
 <template>
     <Reveal>
-        <!-- <Container padX center padTGrow>
+        <Container padX center padTGrow>
             <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
             <ClientOnly>
                 <div v-if="cart.length" class="pt-5 overflow-x-hidden">
                     <div class="bg-white rounded-xl border border-gray-200 relative overflow-x-hidden">
+                        <!-- Background color split screen for large screens -->
                         <div class="absolute top-0 left-0 hidden h-full w-1/2 bg-white lg:block" aria-hidden="true"/>
                         <div class="absolute top-0 right-0 hidden h-full w-1/2 bg-gray-50 lg:block border-l border-gray-200" aria-hidden="true"/>
 
@@ -41,6 +42,7 @@
                                 aria-labelledby="payment-and-shipping-heading"
                                 class="p-3 py-5 lg:py-7 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg">
                                 <h2 id="payment-and-shipping-heading" class="sr-only">Payment and shipping details</h2>
+                                <!-- Complete order form -->
                                 <form
                                     @submit.prevent="proceedToPay()"
                                     class="mx-auto max-w-2xl lg:max-w-none">
@@ -112,7 +114,7 @@
                     <NuxtLink to="/products">our Products.</NuxtLink>
                 </p>
             </ClientOnly>
-        </Container> -->
+        </Container>
     </Reveal>
 </template>
 
@@ -125,14 +127,13 @@ useHead({
     ]
 })
 
-const { cart, shippingRates, order, fetchShippingRates } = useProductsStore()
-console.log(cart)
+const products = useProductsStore()
+const cart = products.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
-console.log(subTotal)
-// const callFetchShippingRates = computed(() => fetchShippingRates())
-// console.log(shippingRates)
-// const shipping = shippingRates[0].price
-// console.log(shipping)
+
+await products.fetchShippingRates()
+const shippingRates = ref(products.shippingRates)
+const shipping = ref(shippingRates.value[0].price)
 
 const customer = {
     first_name: ref(''),
@@ -147,6 +148,7 @@ let formStatus = {
     error: ref(false),
     errorMessage: ref(null)
 }
+const order = products.order
 const { completeOrder } = useOrderCompletion()
 
 const proceedToPay = () => {
@@ -158,7 +160,7 @@ const proceedToPay = () => {
         ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
         callback: response => {
             let reference = response.reference
-            completeOrder(formStatus, customer, order, shippingRates, subTotal, shipping, cart, reference)
+            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, products, cart, reference)
         },
         onClose: () => {
             alert(`Sure you want to dismiss this transaction?`)

@@ -1,7 +1,7 @@
 export const useOrderCompletion = () => {
     const route = useRouter()
     const supabase = useSupabaseClient()
-    const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, shipping, cart, reference) => {
+    const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, shipping, products, cart, reference) => {
         formStatus.sending.value = true
         order.push({
             first_name: customer.first_name.value,
@@ -51,15 +51,15 @@ export const useOrderCompletion = () => {
         } catch (err) { console.log(err) }
         finally {
             formStatus.sent.value = true
-            // store.$patch({
-            //     cart: [],
-            //     order: []
-            // })
+            products.$patch({
+                cart: [],
+                order: []
+            })
             route.push({ path: '/shop/success' })
             setTimeout(() => {
                 console.log('Purchase complete. You may refresh this page. Thanks')
-                // globalThis.location.reload()
-            }, 1000);
+                globalThis.location.reload()
+            }, 2000);
         }
     }
 
