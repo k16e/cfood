@@ -5,7 +5,7 @@ export default defineNuxtConfig({
         '@nuxtjs/supabase',
         'nuxt-icon',
         'nuxt-lodash',
-        ['@pinia/nuxt', { autoImports: ['defineStore'] }],
+        ['@pinia/nuxt', { autoImports: ['defineStore', 'acceptHMRUpdate'] }],
         '@pinia-plugin-persistedstate/nuxt',
         '@vueuse/nuxt',
         '@nuxt/image-edge',
@@ -56,5 +56,8 @@ export default defineNuxtConfig({
         preload: true,
         loading: 'lazy',
         format: 'webp'
+    },
+    imports: {
+        dirs: ['stores']
     }
 })

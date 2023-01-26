@@ -24,3 +24,4 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 10. [Beautiful Tailwind gradient generator](https://hypercolor.dev/generator)
 11. [Regexp to check if file type is image](https://stackoverflow.com/questions/30994015/regexp-to-check-if-file-is-image#30994033)
 12. [Embed SVG as a cool section divider](https://adelkov.medium.com/embed-svgs-as-cool-section-dividers-3b762639befd)
+13. [Global State Management with Pinia In Nuxt 3](https://vueschool.io/articles/vuejs-tutorials/global-state-management-with-pinia-in-nuxt-3/)

@@ -110,7 +110,7 @@
 </template>
 
 <script setup>
-const { cart } = useStatesStore()
+const { cart } = useProductsStore()
 
 const router = useRouter()
 const proceedToCheckout = () => router.push({ path: '/shop/checkout' })

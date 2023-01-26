@@ -14,8 +14,5 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states.js'
-
-const store = useStateStore()
-const wishlist = store.wishlist
+const { wishlist } = useProductsStore()
 </script>

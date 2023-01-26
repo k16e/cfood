@@ -38,12 +38,9 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states'
+const props = defineProps({
+    product: { type: Object, required: true }
+})
 
-const { product } = defineProps(['product'])
-
-const store = useStateStore()
-const addToCart = store.addToCart
-const addToWishlist = store.addToWishlist
-const wishlist = store.wishlist
+const { wishlist, addToCart, addToWishlist } = useProductsStore()
 </script>

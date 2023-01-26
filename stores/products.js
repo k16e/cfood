@@ -1,13 +1,10 @@
-export const useStateStore = defineStore('stateStore', {
+export const useProductsStore = defineStore('products', {
     state: () => ({
         products: [],
         cart: [],
         wishlist: [],
         shippingRates: [],
-        order: [],
-
-        overlay: false,
-        sheet: false
+        order: []
     }),
     actions: {
         async fetchProducts() {

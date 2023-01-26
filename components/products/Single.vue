@@ -68,15 +68,11 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states.js'
+const props = defineProps({
+    product: { type: Object, required: true }
+})
 
-const { product } = defineProps(['product'])
-
-const store = useStateStore()
-const cart = store.cart
-const addToCart = store.addToCart
-const addToWishlist = store.addToWishlist
-const wishlist = store.wishlist
+const { cart, wishlist, addToCart, addToWishlist } = useProductsStore()
 const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
 

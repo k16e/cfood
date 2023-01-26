@@ -13,8 +13,5 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states.js'
-
-const store = useStateStore()
-const cart = store.cart
+const { cart } = useProductsStore()
 </script>

@@ -1,6 +1,6 @@
 <template>
     <Reveal>
-        <ProductsOverview :product="product[0]"/>
+        <ProductsSingle :product="product[0]"/>
     </Reveal>
 </template>
 

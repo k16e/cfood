@@ -14,11 +14,7 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states'
-
-const store = useStateStore()
-await store.fetchProducts()
-const products = store.products
+const { products } = useProductsStore()
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',

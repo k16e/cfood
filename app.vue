@@ -26,5 +26,5 @@
 </template>
 
 <script setup>
-const { overlay, sheet } = useStatesStore()
+const { overlay, sheet } = useAppStore()
 </script>

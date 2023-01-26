@@ -80,12 +80,8 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states.js'
-
-const store = useStateStore()
-const wishlist = store.wishlist
+const { wishlist, addToCart } = useProductsStore()
 const removeFromWishlist = (e, itemIdx) => wishlist.splice(itemIdx, 1)
-const addToCart = store.addToCart
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
