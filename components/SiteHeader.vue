@@ -9,11 +9,13 @@
                     <span v-text="'c.food home'" class="sr-only"/>
                     <Logo/>
                 </NuxtLink>
-                <button
-                    v-if="!isLargeScreen"
-                    class="luna-btn _is-square flex lg:hidden">
-                    <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
-                </button>
+                <ClientOnly>
+                    <button
+                        v-if="!isLargeScreen"
+                        class="luna-btn _is-square flex lg:hidden">
+                        <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
+                    </button>
+                </ClientOnly>
             </div>
             <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
