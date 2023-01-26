@@ -2,12 +2,19 @@
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
         <div class="flex items-center h-full translate-y-2.5">
-            <NuxtLink
-                to="/"
-                class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
-                <span v-text="'c.food home'" class="sr-only"/>
-                <Logo/>
-            </NuxtLink>
+            <div class="flex items-center">
+                <NuxtLink
+                    to="/"
+                    class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
+                    <span v-text="'c.food home'" class="sr-only"/>
+                    <Logo/>
+                </NuxtLink>
+                <button
+                    v-if="!isLargeScreen"
+                    class="luna-btn _is-square">
+                    <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
+                </button>
+            </div>
             <nav class="sr-only lg:not-sr-only flex !h-[95%] items-center">
                 <h2 v-text="'Main navigation'" class="sr-only"/>
                 <ul class="flex items-center h-full w-full space-x-3">
@@ -42,4 +49,5 @@ const routes = [
 ]
 const currentRoute = useRoute()
 const isParentRoute = path => currentRoute.path.startsWith(path)
+const { isLargeScreen } = useMediaQueryDefs()
 </script>
