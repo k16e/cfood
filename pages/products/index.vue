@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container center padX padTGrow>
             <div class="flex items-center justify-between">
                 <Heading tag="h1" content="Our products"/>
@@ -10,7 +10,7 @@
                 </li>
             </ul>
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

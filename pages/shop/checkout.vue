@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container padX center padTGrow>
             <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
             <ClientOnly>
@@ -115,7 +115,7 @@
                 </p>
             </ClientOnly>
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container padX center padTGrow>
             <div v-editable="blok" data-test="media-split">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-12 sm:gap-14">
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

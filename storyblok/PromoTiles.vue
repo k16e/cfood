@@ -1,6 +1,6 @@
 <template>
-    <WrapperReveal>
-        <WrapperSection>
+    <Reveal>
+        <Section>
             <div class="overflow-hidden pt-32 sm:pt-16 z-[1] relative">
                 <Wave :stroke="false" :bottom="'revert'" class="z-[1]"/>
                 <Wave
@@ -77,8 +77,8 @@
                     </Container>
                 </div>
             </div>
-        </WrapperSection>
-    </WrapperReveal>
+        </Section>
+    </Reveal>
 </template>
 
 <script setup>

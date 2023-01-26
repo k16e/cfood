@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container padX center padTGrow>
             <HeaderPage
                 tag="h1" content="Thanks, a load!"
@@ -7,7 +7,7 @@
                 linkText="Buy more"
             />
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

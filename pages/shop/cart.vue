@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container padX center padTGrow>
             <div class="flex items-center justify-between">
                 <Heading tag="h1" content="Your cart!"/>
@@ -106,7 +106,7 @@
                 </div>
             </ClientOnly>
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

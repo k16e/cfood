@@ -1,7 +1,7 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <ProductsOverview :product="product[0]"/>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>

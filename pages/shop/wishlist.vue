@@ -1,5 +1,5 @@
 <template>
-    <WrapperReveal>
+    <Reveal>
         <Container padX center padTGrow>
             <HeaderPage
                 tag="h1" content="Your wishlist!"
@@ -76,7 +76,7 @@
                 </div>
             </ClientOnly>
         </Container>
-    </WrapperReveal>
+    </Reveal>
 </template>
 
 <script setup>
