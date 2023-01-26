@@ -16,8 +16,8 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = (route.path === '/' ? 'home' : route.path).replaceAll('//', '/')
-
 let story = ref(null)
+
 const storyblok = async () => {
     try {
         const response = await useStoryblok(path, {

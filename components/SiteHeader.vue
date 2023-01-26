@@ -11,7 +11,8 @@
                 </NuxtLink>
                 <button
                     v-if="!isLargeScreen"
-                    class="luna-btn _is-square">
+                    class="luna-btn _is-square"
+                    v-auto-animate>
                     <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
                 </button>
             </div>
