@@ -110,10 +110,7 @@
 </template>
 
 <script setup>
-import { useStateStore } from '@/states.js'
-
-const store = useStateStore()
-const cart = store.cart
+const { cart } = useStatesStore()
 
 const router = useRouter()
 const proceedToCheckout = () => router.push({ path: '/shop/checkout' })

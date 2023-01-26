@@ -20,4 +20,11 @@
             </footer>
         </div>
     </NuxtLayout>
+    <Overlay v-if="overlay">
+        <Sheet v-if="sheet"/>
+    </Overlay>
 </template>
+
+<script setup>
+const { overlay, sheet } = useStatesStore()
+</script>

@@ -4,7 +4,10 @@ export const useStateStore = defineStore('stateStore', {
         cart: [],
         wishlist: [],
         shippingRates: [],
-        order: []
+        order: [],
+
+        overlay: false,
+        sheet: false
     }),
     actions: {
         async fetchProducts() {
