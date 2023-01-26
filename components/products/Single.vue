@@ -5,28 +5,28 @@
             tag="h1"
             :content="product.name" isChildPage>
             <Transition
-                name="switch"
+                enter-active-class="transition-all duration-300 ease"
+                enter-from-class="opacity-0 translate-y-4"
+                leave-to-class="opacity-0 -translate-y-4"
                 mode="out-in">
-                <div class="">
-                    <div
-                        v-if="$itemIsIn(product, cart)"
-                        class="flex items-center space-x-3">
-                        <ProductsCarting :item="cart[productIdx(product)]"/>
-                        <NuxtLink
-                            to="/shop/cart"
-                            class="luna-btn _is-primary luna-turn-off-active">
-                            <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
-                            <span v-text="`Go to cart`" class="hidden lg:block"/>
-                        </NuxtLink>
-                    </div>
-                    <button
-                        v-else
-                        @click="addToCart(product)"
-                        class="luna-btn _is-primary">
-                        <Icon name="ri:shopping-cart-fill" size="20"/>
-                        <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
-                    </button>
+                <div
+                    v-if="$itemIsIn(product, cart)"
+                    class="flex items-center space-x-3">
+                    <ProductsCarting :item="cart[productIdx(product)]"/>
+                    <NuxtLink
+                        to="/shop/cart"
+                        class="luna-btn _is-primary luna-turn-off-active">
+                        <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
+                        <span v-text="`Go to cart`" class="hidden lg:block"/>
+                    </NuxtLink>
                 </div>
+                <button
+                    v-else
+                    @click="addToCart(product)"
+                    class="luna-btn _is-primary">
+                    <Icon name="ri:shopping-cart-fill" size="20"/>
+                    <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
+                </button>
             </Transition>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
@@ -75,14 +75,3 @@ const props = defineProps({
 const { cart, wishlist, addToCart, addToWishlist } = useProductsStore()
 const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
-
-<style scoped>
-.switch-enter-from,
-.switch-leave-to {
-    @apply opacity-0 translate-y-2;
-}
-.switch-enter-active,
-.switch-leave-active {
-    @apply transition duration-200;
-}
-</style>

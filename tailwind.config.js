@@ -25,11 +25,11 @@ module.exports = {
             }),
             animation: {
                 'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
-                'slide-in-top': 'slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
+                'slide-in-top': 'slide-in-top 0.5s ease-out'
             },
             keyframes: {
                 'slide-in-top': {
-                    '0%': { transform: 'translateY(-8px)', opacity: '0' },
+                    '0%': { transform: 'translateY(-16px)', opacity: '0' },
                     to: { transform: 'translateY(0)', opacity: '1' }
                 }
             }
