@@ -127,12 +127,12 @@ useHead({
     ]
 })
 
-const products = useProductsStore()
-const cart = products.cart
+const productsStore = useProductsStore()
+const cart = productsStore.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
-await products.fetchShippingRates()
-const shippingRates = ref(products.shippingRates)
+await productsStore.fetchShippingRates()
+const shippingRates = ref(productsStore.shippingRates)
 const shipping = ref(shippingRates.value[0].price)
 
 const customer = {
@@ -148,7 +148,7 @@ let formStatus = {
     error: ref(false),
     errorMessage: ref(null)
 }
-const order = products.order
+const order = productsStore.order
 const { completeOrder } = useOrderCompletion()
 
 const proceedToPay = () => {
@@ -160,7 +160,7 @@ const proceedToPay = () => {
         ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
         callback: response => {
             let reference = response.reference
-            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, products, cart, reference)
+            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, productsStore, cart, reference)
         },
         onClose: () => {
             alert(`Sure you want to dismiss this transaction?`)
