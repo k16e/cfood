@@ -12,7 +12,7 @@
 
 <script setup>
 const route = useRoute()
-const path = route.path === '/' ? 'home' : route.path
+const path = route.path === '/' ? 'home' : (route.path).substring(1)
 const storyblok = useStoryblokStore()
 await storyblok.fetchStory(path)
 const { story } = storyblok
