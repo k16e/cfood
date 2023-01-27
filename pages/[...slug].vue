@@ -14,25 +14,10 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
-let story = ref(null)
-
-const storyblok = async () => {
-    try {
-        const response = await useStoryblok(path, {
-            version: config.storyblokVersion,
-            resolve_links: 'story'
-        })
-        if(!response) {
-            throw createError({
-                statusCode: 404,
-                statusMessage: 'Page Not Found',
-                fatal: true
-            })
-        }
-        return response
-    } catch (e) { console.log('Storyblok error: ', e) }
-}
-story = await storyblok()
+const story = await useAsyncStoryblok(path, {
+    version: config.storyblokVersion,
+    resolve_links: 'story'
+})
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
