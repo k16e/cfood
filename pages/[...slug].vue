@@ -14,7 +14,6 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
-console.log(path)
 let story = {}
 
 try {
