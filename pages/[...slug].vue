@@ -14,9 +14,17 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
-const story = await useAsyncStoryblok(path, {
-    version: config.storyblokVersion,
-    resolve_links: 'story'
+const story = ref(null)
+const storyblokApi = useStoryblokApi()
+const { data } = await useAsyncData(path,
+    async () => await storyblokApi.get(`cdn/stories/${path}`, {
+        version: config.storyblokVersion
+    })
+)
+story.value = data.value.data.story
+
+onMounted(() => {
+    useStoryblokBridge(story.value.id, (evStory) => (story.value = evStory))
 })
 
 useHead({
