@@ -15,7 +15,7 @@ const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
 const storyblok = useStoryblokStore()
 await storyblok.fetchStory(path)
-const story = storyblok.story
+const { story } = storyblok
 
 
 useHead({
