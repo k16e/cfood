@@ -59,7 +59,7 @@ export const useOrderCompletion = () => {
             setTimeout(() => {
                 console.log('Purchase complete. You may refresh this page. Thanks')
                 globalThis.location.reload()
-            }, 2000);
+            }, 3000);
         }
     }
 
