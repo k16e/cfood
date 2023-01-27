@@ -15,8 +15,8 @@
 
 <script setup>
 const productsStore = useProductsStore()
+await productsStore.fetchProducts()
 const products = productsStore.products
-console.log(products)
 
 
 useHead({
