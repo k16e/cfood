@@ -15,7 +15,7 @@
 
 <script setup>
 const productsStore = useProductsStore()
-const products = computed(() => productsStore.products)
+const products = productsStore.products
 console.log(products)
 
 
