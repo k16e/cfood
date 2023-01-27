@@ -7,7 +7,7 @@
             </svg>
         </Reveal>
     </div>
-    <StoryblokComponent v-if="story" :blok="story.content"/>
+    <StoryblokComponent v-else :blok="story.content"/>
 </template>
 
 <script setup>
