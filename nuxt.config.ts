@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-    // ssr: false,
     modules: [
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
@@ -32,8 +31,10 @@ export default defineNuxtConfig({
         storyblokKey: process.env.STORYBLOK_KEY,
         serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
         supabaseUrl: process.env.SUPABASE_URL,
-        paystackKey: process.env.PAYSTACK_KEY,
-        storyblokVersion: process.env.STORYBLOK_VERSION
+        public: {
+            paystackKey: process.env.PAYSTACK_KEY,
+            storyblokVersion: process.env.STORYBLOK_VERSION
+        }
     },
     lodash: {
         prefix: '_',

@@ -22,7 +22,7 @@ try {
       resolve_links: 'story'
     })
     .then(res => story = res.value)
-} catch (error) { console.error(error) }
+} catch (err) { console.error(err) }
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',

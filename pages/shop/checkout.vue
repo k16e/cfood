@@ -119,12 +119,6 @@
 </template>
 
 <script setup>
-useHead({
-    script: [
-        { src: 'https://js.paystack.co/v1/inline.js', async: true }
-    ]
-})
-
 const productsStore = useProductsStore()
 const cart = productsStore.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
@@ -149,6 +143,7 @@ let formStatus = {
 const order = productsStore.order
 const { completeOrder } = useOrderCompletion()
 const config = useRuntimeConfig()
+
 const proceedToPay = () => {
     let handler = PaystackPop.setup({
         key: config.paystackKey,
@@ -167,4 +162,10 @@ const proceedToPay = () => {
     });
     handler.openIframe()
 }
+
+useHead({
+    script: [
+        { src: 'https://js.paystack.co/v1/inline.js', async: true }
+    ]
+})
 </script>
