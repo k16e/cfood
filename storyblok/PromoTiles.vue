@@ -86,6 +86,6 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-    img { @apply h-48 w-48 rounded-2xl object-cover md:h-64 md:w-64 flex-shrink-0; }
-    img + img { @apply mt-7 md:mt-0; }
+img { @apply h-48 w-48 rounded-2xl object-cover md:h-64 md:w-64 flex-shrink-0; }
+img + img { @apply mt-7 md:mt-0; }
 </style>

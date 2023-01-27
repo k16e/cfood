@@ -14,23 +14,19 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
-const story = ref(null)
-const storyblokApi = useStoryblokApi()
-const { data } = await useAsyncData(path,
-    async () => await storyblokApi.get(`cdn/stories/${path}`, {
-        version: config.storyblokVersion
-    })
-)
-story.value = data.value.data.story
+console.log(path)
+let story = {}
 
-onMounted(() => {
-    useStoryblokBridge(story.value.id, (evStory) => (story.value = evStory))
-})
+try {
+    await useStoryblok(path, {
+      version: config.storyblokVersion,
+      resolve_links: 'story'
+    })
+    .then(res => story = res.value)
+} catch (error) { console.error(error) }
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
-    meta: [
-        { name: 'description', content: 'All condiments and foodstuff from c.food' }
-    ]
+    meta: [{ name: 'description', content: 'All condiments and foodstuff from c.food' }]
 })
 </script>

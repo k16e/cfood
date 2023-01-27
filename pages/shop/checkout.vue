@@ -119,8 +119,6 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig()
-
 useHead({
     script: [
         { src: 'https://js.paystack.co/v1/inline.js', async: true }
@@ -150,7 +148,7 @@ let formStatus = {
 }
 const order = productsStore.order
 const { completeOrder } = useOrderCompletion()
-
+const config = useRuntimeConfig()
 const proceedToPay = () => {
     let handler = PaystackPop.setup({
         key: config.paystackKey,
