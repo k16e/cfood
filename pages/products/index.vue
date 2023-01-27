@@ -16,6 +16,7 @@
 <script setup>
 const productsStore = useProductsStore()
 const products = computed(() => productsStore.products)
+console.log(products)
 
 
 useHead({
