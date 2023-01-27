@@ -14,7 +14,9 @@
 </template>
 
 <script setup>
-const { products } = useProductsStore()
+const productsStore = useProductsStore()
+const products = computed(() => productsStore.products)
+
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',

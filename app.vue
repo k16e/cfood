@@ -27,10 +27,4 @@
 
 <script setup>
 const app = useAppStore()
-
-useHead({
-    bodyAttrs: {
-        class: app.overlay ? 'overflow-hidden' : ''
-    }
-})
 </script>
