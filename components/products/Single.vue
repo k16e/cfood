@@ -1,6 +1,5 @@
 <template>
     <Container padX center padTGrow>
-        <!-- Product title -->
         <HeaderPage
             tag="h1"
             :content="product.name" isChildPage>
@@ -30,13 +29,11 @@
             </Transition>
         </HeaderPage>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
-            <!-- Product image -->
             <NuxtImg
                 :src="product.image"
                 :alt="product.name"
                 sizes="sm:576px md:768px lg:960px"
             />
-            <!-- Product details -->
             <section
                 aria-labelledby="information-heading"
                 class="bg-white p-5 rounded-xl border border-gray-200 relative">
@@ -52,7 +49,6 @@
                     <Icon name="ic:round-check-circle" size="18" class="flex-shrink-0 text-green-700" aria-hidden="true"/>
                     <p class="ml-2 text-sm text-gray-500">In stock, ready to ship</p>
                 </div>
-                <!-- Add to wishlist -->
                 <ClientOnly>
                     <button
                         @click="addToWishlist(product)"

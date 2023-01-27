@@ -1,9 +1,21 @@
 <template>
     <Reveal>
         <Container center padX padTGrow>
-            <div class="flex items-center justify-between">
-                <Heading tag="h1" content="Our products"/>
-            </div>
+            <HeaderPage tag="h1" content="Our products">
+                <Transition
+                    enter-active-class="transition-all duration-300 ease"
+                    enter-from-class="opacity-0 translate-y-4"
+                    leave-to-class="opacity-0 -translate-y-4"
+                    mode="out-in">
+                    <NuxtLink
+                        v-if="cart.length"
+                        to="/shop/cart"
+                        class="luna-btn _is-primary luna-turn-off-active">
+                        <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
+                        <span v-text="`Go to cart`" class="hidden lg:block"/>
+                    </NuxtLink>
+                </Transition>
+            </HeaderPage>
             <ul class="pt-5 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
                 <li v-for="product in products" :key="product.uuid">
                     <ProductsCard :product="product"/>
@@ -16,7 +28,7 @@
 <script setup>
 const productsStore = useProductsStore()
 await productsStore.fetchProducts()
-const products = productsStore.products
+const { products, cart } = productsStore
 
 
 useHead({
