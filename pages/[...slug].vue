@@ -7,22 +7,16 @@
             </svg>
         </Reveal>
     </div>
-    <StoryblokComponent v-else :blok="story.content"/>
+    <StoryblokComponent v-if="story" :blok="story.content"/>
 </template>
 
 <script setup>
-const config = useRuntimeConfig()
 const route = useRoute()
 const path = route.path === '/' ? 'home' : route.path
-let story = {}
+const storyblok = useStoryblokStore()
+await storyblok.fetchStory(path)
+const story = storyblok.story
 
-try {
-    await useStoryblok(path, {
-      version: config.storyblokVersion,
-      resolve_links: 'story'
-    })
-    .then(res => story = res.value)
-} catch (err) { console.error(err) }
 
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',

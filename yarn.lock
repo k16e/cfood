@@ -3968,7 +3968,7 @@ nuxt-lodash@^2.4.1:
     "@types/lodash-es" "^4.17.6"
     lodash-es "^4.17.21"
 
-nuxt@^3.1.0:
+nuxt@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.1.1.tgz#c8acb7dadb006aa6c4ada6129e7dcacddbfad7a9"
   integrity sha512-GVdmV88lR01OX0slxTPyTzwQkge7fxNREkx2QW0Lo66fb6aHcJlRXzFMBCOTjas+Ncng6AalIyIiPREEteGKSg==

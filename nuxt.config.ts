@@ -9,7 +9,6 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@vueuse/nuxt',
         '@nuxt/image-edge',
-        '@vueuse/nuxt',
         ['@storyblok/nuxt', {
             accessToken: process.env.STORYBLOK_KEY,
             cache: { clear: 'auto', type: 'memory' }
