@@ -10,11 +10,11 @@
                     :max-height="'max-h-[88px]'"
                 />
             </header>
-            <main class="py-24 flex-1">
+            <main class="py-24 md:py-28 flex-1">
                 <NuxtPage/>
             </main>
             <footer
-                class="relative transition-all pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center">
+                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center">
                 <Wave top="top-[-56px]" :stroke="false"/>
                 <SiteFooter/>
             </footer>
