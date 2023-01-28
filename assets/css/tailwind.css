@@ -44,6 +44,10 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-input { @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3 lg:p-2; }
 .luna-label { @apply block mb-1.5 text-sm font-medium text-gray-700; }
 
+._is-disabled {
+    @apply cursor-not-allowed opacity-25;
+}
+
 
 
 .router-link-active:not(.luna-turn-off-active),

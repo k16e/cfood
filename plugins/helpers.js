@@ -41,11 +41,13 @@ export default defineNuxtPlugin(nuxtApp => {
             decreaseFromCart: (e, item) => {
                 const
                     input = e.target.nextElementSibling,
+                    incr = input.nextElementSibling,
                     min = Number(input.getAttribute('min'))
                 let value = Number(input.value)
 
                 if (value <= 0) return
                 value--
+                if (incr.classList.contains('_is-disabled')) incr.classList.remove('_is-disabled')
                 if (value == 0) {
                     const { cart } = useProductsStore()
                     cart.splice(cart.findIndex(i => i.sku === item.sku), 1)
