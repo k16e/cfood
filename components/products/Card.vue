@@ -37,7 +37,7 @@
                     <NuxtLink
                         to="/shop/cart"
                         class="luna-btn _is-primary _is-square luna-turn-off-active">
-                        <Icon name="ri:shopping-cart-fill" size="22"/>
+                        <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
                     </NuxtLink>
                 </div>
                 <button

@@ -11,9 +11,9 @@
                         <div v-if="cart.length">
                             <NuxtLink
                                 to="/shop/cart"
-                                class="luna-btn _is-primary luna-turn-off-active">
-                                <Icon name="ri:shopping-cart-fill" size="22" class="lg:mr-1.5"/>
-                                <span v-text="`Go to cart`" class="hidden lg:block"/>
+                                class="luna-btn _is-primary _is-square luna-turn-off-active">
+                                <span v-text="`Go to cart`" class="hidden"/>
+                                <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
                             </NuxtLink>
                         </div>
                     </Transition>
