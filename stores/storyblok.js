@@ -1,16 +1,20 @@
 export const useStoryblokStore = defineStore('storyblok', {
     state: () => ({
-        story: {}
+        story: {},
+        fallbackComponent: 'page'
     }),
     actions: {
         async fetchStory(path) {
             const config = useRuntimeConfig()
             try {
-                await useStoryblok(path, {
+                await useAsyncStoryblok(path, {
                     version: config.storyblokVersion,
                     resolve_links: 'story'
                 })
-                .then(res => this.story = res.value)
+                .then(res => {
+                    this.story = res.value
+                    this.fallbackComponent = this.story.content.component
+                })
             } catch (err) { console.error(err) }
         }
     },
