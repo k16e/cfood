@@ -1,8 +1,10 @@
 export const useOrderCompletion = () => {
     const route = useRouter()
     const supabase = useSupabaseClient()
+
     const completeOrder = async (formStatus, order, customer, shippingRates, subTotal, shipping, productsStore, cart, reference) => {
         formStatus.sending.value = true
+
         order.push({
             first_name: customer.first_name.value,
             last_name: customer.last_name.value,
@@ -45,21 +47,19 @@ export const useOrderCompletion = () => {
                 ])
 
             formStatus.sending.value = false
+
             if (order_error) throw order_error
             if (customer_error) throw customer_error
-
         } catch (err) { console.log(err) }
         finally {
             formStatus.sent.value = true
             route.push({ path: '/shop/success' })
-            console.log('Purchase complete. You may refresh this page. Thanks')
-            setTimeout(() => {
-                route.push({ path: '/products' })
-                productsStore.$patch({
-                    cart: [],
-                    order: []
-                })
-            }, 3000);
+            productsStore.$patch({
+                cart: [],
+                order: []
+            })
+            console.log('Purchase complete. You may refresh this page. Thanks!')
+            setTimeout(() => { route.push({ path: '/products' }) }, 5000);
         }
     }
 
