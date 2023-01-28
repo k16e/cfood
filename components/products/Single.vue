@@ -1,13 +1,7 @@
 <template>
     <Container padX center padTGrow>
-        <PageHeader
-            tag="h1"
-            :content="product.name" isChildPage>
-            <Transition
-                enter-active-class="transition-all duration-300 ease"
-                enter-from-class="opacity-0 translate-y-4"
-                leave-to-class="opacity-0 -translate-y-4"
-                mode="out-in">
+        <PageHeader tag="h1" :content="product.name" isChildPage>
+            <Transition name="slide-down" mode="out-in">
                 <div
                     v-if="$itemIsIn(product, cart)"
                     class="flex items-center space-x-3">
@@ -28,7 +22,7 @@
                 </button>
             </Transition>
         </PageHeader>
-        <div class="pt-5 grid md:grid-cols-2 gap-5">
+        <div class="grid md:grid-cols-2 gap-5">
             <NuxtImg
                 :src="product.image"
                 :alt="product.name"
@@ -64,9 +58,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
-    product: { type: Object, required: true }
-})
+const props = defineProps({ product: { type: Object, required: true } })
 
 const { cart, wishlist, addToCart, addToWishlist } = useProductsStore()
 const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)

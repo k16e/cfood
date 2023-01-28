@@ -7,11 +7,11 @@
                 <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
             </figure>
             <div class="p-3 border-t border-gray-100 h-full flex flex-col justify-between">
-                <div class="pr-14">
+                <div class="pr-14 mb-9 sm:mb-12">
                     <Heading tag="h2" :content="product.name"/>
                     <p v-text="product.description" class="text-sm line-clamp-2 opacity-70"/>
                 </div>
-                <div class="pt-2 sm:pt-3">
+                <div>
                     <p
                         v-text="$formatPrice(product.price)"
                         class="font-medium text-gray-800 text-2xl sm:text-xl"
@@ -28,19 +28,32 @@
                 <span v-text="'Add to wishlist'" class="sr-only"/>
             </button>
         </ClientOnly>
-        <button
-            @click="addToCart(product)"
-            class="flex items-center p-3 sm:p-2 rounded-full bg-orange-600 text-white absolute bottom-3 right-3 z-10">
-            <Icon name="ri:shopping-cart-fill" size="18"/>
-            <span v-text="'Add to cart'" class="sr-only"/>
-        </button>
+        <div class="absolute bottom-3 right-3 z-10">
+            <Transition name="slide-up" mode="out-in">
+                <div
+                    v-if="$itemIsIn(product, cart)"
+                    class="flex items-center space-x-3">
+                    <ProductsCarting :item="cart[productIdx(product)]"/>
+                    <NuxtLink
+                        to="/shop/cart"
+                        class="luna-btn _is-primary _is-square luna-turn-off-active">
+                        <Icon name="ri:shopping-cart-fill" size="22"/>
+                    </NuxtLink>
+                </div>
+                <button
+                    v-else
+                    @click="addToCart(product)"
+                    class="luna-btn _is-primary _is-square">
+                    <Icon name="ri:shopping-cart-fill" size="20"/>
+                </button>
+            </Transition>
+        </div>
     </div>
 </template>
 
 <script setup>
-const props = defineProps({
-    product: { type: Object, required: true }
-})
+const props = defineProps({ product: { type: Object, required: true } })
 
-const { wishlist, addToCart, addToWishlist } = useProductsStore()
+const { cart, wishlist, addToCart, addToWishlist } = useProductsStore()
+const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
