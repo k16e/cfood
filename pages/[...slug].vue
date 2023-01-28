@@ -15,7 +15,6 @@ const storyblok = useStoryblokStore()
 await storyblok.fetchStory(path)
 const { story } = storyblok
 
-
 useHead({
     title: 'c.food Products (All Condiments & foodstuff)',
     meta: [{ name: 'description', content: 'All condiments and foodstuff from c.food' }]
