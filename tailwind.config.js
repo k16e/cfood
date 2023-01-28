@@ -12,6 +12,9 @@ module.exports = {
                 'display': ['Yellowtail', 'cursive'],
                 'sans': ['Kumbh Sans', 'sans-serif']
             },
+            fontSize: {
+                sm: '0.975rem'
+            },
             typography: (theme) => ({
                 DEFAULT: {
                     css: {

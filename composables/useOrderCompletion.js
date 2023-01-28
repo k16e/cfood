@@ -51,14 +51,14 @@ export const useOrderCompletion = () => {
         } catch (err) { console.log(err) }
         finally {
             formStatus.sent.value = true
-            productsStore.$patch({
-                cart: [],
-                order: []
-            })
             route.push({ path: '/shop/success' })
+            console.log('Purchase complete. You may refresh this page. Thanks')
             setTimeout(() => {
-                console.log('Purchase complete. You may refresh this page. Thanks')
-                globalThis.location.reload()
+                route.push({ path: '/products' })
+                productsStore.$patch({
+                    cart: [],
+                    order: []
+                })
             }, 3000);
         }
     }
