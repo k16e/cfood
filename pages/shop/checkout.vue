@@ -1,7 +1,7 @@
 <template>
     <Reveal>
         <Container padX center padTGrow>
-            <HeaderPage tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
+            <PageHeader tag="h1" content="Checkout" link="/shop/cart" linkIcon="ic:baseline-arrow-back" linkText="Modify cart?"/>
             <ClientOnly>
                 <div v-if="cart.length" class="pt-5 overflow-x-hidden">
                     <div class="bg-white rounded-xl border border-gray-200 relative overflow-x-hidden">

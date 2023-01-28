@@ -1,6 +1,6 @@
 <template>
     <Container padX center padTGrow>
-        <HeaderPage
+        <PageHeader
             tag="h1"
             :content="product.name" isChildPage>
             <Transition
@@ -27,7 +27,7 @@
                     <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
                 </button>
             </Transition>
-        </HeaderPage>
+        </PageHeader>
         <div class="pt-5 grid md:grid-cols-2 gap-5">
             <NuxtImg
                 :src="product.image"

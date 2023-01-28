@@ -10,16 +10,14 @@
             </div>
 
             <ClientOnly>
-                <div v-auto-animate class="pt-5">
+                <div class="pt-5">
                     <div v-if="cart.length" class="bg-white px-3 sm:px-5 rounded-xl border border-gray-200">
                         <form
                             @submit.prevent="proceedToCheckout()"
                             class="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 pb-7">
                             <section aria-labelledby="cart-heading" class="lg:col-span-7">
                                 <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
-                                <ul
-                                    v-auto-animate
-                                    class="divide-y divide-gray-200">
+                                <ul class="divide-y divide-gray-200">
                                     <li v-for="(item, idx) in cart" :key="item.sku" class="flex py-5 sm:py-7">
                                         <NuxtImg
                                             :src="item.image"

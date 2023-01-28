@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between mb-5 lg:mb-7">
         <div class="flex-1" :class="isChildPage && 'flex items-center gap-x-3 lg:gap-x-5'">
             <BackToParent v-if="isChildPage" class="translate-y-1"/>
             <Heading :tag="tag" :content="content"/>
