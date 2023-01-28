@@ -61,7 +61,7 @@ export const useOrderCompletion = () => {
             console.log('Purchase complete. You may refresh this page. Thanks!')
             setTimeout(() => {
                 route.push({ path: '/products' })
-                console.log('Thanks for buying from us. You were redirected back to our products page.')
+                console.log('Thanks for buying from us! You were redirected to our products page.')
             }, 5000);
         }
     }
