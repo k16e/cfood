@@ -1,26 +1,28 @@
 <template>
     <Container padX center padTGrow>
         <PageHeader tag="h1" :content="product.name" isChildPage>
-            <Transition name="slide-down" mode="out-in">
-                <div
-                    v-if="$itemIsIn(product, cart)"
-                    class="flex items-center space-x-3">
-                    <ProductsCarting :item="cart[productIdx(product)]"/>
-                    <NuxtLink
-                        to="/shop/cart"
-                        class="luna-btn _is-primary _is-square luna-turn-off-active">
-                        <span v-text="`Go to cart`" class="hidden"/>
-                        <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
-                    </NuxtLink>
-                </div>
-                <button
-                    v-else
-                    @click="addToCart(product)"
-                    class="luna-btn _is-primary">
-                    <Icon name="ri:shopping-cart-fill" size="20"/>
-                    <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
-                </button>
-            </Transition>
+            <ClientOnly>
+                <Transition name="slide-down" mode="out-in">
+                    <div
+                        v-if="$itemIsIn(product, cart)"
+                        class="flex items-center space-x-3">
+                        <ProductsCarting :item="cart[productIdx(product)]"/>
+                        <NuxtLink
+                            to="/shop/cart"
+                            class="luna-btn _is-primary _is-square luna-turn-off-active">
+                            <span v-text="`Go to cart`" class="hidden"/>
+                            <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
+                        </NuxtLink>
+                    </div>
+                    <button
+                        v-else
+                        @click="addToCart(product)"
+                        class="luna-btn _is-primary">
+                        <Icon name="ri:shopping-cart-fill" size="20"/>
+                        <span v-text="'Add to cart'" class="hidden lg:block ml-1.5"/>
+                    </button>
+                </Transition>
+            </ClientOnly>
         </PageHeader>
         <div class="grid md:grid-cols-2 gap-5">
             <NuxtImg

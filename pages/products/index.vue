@@ -3,11 +3,7 @@
         <Container center padX padTGrow>
             <PageHeader tag="h1" content="Our products">
                 <ClientOnly>
-                    <Transition
-                        enter-active-class="transition-all duration-300 ease"
-                        enter-from-class="opacity-0 translate-y-4"
-                        leave-to-class="opacity-0 -translate-y-4"
-                        mode="out-in">
+                    <Transition name="slide-up" mode="out-in">
                         <div v-if="cart.length">
                             <NuxtLink
                                 to="/shop/cart"

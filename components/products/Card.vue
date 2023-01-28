@@ -29,24 +29,26 @@
             </button>
         </ClientOnly>
         <div class="absolute bottom-3 right-3 z-10">
-            <Transition name="slide-up" mode="out-in">
-                <div
-                    v-if="$itemIsIn(product, cart)"
-                    class="flex items-center space-x-3">
-                    <ProductsCarting :item="cart[productIdx(product)]"/>
-                    <NuxtLink
-                        to="/shop/cart"
-                        class="luna-btn _is-primary _is-square luna-turn-off-active">
-                        <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
-                    </NuxtLink>
-                </div>
-                <button
-                    v-else
-                    @click="addToCart(product)"
-                    class="luna-btn _is-primary _is-square">
-                    <Icon name="ri:shopping-cart-fill" size="20"/>
-                </button>
-            </Transition>
+            <ClientOnly>
+                <Transition name="slide-up" mode="out-in">
+                    <div
+                        v-if="$itemIsIn(product, cart)"
+                        class="flex items-center space-x-3">
+                        <ProductsCarting :item="cart[productIdx(product)]"/>
+                        <NuxtLink
+                            to="/shop/cart"
+                            class="luna-btn _is-primary _is-square luna-turn-off-active">
+                            <Icon name="material-symbols:arrow-outward-rounded" size="22"/>
+                        </NuxtLink>
+                    </div>
+                    <button
+                        v-else
+                        @click="addToCart(product)"
+                        class="luna-btn _is-primary _is-square">
+                        <Icon name="ri:shopping-cart-fill" size="20"/>
+                    </button>
+                </Transition>
+            </ClientOnly>
         </div>
     </div>
 </template>

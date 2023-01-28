@@ -12,25 +12,20 @@ export default defineNuxtPlugin(nuxtApp => {
                     .format(price)
                 return formattedPrice
             },
-
             slugify: str => _kebabCase(str.replace(/&/g, '-and-')),
             stripLink: link => {
                 if (link.includes('pages')) return link.replace(/pages/g, '')
                 return link
             },
-
             isEmpty: str => _isEmpty(str),
-
             mdRender: md(),
-
             mediaType: (file, type) => {
                 const imageRegexp = /[\/.](gif|jpg|jpeg|tiff|png)$/i
                 type = type.toLowerCase()
                 if (imageRegexp.test(file)) return (type = 'image')
             },
-
             year: () => new Date().getFullYear(),
-
+            removeFromCart: (e, idx, cart) => cart.splice(idx, 1),
             increaseToCart: (e, item) => {
                 const
                     input = e.target.previousElementSibling,
@@ -49,13 +44,16 @@ export default defineNuxtPlugin(nuxtApp => {
                     min = Number(input.getAttribute('min'))
                 let value = Number(input.value)
 
-                if (value == min) return
+                if (value <= 0) return
                 value--
+                if (value == 0) {
+                    const { cart } = useProductsStore()
+                    cart.splice(cart.findIndex(i => i.sku === item.sku), 1)
+                }
                 input.value = value
                 item.qty = value
                 item.subTotal = value * item.price
             },
-            removeFromCart: (e, idx, cart) => cart.splice(idx, 1),
             itemIsIn: (obj, arr) => arr.some(el => el.sku === obj.sku)
         }
     }
