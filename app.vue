@@ -1,7 +1,8 @@
 <template>
     <NuxtLoadingIndicator :color="`#ea580c`"/>
     <NuxtLayout>
-        <div class="flex flex-col min-h-screen">
+        <div
+            class="flex flex-col min-h-screen">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <SiteHeader/>
                 <Wave
@@ -20,6 +21,7 @@
             </footer>
         </div>
     </NuxtLayout>
+    <BackToTop class="fixed bottom-9 right-7 sm:right-9 z-20"/>
     <Overlay>
         <Sheet v-show="app.sheet"/>
     </Overlay>
@@ -27,4 +29,14 @@
 
 <script setup>
 const app = useAppStore()
+
+const backToTop = () => {
+    if (!process.client) return
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 480) app.showBackToTop = true
+        else app.showBackToTop = false
+    }, false)
+}
+
+backToTop()
 </script>
