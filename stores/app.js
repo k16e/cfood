@@ -1,7 +1,8 @@
 export const useAppStore = defineStore('app', {
     state: () => ({
         overlay: false,
-        sheet: false
+        sheet: false,
+        showBackToTop: false
     }),
     actions: {
         toggleOverlay() { this.overlay = !this.overlay },
