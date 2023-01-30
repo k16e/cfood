@@ -35,7 +35,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="flex items-center space-x-3 -translate-y-1 font-medium">
+        <div class="flex items-center space-x-3 translate-y-[-5px] font-medium">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
             <ProductsUserMenu/>
