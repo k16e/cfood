@@ -64,8 +64,16 @@ const backToTop = () => {
 }
 
 onMounted(() => {
-    window.addEventListener('scroll', () => {
-        backToTop()
-    })
+    const scrollEvents = () => {
+        window.addEventListener('scroll', () => {
+            backToTop()
+        }, false)
+    }
+
+    scrollEvents()
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', scrollEvents())
 })
 </script>
