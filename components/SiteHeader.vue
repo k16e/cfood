@@ -1,7 +1,7 @@
 <template>
     <Container center :max-width="'max-w-screen-2xl'"
         class="flex items-center justify-between h-full">
-        <div class="flex items-center h-full translate-y-2.5">
+        <div class="flex items-center h-full translate-y-1.5">
             <div class="flex items-center">
                 <NuxtLink
                     to="/"
@@ -35,7 +35,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="flex items-center space-x-3 -translate-y-0.5 font-medium">
+        <div class="flex items-center space-x-3 -translate-y-1 font-medium">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
             <ProductsUserMenu/>

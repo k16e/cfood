@@ -8,7 +8,7 @@
                 <Wave
                     class="fixed z-[-1]"
                     :fill="'#fff'"
-                    :max-height="'max-h-[88px]'"
+                    :max-height="'max-h-[80px]'"
                 />
             </header>
             <main class="py-24 flex-1 transition-all duration-300">
