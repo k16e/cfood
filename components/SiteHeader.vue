@@ -60,6 +60,7 @@ const toggleMenu = () => {
     } else {
         app.openSheet()
         app.activateOverlay()
+        if (app.showBackToTop) app.showBackToTop = false
     }
 }
 </script>
