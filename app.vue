@@ -75,4 +75,10 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', scrollEvents())
 })
+
+// useHead({
+//     htmlAttrs: {
+//         style: app.overlay ? 'overflow-y: hidden' : ''
+//     }
+// })
 </script>
