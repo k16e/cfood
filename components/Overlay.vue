@@ -1,7 +1,5 @@
 <template>
-    <Transition
-        enter-from-class="opacity-0"
-        leave-to-class="opacity-0">
+    <Transition name="fade-in">
         <div
             @click.self="app.removeOverlay"
             v-if="app.overlay"
