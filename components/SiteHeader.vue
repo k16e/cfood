@@ -12,7 +12,6 @@
                 <ClientOnly>
                     <button
                         @click="toggleMenu"
-                        v-if="!isLargeScreen"
                         class="luna-btn _is-square flex lg:hidden">
                         <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
                     </button>
@@ -52,7 +51,6 @@ const routes = [
 ]
 const currentRoute = useRoute()
 const isParentRoute = path => currentRoute.path.startsWith(path)
-const { isLargeScreen } = useMediaQueryDefs()
 const app = useAppStore()
 
 const toggleMenu = () => {

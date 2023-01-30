@@ -4,10 +4,9 @@
         leave-to-class="opacity-0">
         <div
             @click.self="app.removeOverlay"
-            v-show="app.overlay"
-            class="fixed inset-0 bg-gray-800 bg-opacity-80 ease duration-500 transition-opacity">
-            <slot/>
-        </div>
+            v-if="app.overlay"
+            class="fixed inset-0 bg-black bg-opacity-70 ease duration-300 transition-opacity"
+        />
     </Transition>
 </template>
 

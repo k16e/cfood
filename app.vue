@@ -25,9 +25,8 @@
             </footer>
         </div>
     </NuxtLayout>
-    <Overlay>
-        <Sheet v-show="app.sheet"/>
-    </Overlay>
+    <Overlay/>
+    <Sheet/>
 </template>
 
 <script setup>
