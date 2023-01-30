@@ -2,6 +2,7 @@
     <NuxtLoadingIndicator :color="`#ea580c`"/>
     <NuxtLayout>
         <div
+            ref="rootElRef"
             class="flex flex-col min-h-screen">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <SiteHeader/>
@@ -15,28 +16,57 @@
                 <NuxtPage/>
             </main>
             <footer
-                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center">
-                <Wave top="top-[-56px]" :stroke="false"/>
+                ref="footerRef"
+                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center"
+                :data-visible="isVisible">
+                <Wave top="top-[-64px]" :stroke="false"/>
                 <SiteFooter/>
+                <BackToTop class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
             </footer>
         </div>
     </NuxtLayout>
-    <BackToTop class="fixed bottom-9 right-7 sm:right-9 z-20"/>
     <Overlay>
         <Sheet v-show="app.sheet"/>
     </Overlay>
 </template>
 
 <script setup>
+import { useIntersectionObserver } from '@vueuse/core'
+
 const app = useAppStore()
 
+const rootElRef = ref(null)
+const footerRef = ref(null)
+const isVisible = ref(false)
+
+useIntersectionObserver(footerRef,
+    ([{ isIntersecting }]) => { isVisible.value = isIntersecting }
+)
+
 const backToTop = () => {
-    if (!process.client) return
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 480) app.showBackToTop = true
-        else app.showBackToTop = false
-    }, false)
+    const footer = footerRef.value
+    const footerHeight = Math.ceil(footer.getBoundingClientRect().height)
+    const root = document.documentElement
+    const footerVisible = footer.getAttribute('data-visible')
+    let divisor
+
+    if (window.pageYOffset > 480) {
+        app.showBackToTop = true
+        const bttRef = footer.lastElementSibbling
+        const bttHeigt = bttRef?.getBoundingClientRect()?.height || 56
+        divisor = Math.round(bttHeigt)
+    }
+    else app.showBackToTop = false
+
+    if (footerVisible === 'true') {
+        root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
+    }
+    else root.style.setProperty('--back-to-top-translate', 0)
 }
 
-backToTop()
+onMounted(() => {
+    window.addEventListener('scroll', () => {
+        backToTop()
+    })
+})
 </script>

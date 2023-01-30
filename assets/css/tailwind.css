@@ -3,6 +3,7 @@
     --body-bg: #f1f1f1;
     --bezier: cubic-bezier(0.55, 0, 0.1, 1);
     --transition: all 0.5s var(--bezier);
+    --back-to-top-translate: 0;
 }
 
 @tailwind components;
