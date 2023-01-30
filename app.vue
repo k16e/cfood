@@ -11,7 +11,7 @@
                     :max-height="'max-h-[88px]'"
                 />
             </header>
-            <main class="py-24 md:py-28 flex-1 transition-all duration-300">
+            <main class="py-24 flex-1 transition-all duration-300">
                 <NuxtPage/>
             </main>
             <footer
