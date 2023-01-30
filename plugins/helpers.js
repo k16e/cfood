@@ -1,4 +1,5 @@
 import md from 'markdown-it'
+
 export default defineNuxtPlugin(nuxtApp => {
     return {
         provide: {
