@@ -76,9 +76,9 @@ onUnmounted(() => {
     window.removeEventListener('scroll', scrollEvents())
 })
 
-// useHead({
-//     htmlAttrs: {
-//         style: app.overlay ? 'overflow-y: hidden' : ''
-//     }
-// })
+useHead({
+    htmlAttrs: {
+        style: () => app.overlay && 'overflow-y: hidden'
+    }
+})
 </script>
