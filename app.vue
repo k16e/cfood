@@ -35,7 +35,6 @@ import { useIntersectionObserver } from '@vueuse/core'
 
 const app = useAppStore()
 
-const rootElRef = ref(null)
 const footerRef = ref(null)
 const isVisible = ref(false)
 
