@@ -3,8 +3,8 @@
         <button
             v-if="app.showBackToTop"
             @click="scrollToTop"
-            class="luna-btn _is-primary _is-square _is-wider _is-raised">
-            <Icon name="material-symbols:arrow-upward-rounded" size="25"/>
+            class="luna-btn _is-borderless _is-square _is-wider _is-raised">
+            <Icon name="material-symbols:arrow-upward-rounded" size="25" class="text-orange-700"/>
         </button>
     </Transition>
 </template>
