@@ -60,8 +60,8 @@ const toggleMenu = () => {
         app.closeSheet()
         app.removeOverlay()
     } else {
-        app.activateOverlay()
         app.openSheet()
+        app.activateOverlay()
     }
 }
 </script>

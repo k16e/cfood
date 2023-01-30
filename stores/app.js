@@ -6,7 +6,9 @@ export const useAppStore = defineStore('app', {
     }),
     actions: {
         toggleOverlay() { this.overlay = !this.overlay },
-        activateOverlay() { this.overlay = true },
+        activateOverlay() {
+            this.overlay = true
+        },
         removeOverlay() {
             this.overlay = false
             this.sheet = false
