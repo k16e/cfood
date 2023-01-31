@@ -6,11 +6,7 @@
             class="flex flex-col min-h-screen">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <SiteHeader/>
-                <Wave
-                    class="fixed z-[-1]"
-                    :fill="'#fff'"
-                    :max-height="'max-h-[80px]'"
-                />
+                <Wave class="fixed z-[-1]" :fill="'#fff'" :max-height="'max-h-[80px]'"/>
             </header>
             <main class="py-24 flex-1 transition-all duration-300">
                 <NuxtPage/>
