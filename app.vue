@@ -13,7 +13,7 @@
             </main>
             <footer
                 ref="footerRef"
-                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-800 to-orange-600 text-white flex flex-col items-center"
+                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-600 to-orange-800 flex flex-col items-center"
                 :data-visible="isVisible">
                 <Wave top="top-[-64px]" :stroke="false"/>
                 <SiteFooter/>
