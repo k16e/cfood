@@ -13,7 +13,8 @@ module.exports = {
                 'sans': ['Kumbh Sans', 'sans-serif']
             },
             fontSize: {
-                sm: '0.975rem'
+                sm: '0.975rem',
+                base: '1.096rem'
             },
             typography: (theme) => ({
                 DEFAULT: {
