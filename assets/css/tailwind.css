@@ -110,7 +110,7 @@ animations is calculated correctly. */
 
 .slide-up-full-enter-from,
 .slide-up-full-leave-to {
-    @apply opacity-0 translate-y-full scale-95;
+    @apply opacity-0 translate-y-full scale-x-75;
 }
 
 /* Slide down transition */
