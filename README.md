@@ -27,3 +27,4 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 13. [Global State Management with Pinia In Nuxt 3](https://vueschool.io/articles/vuejs-tutorials/global-state-management-with-pinia-in-nuxt-3/)
 14. [How to push local code to new branch on gitlab . need specific steps (looks like a duplicate question but i need some specific steps)](https://stackoverflow.com/questions/63225255/how-to-push-local-code-to-new-branch-on-gitlab-need-specific-steps-looks-like)
 15. [-u is shorthand for --set-upstream first push to create matching local branch on remote](https://stackoverflow.com/questions/18031946/what-does-set-upstream-do#18032014)
+16. [How do I delete a Git branch locally and remotely?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515)
