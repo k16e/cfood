@@ -43,15 +43,11 @@
 </template>
 
 <script setup>
-const routes = [
-    { title: 'Products', to: '/products' },
-    { title: 'Research', to: '/research' },
-    { title: 'Studio', to: '/more/studio' },
-    { title: 'Meet c.food', to: '/about' }
-]
 const currentRoute = useRoute()
 const isParentRoute = path => currentRoute.path.startsWith(path)
 const app = useAppStore()
+
+const { data: routes, pending, error, refresh } = await $fetch(`/api/routes`)
 
 const toggleMenu = () => {
     if (app.sheet) {
