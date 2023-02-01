@@ -13,7 +13,7 @@
             :class="{
                 'parent-active': isParentRoute(route.to),
                 'py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700 flex items-center h-full': desktop,
-                'flex items-center justify-center text-center p-7 w-full h-full font-display text-3xl text-orange-700 focus:ring-0 focus:ring-offset-0 focus:bg-orange-100 hover:bg-orange-100 rounded-lg': mobile
+                'flex items-center justify-center text-center p-7 w-full h-full font-display text-3xl text-orange-700 focus:ring-0 focus:ring-offset-0 focus:bg-orange-100 hover:bg-orange-100 rounded-md': mobile
             }">
             {{ route.title }}
         </NuxtLink>
