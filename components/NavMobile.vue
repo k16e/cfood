@@ -1,7 +1,7 @@
 <template>
-    <nav class="flex">
+    <nav class="flex relative z-10 p-3">
         <h2 v-text="'Mobile navigation'" class="sr-only"/>
-        <ul class="grid grid-cols-2 md:grid-cols-3 h-full w-full gap-3 sm:gap-5">
+        <ul class="grid grid-cols-2 md:grid-cols-3 gap-1 h-full w-full">
             <NavList mobile :list="routes"/>
         </ul>
     </nav>

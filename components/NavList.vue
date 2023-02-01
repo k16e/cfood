@@ -9,10 +9,11 @@
         }">
         <NuxtLink
             :to="route.to"
+            @click="closeNavMobile"
             :class="{
                 'parent-active': isParentRoute(route.to),
                 'py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700 flex items-center h-full': desktop,
-                'flex items-center p-5 rounded-xl w-full h-full font-display text-3xl': mobile
+                'flex items-center justify-center text-center p-7 w-full h-full font-display text-3xl text-orange-700 focus:ring-0 focus:ring-offset-0 focus:bg-orange-100 hover:bg-orange-100 rounded-lg': mobile
             }">
             {{ route.title }}
         </NuxtLink>
@@ -28,11 +29,17 @@ const props = defineProps({
 })
 const currentRoute = useRoute()
 const isParentRoute = path => currentRoute.path.startsWith(path)
+const app = useAppStore()
+const closeNavMobile = () => app.removeOverlay()
 </script>
 
 <style scoped>
 ._is-desktop .router-link-active:not(.luna-turn-off-active),
 ._is-desktop .parent-active:not(.luna-turn-off-active) {
     @apply ring-2 ring-offset-1 ring-offset-gray-50 outline-none ring-orange-700 bg-orange-50;
+}
+._is-mobile .router-link-active:not(.luna-turn-off-active),
+._is-mobile .parent-active:not(.luna-turn-off-active) {
+    @apply bg-orange-100;
 }
 </style>

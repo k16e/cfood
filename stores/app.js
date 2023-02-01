@@ -13,6 +13,7 @@ export const useAppStore = defineStore('app', {
         removeOverlay() {
             this.overlay = false
             this.sheet = false
+            this.navMobile = false
         },
         openSheet() { this.sheet = true },
         closeSheet() { this.sheet = false },
