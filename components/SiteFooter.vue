@@ -20,8 +20,8 @@
                 </div>
             </div>
         </div>
-        <div class="text-white text-center border-t border-opacity-30 border-white max-w-sm sm:max-w-lg mx-auto">
-            <p class="opacity-60 text-sm pt-3">
+        <div class="text-white text-center border-t border-opacity-20 border-white max-w-sm sm:max-w-lg mx-auto">
+            <p class="opacity-60 text-xs pt-3">
                 &copy; {{ $year() }} c.food Studio. All rights reserved.
             </p>
         </div>
