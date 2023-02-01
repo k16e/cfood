@@ -5,7 +5,5 @@ export default defineEventHandler(async () => {
         { title: 'Studio', to: '/more/studio' },
         { title: 'Meet c.food', to: '/about' }
     ]
-    return {
-        data
-    }
+    return { data }
 })

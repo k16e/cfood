@@ -58,11 +58,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 
-
-.router-link-active:not(.luna-turn-off-active),
-.parent-active:not(.luna-turn-off-active) {
-    @apply ring-2 ring-offset-1 ring-offset-gray-50 outline-none ring-orange-700 bg-orange-50;
-}
+.luna-gradient { @apply bg-gradient-to-r from-orange-600 to-orange-800; }
 
 
 
