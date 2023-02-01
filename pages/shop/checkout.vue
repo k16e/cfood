@@ -133,7 +133,7 @@ const formStatus = {
     errorMessage: ref(null)
 }
 const order = productsStore.order
-const { completeOrder } = useOrderCompletion()
+const { completeOrder } = useCompleteOrder()
 const config = useRuntimeConfig()
 
 const proceedToPay = () => {

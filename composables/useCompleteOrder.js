@@ -1,4 +1,4 @@
-export const useOrderCompletion = () => {
+export const useCompleteOrder = () => {
     const route = useRouter()
     const supabase = useSupabaseClient()
 
