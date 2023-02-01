@@ -1,5 +1,5 @@
 <template>
-    <Transition name="slide-up-full">
+    <Transition name="slide-up-full" appear>
         <div
             v-if="app.sheet"
             class="fixed bottom-0 inset-x-0 bg-white min-h-[150px]">
