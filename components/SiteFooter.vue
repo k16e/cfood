@@ -5,9 +5,9 @@
             <div class="col-span-full md:col-span-6 xl:col-span-5">
                 <Heading
                     tag="h2" font="font-sans" color="text-white" weight="font-bold"
-                    class="luna-decorative text-4xl sm:text-5xl lg:text-7xl !leading-none text-right">
+                    class="luna-block-heading text-right">
                     <span class="block">Food that</span>
-                    <em class="_is-decorated block italic">
+                    <em class="block italic">
                         love us back!
                     </em>
                 </Heading>
