@@ -1,6 +1,7 @@
 <template>
     <NuxtLink
         to="/shop/cart"
+        @click="$closeMobileNavIfOpen()"
         class="luna-btn luna-turn-off-active">
         <Icon name="ri:shopping-cart-fill" size="22" class="mr-1.5 text-orange-700"/>
         <span class="flex items-center">

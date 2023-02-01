@@ -57,7 +57,11 @@ export default defineNuxtPlugin(nuxtApp => {
                 item.qty = value
                 item.subTotal = value * item.price
             },
-            itemIsIn: (obj, arr) => arr.some(el => el.sku === obj.sku)
+            itemIsIn: (obj, arr) => arr.some(el => el.sku === obj.sku),
+            closeMobileNavIfOpen: () => {
+                const app = useAppStore()
+                app.navMobile && app.removeOverlay()
+            }
         }
     }
 })

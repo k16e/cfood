@@ -5,6 +5,7 @@
             <div class="flex items-center">
                 <NuxtLink
                     to="/"
+                    @click="$closeMobileNavIfOpen()"
                     class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
                     <span v-text="'c.food home'" class="sr-only"/>
                     <Logo/>
@@ -38,9 +39,7 @@ const { data: routes, pending, error, refresh } = await $fetch(`/api/routes`)
 
 const toggleNavMobile = () => {
     if (app.sheet) {
-        app.closeSheet()
         app.removeOverlay()
-        app.closeNavMobile()
     } else {
         app.openSheet()
         app.activateOverlay()
