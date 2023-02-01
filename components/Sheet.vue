@@ -6,7 +6,7 @@
             <div class="h-full overflow-y-auto">
                 <Wave top="top-[-64px]" :stroke="false" :fill="`#fff`" flip-forward/>
                 <div class="p-3 py-5 mt-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolor aliquam voluptatem sit temporibus vitae iste cum in sapiente, dolorem illo enim est suscipit placeat repudiandae itaque, debitis quis assumenda.
+                    <NavMobile v-if="app.navMobile"/>
                 </div>
             </div>
         </div>

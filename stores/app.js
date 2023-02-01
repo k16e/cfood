@@ -2,7 +2,8 @@ export const useAppStore = defineStore('app', {
     state: () => ({
         overlay: false,
         sheet: false,
-        showBackToTop: false
+        showBackToTop: false,
+        navMobile: false
     }),
     actions: {
         toggleOverlay() { this.overlay = !this.overlay },
@@ -15,7 +16,9 @@ export const useAppStore = defineStore('app', {
         },
         openSheet() { this.sheet = true },
         closeSheet() { this.sheet = false },
-        toggleSheet() { this.sheet = !this.sheet }
+        toggleSheet() { this.sheet = !this.sheet },
+        openNavMobile() { this.navMobile = true },
+        closeNavMobile() { this.navMobile = false }
     },
     persist: { storage: persistedState.localStorage }
 })
