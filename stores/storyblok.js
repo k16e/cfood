@@ -7,7 +7,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchStory(path) {
             const config = useRuntimeConfig()
             try {
-                await useAsyncStoryblok(path, {
+                await useStoryblok(path, {
                     version: config.storyblokVersion,
                     resolve_links: 'story'
                 })
