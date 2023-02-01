@@ -1,6 +1,7 @@
 <template>
     <NuxtLink
         to="/shop/wishlist"
+        @click="$closeMobileNavIfOpen()"
         class="luna-btn _is-neutral luna-turn-off-active relative">
         <Icon name="ri:heart-2-fill" size="22" class="!text-red-600"/>
         <span v-text="`Wishlist`" class="sr-only lg:not-sr-only lg:ml-1.5"/>

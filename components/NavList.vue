@@ -9,7 +9,7 @@
         }">
         <NuxtLink
             :to="route.to"
-            @click="closeNav"
+            @click="closeNav()"
             :class="{
                 'parent-active': isParentRoute(route.to),
                 'py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700 flex items-center h-full': desktop,

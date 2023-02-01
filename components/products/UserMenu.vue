@@ -1,5 +1,6 @@
 <template>
     <button
+        @click="$closeMobileNavIfOpen()"
         class="luna-btn _is-padless border-none relative">
         <Icon name="ri:user-smile-fill" size="32" class="text-orange-700"/>
         <span class="flex items-center">
