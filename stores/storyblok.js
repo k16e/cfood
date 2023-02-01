@@ -7,12 +7,12 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchStory(path) {
             const config = useRuntimeConfig()
             try {
-                const data = await useAsyncStoryblok(path, {
+                await useAsyncStoryblok(path, {
                     version: config.storyblokVersion,
                     resolve_links: 'story'
                 })
-                .then(data => {
-                    this.story = data.value
+                .then(result => {
+                    this.story = result.value
                     this.fallbackComponent = this.story.content.component
                 })
             } catch (err) { console.error(err) }
