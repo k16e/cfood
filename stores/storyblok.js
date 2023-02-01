@@ -11,8 +11,8 @@ export const useStoryblokStore = defineStore('storyblok', {
                     version: config.storyblokVersion,
                     resolve_links: 'story'
                 })
-                .then(res => {
-                    this.story = res.value
+                .then(result => {
+                    this.story = result.value
                     this.fallbackComponent = this.story.content.component
                 })
             } catch (err) { console.error(err) }
