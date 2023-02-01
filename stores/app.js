@@ -21,5 +21,5 @@ export const useAppStore = defineStore('app', {
         openNavMobile() { this.navMobile = true },
         closeNavMobile() { this.navMobile = false }
     },
-    persist: { storage: persistedState.localStorage }
+    // persist: { storage: persistedState.localStorage }
 })
