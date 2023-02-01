@@ -5,8 +5,10 @@
             class="fixed bottom-0 inset-x-0 bg-white min-h-[150px]">
             <div class="h-full overflow-y-auto">
                 <Wave top="top-[-64px]" :stroke="false" :fill="`#fff`" flip-forward/>
-                <div class="p-3 py-5 z-10 relative">
-                    <NavMobile v-if="app.navMobile"/>
+                <div class="relative z-10 -translate-y-3">
+                    <Transition name="flip">
+                        <NavMobile v-if="app.navMobile"/>
+                    </Transition>
                 </div>
             </div>
         </div>

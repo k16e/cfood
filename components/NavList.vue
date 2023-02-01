@@ -5,14 +5,14 @@
         :key="route.title + idx"
         :class="{
             'flex items-center h-full _is-desktop': desktop,
-            'w-full h-full flex items-center justify-center _is-mobile': mobile
+            'w-full h-full flex _is-mobile': mobile
         }">
         <NuxtLink
             :to="route.to"
             :class="{
                 'parent-active': isParentRoute(route.to),
                 'py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700 flex items-center h-full': desktop,
-                'flex items-center justify-center p-5 rounded-xl w-full h-full luna-gradient text-white text-xl': mobile
+                'flex items-center p-5 rounded-xl w-full h-full font-display text-3xl': mobile
             }">
             {{ route.title }}
         </NuxtLink>
