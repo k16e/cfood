@@ -13,7 +13,7 @@
             :value="item.qty"
             min="1"
             max="9"
-            class="focus:outline-none text-center w-full font-semibold hover:text-black focus:text-black md:text-base flex items-center text-gray-700 border-0 border-y-[3px] border-gray-200 rounded-sm !p-0" disabled>
+            class="focus:outline-none text-center w-full font-medium hover:text-black focus:text-black flex items-center text-gray-700 border-0 border-y-[3px] border-gray-200 rounded-full text-sm !p-0" disabled>
         <button
             @click="$increaseToCart($event, item)"
             type="button"
