@@ -7,7 +7,7 @@
         <span class="flex items-center">
             <span v-text="`Cart`" class="hidden lg:block mr-1"/>
             <ClientOnly>
-                <sup v-text="`(${cart.length})`" class="font-medium text-orange-700"/>
+                <sup v-text="`(${cartLength})`" class="font-medium text-orange-700"/>
             </ClientOnly>
         </span>
     </NuxtLink>
@@ -15,4 +15,5 @@
 
 <script setup>
 const { cart } = useProductsStore()
+const cartLength = computed(() => cart.length )
 </script>
