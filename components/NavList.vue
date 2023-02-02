@@ -13,7 +13,7 @@
             :class="{
                 'parent-active': isParentRoute(route.to),
                 'py-1 px-5 rounded-full focus:bg-orange-50 hover:bg-orange-50 font-medium text-orange-700 flex items-center h-full': desktop,
-                'flex items-center justify-center text-center p-7 w-full h-full font-display text-3xl text-orange-700 focus:ring-0 focus:ring-offset-0 focus:bg-orange-100 hover:bg-orange-100 rounded-md': mobile
+                'flex items-center md:justify-center md:text-center p-7 w-full h-full font-display text-3xl text-orange-700 focus:ring-0 focus:ring-offset-0 focus:bg-orange-50 hover:bg-orange-50 rounded-md': mobile
             }">
             {{ route.title }}
         </NuxtLink>
@@ -40,6 +40,6 @@ const closeNav = () => app.removeOverlay()
 }
 ._is-mobile .router-link-active:not(.luna-turn-off-active),
 ._is-mobile .parent-active:not(.luna-turn-off-active) {
-    @apply bg-orange-100;
+    @apply bg-orange-50 border border-orange-200;
 }
 </style>
