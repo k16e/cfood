@@ -20,6 +20,5 @@ export const useAppStore = defineStore('app', {
         toggleSheet() { this.sheet = !this.sheet },
         openNavMobile() { this.navMobile = true },
         closeNavMobile() { this.navMobile = false }
-    },
-    persist: { storage: persistedState.localStorage }
+    }
 })
