@@ -114,7 +114,7 @@
 
 <script setup>
 const productsStore = useProductsStore()
-const { cart } = productsStore
+const cart = productsStore.cart
 const subTotal = cart.reduce((acc, cur) => acc + cur.subTotal, 0)
 
 await productsStore.fetchShippingRates()
