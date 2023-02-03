@@ -19,6 +19,20 @@ My own shorthand, all in one fell swoop.
 
 Link to this is down in References & credits.
 
+### How do I delete a branch both locally and remotely?
+From source:
+
+```
+git push -d <remote_name> <branchname>
+git branch -d <branchname>
+```
+
+Note: In most cases, `<remote_name>` will be `origin`.
+
+My shorthand:
+
+`git push -d origin branch-name; git branch -d branch-name`
+
 
 ## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
@@ -34,6 +48,7 @@ Link to this is down in References & credits.
 11. [Regexp to check if file type is image](https://stackoverflow.com/questions/30994015/regexp-to-check-if-file-is-image#30994033)
 12. [Embed SVG as a cool section divider](https://adelkov.medium.com/embed-svgs-as-cool-section-dividers-3b762639befd)
 13. [Global State Management with Pinia In Nuxt 3](https://vueschool.io/articles/vuejs-tutorials/global-state-management-with-pinia-in-nuxt-3/)
-14. [How to push local code to new branch on gitlab . need specific steps (looks like a duplicate question but i need some specific steps)](https://stackoverflow.com/questions/63225255/how-to-push-local-code-to-new-branch-on-gitlab-need-specific-steps-looks-like)
+14. [How to push local code to new branch on gitlab. need specific steps (looks like a duplicate question but i need some specific steps)](https://stackoverflow.com/questions/63225255/how-to-push-local-code-to-new-branch-on-gitlab-need-specific-steps-looks-like)
 15. [-u is shorthand for --set-upstream first push to create matching local branch on remote](https://stackoverflow.com/questions/18031946/what-does-set-upstream-do#18032014)
 16. [How to "git pull" from master into the development branch](https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch#20103414)
+17. [How do I delete a Git branch locally and remotely?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515)
