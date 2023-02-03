@@ -11,6 +11,15 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 * Storyblok
 
 
+## Summaries of code used
+### How to pull up to date main into dev branch
+My own shorthand, all in one fell swoop.
+
+`git checkout branch-name; git fetch origin; git merge origin/main;`
+
+Link to this is down in References & credits.
+
+
 ## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
@@ -27,3 +36,4 @@ This digital store is open-source and built openly by kb (Kabolobari Benakole) f
 13. [Global State Management with Pinia In Nuxt 3](https://vueschool.io/articles/vuejs-tutorials/global-state-management-with-pinia-in-nuxt-3/)
 14. [How to push local code to new branch on gitlab . need specific steps (looks like a duplicate question but i need some specific steps)](https://stackoverflow.com/questions/63225255/how-to-push-local-code-to-new-branch-on-gitlab-need-specific-steps-looks-like)
 15. [-u is shorthand for --set-upstream first push to create matching local branch on remote](https://stackoverflow.com/questions/18031946/what-does-set-upstream-do#18032014)
+16. [How to "git pull" from master into the development branch](https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch#20103414)
