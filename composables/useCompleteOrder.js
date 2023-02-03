@@ -52,13 +52,13 @@ const completeOrder = async (formStatus, order, customer, shippingRates, subTota
     finally {
         formStatus.sent.value = true
         router.push({ path: '/shop/success' })
-        console.log(order.orders)
         // productsStore.$reset()
-        console.log('Purchase complete. You may refresh this page. Thanks!')
-        setTimeout(() => {
-            router.push({ path: '/products' })
-            console.log('Thanks for buying from us! You were redirected to our products page.')
-        }, 5000);
+        productsStore.$patch(state => {
+            state.cart = []
+            state.latestOrder.push(state.order)
+            state.order = []
+        })
+        console.log('Purchase complete. You may refresh this page or tap "Buy more" of our products. Thanks!')
     }
 }
 
