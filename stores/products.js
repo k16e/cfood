@@ -49,9 +49,8 @@ export const useProductsStore = defineStore('products', {
             }
         },
         addToWishlist(payload) {
-            const existingItem = this.wishlist.find(item => item.sku === payload.sku)
-
-            if (existingItem) this.wishlist.splice(existingItem, 1)
+            const isInWishlist = this.wishlist.find(item => item.sku === payload.sku)
+            if (isInWishlist) this.wishlist.splice(this.wishlist.indexOf(isInWishlist), 1)
             else {
                 this.wishlist.push({
                     sku: payload.sku,
