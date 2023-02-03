@@ -1,12 +1,6 @@
 <template>
     <li v-if="mobile" class="_is-mobile">
-        <NuxtLink
-            to="/"
-            @click="closeNav"
-            :class="[
-                { 'parent-active': isParentRoute('/') },
-                '_is-mobile--classes'
-            ]">
+        <NuxtLink to="/" @click="closeNav" class="_is-mobile--classes">
             Home
         </NuxtLink>
     </li>
