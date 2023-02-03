@@ -22,9 +22,7 @@
 <script setup>
 const productsStore = useProductsStore()
 const routeLeaving = onBeforeRouteLeave(() => {
-    productsStore.$patch(state => {
-        state.latestOrder = []
-    })
+    productsStore.$patch(state => state.latestOrder = [])
 })
 onMounted(() => {
     const router = useRouter()
@@ -32,7 +30,7 @@ onMounted(() => {
         setTimeout(() => {
             productsStore.$patch(state => state.latestOrder = [])
             router.push({ path: '/products' })
-        }, 5000)
+        }, 7000)
     }
     resetLatestOrder()
 })
