@@ -59,5 +59,8 @@ export default defineNuxtConfig({
     },
     imports: {
         dirs: ['stores']
+    },
+    routeRules: {
+        '/shop': { redirect: '/products' }
     }
 })
