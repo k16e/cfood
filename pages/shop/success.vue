@@ -7,11 +7,13 @@
                 linkText="Buy more"
             />
             <ClientOnly>
-                <div v-if="productsStore.latestOrder.length >= 1">
-                    <pre>
-                        {{ productsStore.latestOrder }}
-                    </pre>
-                </div>
+                <Transition name="slide-up" appear mode="out-in">
+                    <div v-if="productsStore.latestOrder.length >= 1">
+                        <pre>
+                            {{ productsStore.latestOrder }}
+                        </pre>
+                    </div>
+                </Transition>
             </ClientOnly>
         </Container>
     </Reveal>
@@ -19,5 +21,9 @@
 
 <script setup>
 const productsStore = useProductsStore()
-console.log(productsStore.latestOrder)
+const routeLeaving = onBeforeRouteLeave(() => {
+    productsStore.$patch(state => {
+        state.latestOrder = []
+    })
+})
 </script>
