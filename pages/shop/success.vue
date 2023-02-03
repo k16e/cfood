@@ -26,4 +26,18 @@ const routeLeaving = onBeforeRouteLeave(() => {
         state.latestOrder = []
     })
 })
+onMounted(() => {
+    const router = useRouter()
+    const resetLatestOrder = () => {
+        if (productsStore.latestOrder.length >= 1) {
+            setTimeout(() => {
+                productsStore.$patch(state => {
+                    state.latestOrder = []
+                })
+                router.push({ path: '/products' })
+            }, 5000);
+        }
+    }
+    resetLatestOrder()
+})
 </script>
