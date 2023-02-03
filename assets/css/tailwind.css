@@ -44,6 +44,8 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-btn._is-block {
     @apply w-full rounded-md border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm focus:bg-orange-600 hover:bg-orange-600;
 }
+
+.luna-block-heading { @apply !text-4xl sm:!text-5xl lg:!text-7xl !leading-none; }
 .luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
 
 
@@ -56,11 +58,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 
-
-.router-link-active:not(.luna-turn-off-active),
-.parent-active:not(.luna-turn-off-active) {
-    @apply ring-2 ring-offset-1 ring-offset-gray-50 outline-none ring-orange-700 bg-orange-50;
-}
+.luna-gradient { @apply bg-gradient-to-r from-orange-600 to-orange-800; }
 
 
 

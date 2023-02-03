@@ -3,7 +3,7 @@
         <div
             @click.self="app.removeOverlay"
             v-if="app.overlay"
-            class="fixed inset-0 bg-black bg-opacity-70 ease duration-300 transition-opacity"
+            class="fixed inset-0 bg-black bg-opacity-70 z-10"
         />
     </Transition>
 </template>

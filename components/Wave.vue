@@ -6,7 +6,8 @@
         class="scale-x-[-1] inset-x-0 absolute"
         :class="[maxHeight, top, bottom, {
             'rotate-180 scale-x-100': flip,
-            'rotate-180 -scale-x-100': flipForward
+            'rotate-180 -scale-x-100': flipForward,
+            'pointer-events-auto': allowPointerEvents
         }]">
         <path
             :fill="fill"
@@ -25,6 +26,7 @@ const props = defineProps({
     flipForward: { type: Boolean, default: false },
     top: { type: String, default: 'top-0' },
     bottom: { type: String, default: 'bottom-0' },
-    maxHeight: { type: String, default: 'max-h-[96px]' }
+    maxHeight: { type: String, default: 'max-h-[96px]' },
+    allowPointerEvents: { type: Boolean, default: false }
 })
 </script>

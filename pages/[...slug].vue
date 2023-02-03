@@ -12,7 +12,9 @@
 const route = useRoute()
 const path = route.path === '/' ? 'home' : (route.path).substring(1)
 const storyblok = useStoryblokStore()
+
 await storyblok.fetchStory(path)
+
 const { story, fallbackComponent } = storyblok
 const component = resolveComponent(fallbackComponent)
 

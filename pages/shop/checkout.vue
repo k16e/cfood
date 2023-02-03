@@ -133,7 +133,7 @@ const formStatus = {
     errorMessage: ref(null)
 }
 const order = productsStore.order
-const { completeOrder } = useOrderCompletion()
+const { completeOrder } = useCompleteOrder()
 const config = useRuntimeConfig()
 
 const proceedToPay = () => {
@@ -142,10 +142,9 @@ const proceedToPay = () => {
         email: email.value,
         amount: (subTotal + shipping.value) * 100,
         currency: 'NGN',
-        ref: Date.now().toString(36) + Math.random().toString(36).substring(5),
         callback: response => {
-            let reference = response.reference
-            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, productsStore, cart, reference)
+            const transRef = response.reference
+            completeOrder(formStatus, order, customer, shippingRates, subTotal, shipping, productsStore, cart, transRef)
         },
         onClose: () => {
             alert(`Sure you want to dismiss this transaction?`)

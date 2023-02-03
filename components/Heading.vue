@@ -17,7 +17,7 @@ const props = defineProps({
     weight: { type: String, default: 'font-normal' },
 })
 const classes = computed(() => ({
-    h1: 'text-4xl lg:text-5xl',
+    h1: 'text-4xl sm:text-5xl lg:text-6xl',
     h2: 'text-3xl sm:text-4xl',
     h3: 'text-xl',
     h4: 'text-lg'
