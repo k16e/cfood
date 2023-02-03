@@ -14,5 +14,4 @@ const routes = [
     { title: 'Studio', to: '/more/studio' },
     { title: 'Meet c.food', to: '/about' }
 ]
-// const { data: routes, pending, error, refresh } = await $fetch(`/api/routes`)
 </script>
