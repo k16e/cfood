@@ -6,9 +6,6 @@ export const useProductsStore = defineStore('products', {
         shippingRates: [],
         order: []
     }),
-    getters: {
-
-    },
     actions: {
         async fetchProducts() {
             const supabase = useSupabaseClient()
@@ -65,9 +62,6 @@ export const useProductsStore = defineStore('products', {
                     subTotal: payload.price
                 })
             }
-        },
-        cartLength() {
-            return this.cart.length
         }
     },
     persist: { storage: persistedState.localStorage }

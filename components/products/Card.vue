@@ -56,6 +56,11 @@
 <script setup>
 const props = defineProps({ product: { type: Object, required: true } })
 
-const { cart, wishlist, addToCart, addToWishlist } = useProductsStore()
+const productsStore = useProductsStore()
+const cart = productsStore.cart
+const wishlist = productsStore.wishlist
+const addToCart = productsStore.addToCart
+const addToWishlist = productsStore.addToWishlist
+
 const productIdx = payload => cart.findIndex(item => item.sku === payload.sku)
 </script>
