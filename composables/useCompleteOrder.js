@@ -57,7 +57,6 @@ const completeOrder = async (formStatus, order, customer, shippingRates, subTota
             state.latestOrder.push(state.order)
             state.order = []
         })
-        console.log('Purchase complete. You may refresh this page or tap "Buy more" of our products. Thanks!')
     }
 }
 
