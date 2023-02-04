@@ -13,14 +13,16 @@
             </main>
             <footer
                 ref="footerRef"
+                id="footer"
                 class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-600 to-orange-800 flex flex-col items-center"
                 :data-visible="isVisible">
                 <Wave top="top-[-64px]" :stroke="false"/>
                 <SiteFooter/>
-                <BackToTop class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
             </footer>
         </div>
     </NuxtLayout>
+
+    <BackToTop id="back-to-top" class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
     <Overlay/>
     <Sheet/>
 </template>
@@ -37,16 +39,16 @@ useIntersectionObserver(footerRef,
 )
 
 const backToTop = () => {
-    const footer = footerRef.value
+    const footer = document.getElementById('footer')
     const footerHeight = Math.ceil(footer.getBoundingClientRect().height)
     const root = document.documentElement
     const footerVisible = footer.getAttribute('data-visible')
     let divisor
 
-    if (window.pageYOffset > 480) {
+    if (window.pageYOffset > 640) {
         app.showBackToTop = true
-        const bttRef = footer.lastElementSibbling
-        const bttHeigt = bttRef?.getBoundingClientRect()?.height || 56
+        const backToTop = document.getElementById('back-to-top')
+        const bttHeigt = backToTop?.getBoundingClientRect()?.height || 56
         divisor = Math.round(bttHeigt)
     }
     else app.showBackToTop = false

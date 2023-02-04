@@ -26,6 +26,11 @@ module.exports = {
                             '&:hover': { color: theme('colors.orange.500') }
                         }
                     }
+                },
+                base: {
+                    css: {
+                        fontSize: '1.125rem'
+                    }
                 }
             }),
             animation: {

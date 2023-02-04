@@ -12,12 +12,10 @@
                     </em>
                 </Heading>
             </div>
-            <div class="col-span-full md:col-span-6 self-center">
-                <div class="text-white opacity-80 pr-5 prose">
-                    <p>
-                        <strong>c.food</strong> is a condiments-first food researcher and deloper, coriandered into company in kb's home kitchen, fondly called c.food Studio. As a studio and people, we want to produce only food that <em>love us back</em>.
-                    </p>
-                </div>
+            <div class="col-span-full md:col-span-6 luna-prose prose lg:prose-base max-w-none pr-5">
+                <p>
+                    <strong>c.food</strong> is a condiments-first food researcher and deloper, coriandered into company in kb's home kitchen, fondly called <NuxtLink to="/studio">c.food Studio</NuxtLink>. As a studio and people, we only do food that <em>love us back</em>.
+                </p>
             </div>
         </div>
         <div class="text-white text-center border-t border-opacity-20 border-white max-w-sm sm:max-w-lg mx-auto">
