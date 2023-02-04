@@ -11,16 +11,14 @@
             <main class="py-24 flex-1 transition-all duration-300">
                 <NuxtPage/>
             </main>
-            <Transition name="slide-up" mode="out-in">
-                <footer
-                    ref="footerRef"
-                    class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-600 to-orange-800 flex flex-col items-center"
-                    :data-visible="isVisible">
-                    <Wave top="top-[-64px]" :stroke="false"/>
-                    <SiteFooter/>
-                    <BackToTop class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
-                </footer>
-            </Transition>
+            <footer
+                ref="footerRef"
+                class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-600 to-orange-800 flex flex-col items-center"
+                :data-visible="isVisible">
+                <Wave top="top-[-64px]" :stroke="false"/>
+                <SiteFooter/>
+                <BackToTop class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
+            </footer>
         </div>
     </NuxtLayout>
     <Overlay/>
