@@ -14,7 +14,7 @@
             </div>
             <div class="col-span-full md:col-span-6 luna-prose prose lg:prose-base max-w-none pr-5">
                 <p>
-                    <strong>c.food</strong> is a condiments-first food researcher and deloper, coriandered into company in kb's home kitchen, fondly called <NuxtLink to="/studio">c.food Studio</NuxtLink>. As a studio and people, we only do food that <em>love us back</em>.
+                    <strong>c.food</strong> is a condiments-first food researcher and developer, coriandered into company in kb's home kitchen, fondly called <NuxtLink to="/studio">c.food Studio</NuxtLink>. As a studio and people, we only do food that <em>love us back</em>.
                 </p>
             </div>
         </div>
