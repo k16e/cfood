@@ -15,7 +15,7 @@
             <div class="col-span-full md:col-span-6 self-center">
                 <div class="text-white opacity-80 pr-5 prose">
                     <p>
-                        <strong>c.food</strong> is a condiments-first food researcher and producer, coriandered into company in kb's home kitchen, fondly called c.food Studio. As a studio and people, we want to produce only food that <em>love us back</em>.
+                        <strong>c.food</strong> is a condiments-first food researcher and deloper, coriandered into company in kb's home kitchen, fondly called c.food Studio. As a studio and people, we want to produce only food that <em>love us back</em>.
                     </p>
                 </div>
             </div>
