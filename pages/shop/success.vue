@@ -3,7 +3,7 @@
         <Container padX center padTGrow>
             <PageHeader
                 :centered="latest ? false : true"
-                tag="h1" content="Thanks, a load!"
+                tag="h1" :content="latest ? 'Thanks, a load!' : `You're way ahead!`"
                 link="/products" linkIcon="ic:baseline-arrow-back"
                 linkText="Buy more"
                 :pretitle="latest && `Hey, ${latest.first_name}`"
@@ -26,19 +26,23 @@
 const productsStore = useProductsStore()
 const latest = ref(productsStore.latestOrder[0]) ?? null
 const { $randomIntBetween } = useNuxtApp()
+const router = useRouter()
+const resetLatestOrder = () => {
+    setTimeout(() => {
+        productsStore.$patch(state => state.latestOrder = [])
+        router.push({ path: '/products' })
+    }, ($randomIntBetween(7, 15) * 1000))
+}
 
 onBeforeRouteLeave(() => {
     productsStore.$patch(state => state.latestOrder = [])
 })
 
 onMounted(() => {
-    const router = useRouter()
-    const resetLatestOrder = () => {
-        setTimeout(() => {
-            productsStore.$patch(state => state.latestOrder = [])
-            router.push({ path: '/products' })
-        }, ($randomIntBetween(7, 15) * 1000))
-    }
     resetLatestOrder()
+})
+
+onUnmounted(() => {
+    clearTimeout(resetLatestOrder)
 })
 </script>
