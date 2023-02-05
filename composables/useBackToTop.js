@@ -5,7 +5,7 @@ const backToTop = (app) => {
     const footerVisible = footer.getAttribute('data-visible')
     let divisor
 
-    if (window.pageYOffset > 640) {
+    if (pageYOffset > 640) {
         app.showBackToTop = true
         const backToTop = document.getElementById('back-to-top')
         const bttHeigt = backToTop?.getBoundingClientRect()?.height || 56
