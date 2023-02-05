@@ -15,7 +15,8 @@ module.exports = {
             fontSize: {
                 xs: '0.875rem',
                 sm: '0.975rem',
-                base: '1.125rem'
+                base: '1.125rem',
+                lg: '1.195rem'
             },
             typography: (theme) => ({
                 DEFAULT: {
