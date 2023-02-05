@@ -34,39 +34,20 @@ const app = useAppStore()
 const footerRef = ref(null)
 const isVisible = ref(false)
 
-useIntersectionObserver(footerRef,
-    ([{ isIntersecting }]) => { isVisible.value = isIntersecting }
-)
-
-const backToTop = () => {
-    const footer = document.getElementById('footer')
-    const footerHeight = Math.ceil(footer.getBoundingClientRect().height)
-    const root = document.documentElement
-    const footerVisible = footer.getAttribute('data-visible')
-    let divisor
-
-    if (window.pageYOffset > 640) {
-        app.showBackToTop = true
-        const backToTop = document.getElementById('back-to-top')
-        const bttHeigt = backToTop?.getBoundingClientRect()?.height || 56
-        divisor = Math.round(bttHeigt)
-    }
-    else app.showBackToTop = false
-
-    if (footerVisible === 'true') {
-        root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
-    }
-    else root.style.setProperty('--back-to-top-translate', 0)
-}
+const { backToTop } = useBackToTop()
 
 onMounted(() => {
     const scrollEvents = () => {
         window.addEventListener('scroll', () => {
-            backToTop()
+            backToTop(app)
         }, false)
     }
 
     scrollEvents()
+
+    useIntersectionObserver(footerRef,
+        ([{ isIntersecting }]) => { isVisible.value = isIntersecting }
+    )
 })
 
 onUnmounted(() => {
