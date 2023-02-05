@@ -54,7 +54,7 @@ const completeOrder = async (formStatus, order, customer, shippingRates, subTota
         router.push({ path: '/shop/success' })
         productsStore.$patch(state => {
             state.cart = []
-            state.latestOrder.push(state.order)
+            state.latestOrder = [...state.order]
             state.order = []
         })
     }

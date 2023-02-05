@@ -2,15 +2,18 @@
     <Reveal>
         <Container padX center padTGrow>
             <PageHeader
+                :centered="false"
                 tag="h1" content="Thanks, a load!"
                 link="/products" linkIcon="ic:baseline-arrow-back"
                 linkText="Buy more"
+                :pretitle="`Hey, ${latest.first_name}`"
+                :copy="`Here's a quick summary of your order with id ${latest.reference}`"
             />
             <ClientOnly>
                 <Transition name="slide-up" appear mode="out-in">
-                    <div v-if="productsStore.latestOrder.length >= 1">
+                    <div v-if="latest">
                         <pre>
-                            {{ productsStore.latestOrder }}
+                            {{ latest }}
                         </pre>
                     </div>
                 </Transition>
@@ -21,6 +24,7 @@
 
 <script setup>
 const productsStore = useProductsStore()
+const latest = ref(productsStore.latestOrder[0])
 const routeLeaving = onBeforeRouteLeave(() => {
     productsStore.$patch(state => state.latestOrder = [])
 })

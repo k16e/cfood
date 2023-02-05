@@ -1,8 +1,16 @@
 <template>
-    <div class="flex items-center justify-between mb-5 lg:mb-7">
-        <div class="flex-1" :class="isChildPage && 'flex items-center gap-x-3 lg:gap-x-5'">
+    <div
+        class="flex justify-between mb-5 lg:mb-7"
+        :class="centered ? 'items-center' : 'items-start'">
+        <div
+            class="flex-1"
+            :class="isChildPage && 'flex items-center gap-x-3 lg:gap-x-5'">
             <BackToParent v-if="isChildPage" class="translate-y-1"/>
-            <Heading :tag="tag" :content="content"/>
+            <div>
+                <span v-if="pretitle" v-text="pretitle" class="text-gray-500 text-lg font-medium block"/>
+                <Heading :tag="tag" :content="content" class="text-ellipsis"/>
+                <p v-if="copy" v-html="copy" class="text-base"/>
+            </div>
         </div>
         <slot>
             <NuxtLink
@@ -23,6 +31,9 @@ const props = defineProps({
     link: { type: String, default: '/' },
     linkIcon: { type: String, default: 'ic:baseline-arrow-back' },
     linkText: { type: String, default: 'Go back' },
-    isChildPage: { type: Boolean, default: false }
+    isChildPage: { type: Boolean, default: false },
+    pretitle: { type: String },
+    copy: { type: String },
+    centered: { type: Boolean, default: true }
 })
 </script>
