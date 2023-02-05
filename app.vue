@@ -22,7 +22,7 @@
         </div>
     </NuxtLayout>
 
-    <BackToTop id="back-to-top" class="fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"/>
+    <BackToTop/>
     <Overlay/>
     <Sheet/>
 </template>

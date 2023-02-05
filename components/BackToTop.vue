@@ -3,7 +3,8 @@
         <button
             v-show="app.showBackToTop"
             @click="scrollToTop"
-            class="luna-btn _is-borderless _is-square _is-wider _is-raised transition-all duration-300 ease-[var(--bezier)]">
+            class="luna-btn _is-borderless _is-square _is-wider _is-raised transition-all duration-300 ease-[var(--bezier)] fixed bottom-8 translate-y-[var(--back-to-top-translate)] right-7 sm:right-9 z-20"
+            id="back-to-top">
             <Icon name="material-symbols:arrow-upward-rounded" size="30" class="text-orange-700"/>
         </button>
     </Transition>
@@ -12,8 +13,5 @@
 <script setup>
 const app = useAppStore()
 
-const scrollToTop = () => {
-    if (!process.client) return
-    window.scrollTo(0, 0)
-}
+const scrollToTop = () => scrollTo(0, 0)
 </script>
