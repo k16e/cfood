@@ -13,9 +13,7 @@ const backToTop = (app) => {
     }
     else app.showBackToTop = false
 
-    if (footerVisible === 'true') {
-        root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
-    }
+    if (footerVisible === 'true') root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
     else root.style.setProperty('--back-to-top-translate', 0)
 }
 
