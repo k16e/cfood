@@ -1,9 +1,7 @@
 <template>
     <NuxtLoadingIndicator :color="`#ea580c`"/>
     <NuxtLayout>
-        <div
-            ref="rootElRef"
-            class="flex flex-col min-h-screen">
+        <div class="flex flex-col min-h-screen">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <SiteHeader/>
                 <Wave class="fixed z-[-1]" :fill="'#fff'" :max-height="'max-h-[80px]'"/>
@@ -28,7 +26,7 @@
 </template>
 
 <script setup>
-import { useIntersectionObserver } from '@vueuse/core'
+import { useIntersectionObserver, useEventListener } from '@vueuse/core'
 
 const app = useAppStore()
 const footerRef = ref(null)
@@ -37,21 +35,13 @@ const isVisible = ref(false)
 const { backToTop } = useBackToTop()
 
 onMounted(() => {
-    const scrollEvents = () => {
-        window.addEventListener('scroll', () => {
-            backToTop(app)
-        }, false)
-    }
-
-    scrollEvents()
+    useEventListener(document, 'scroll', () => {
+        backToTop(app)
+    })
 
     useIntersectionObserver(footerRef,
         ([{ isIntersecting }]) => { isVisible.value = isIntersecting }
     )
-})
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', scrollEvents())
 })
 
 useHead({
