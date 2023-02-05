@@ -7,7 +7,7 @@
                 <BackToParent v-if="isChildPage" class="translate-y-1"/>
                 <div>
                     <span v-if="pretitle" v-text="pretitle" class="text-gray-600 text-lg block"/>
-                    <Heading :tag="tag" :content="content" class="text-ellipsis"/>
+                    <Heading :tag="tag" :content="content" class="pr-3"/>
                 </div>
             </div>
             <slot>

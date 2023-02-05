@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :class="`${classes[tag]} ${font} ${color} ${weight} text-orange-700 !leading-normal`">
+        :class="`${classes[tag]} ${font} ${color} ${weight} text-orange-700 !leading-[1.1]`">
         <slot>
             {{ content }}
         </slot>
