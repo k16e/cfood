@@ -36,6 +36,7 @@ input[type='number']::-webkit-outer-spin-button {
 .luna-btn._is-neutral { @apply bg-transparent border-none focus:bg-orange-50 hover:bg-orange-50 focus:ring-0 focus:ring-offset-0; }
 .luna-btn._is-square { @apply p-0 w-10 h-10 justify-center; }
 .luna-btn._is-wider { @apply w-14 h-14; }
+.luna-btn._is-widest { @apply w-20 h-20; }
 .luna-btn._is-pill { @apply py-1 px-3; }
 .luna-btn._is-padless { @apply p-0; }
 .luna-btn._is-taller { @apply py-3 px-5; }

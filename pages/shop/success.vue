@@ -18,20 +18,29 @@
                     </div>
                 </Transition>
             </ClientOnly>
+
+
         </Container>
     </Reveal>
+    <div
+        id="luna-countdown"
+        class="luna-btn _is-borderless _is-square _is-widest _is-raised text-orange-700 fixed bottom-9 left-1/2 -translate-x-1/2 z-10 text-3xl font-display _is-raised">
+    </div>
 </template>
 
 <script setup>
 const productsStore = useProductsStore()
 const latest = ref(productsStore.latestOrder[0]) ?? null
 const { $randomIntBetween } = useNuxtApp()
+const { countdown } = useCountdown()
 const router = useRouter()
 const resetLatestOrder = () => {
     setTimeout(() => {
         productsStore.$patch(state => state.latestOrder = [])
         router.push({ path: '/products' })
-    }, ($randomIntBetween(7, 15) * 1000))
+    }, 12000)
+
+    countdown(12, document.querySelector('#luna-countdown'))
 }
 
 onBeforeRouteLeave(() => {
