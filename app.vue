@@ -1,7 +1,7 @@
 <template>
     <NuxtLoadingIndicator :color="`#ea580c`"/>
     <NuxtLayout>
-        <div class="flex flex-col min-h-screen">
+        <div class="flex flex-col min-h-screen overflow-y-clip">
             <header class="p-3 fixed inset-x-0 top-0 h-16 z-30">
                 <SiteHeader/>
                 <Wave class="fixed z-[-1]" :fill="'#fff'" :max-height="'max-h-[80px]'"/>
