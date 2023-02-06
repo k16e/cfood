@@ -5,7 +5,7 @@
                 :centered="latest ? false : true"
                 tag="h1" :content="latest ? 'Thanks, a load!' : `You're way ahead!`"
                 link="/products" linkIcon="ic:baseline-arrow-back"
-                linkText="Buy more"
+                :linkText="latest ? 'Buy more' : `Get shoppin'`"
                 :pretitle="latest && `Hey, ${latest.first_name}`"
                 :copy="latest && `Here's a quick summary of your order, id <span class='text-blue-700'>${latest.reference}</span>. This has been emailed to you, don't worry. You will always have a view of them (previous orders) under your account when you sign in. See you there.`"
             />
