@@ -983,10 +983,10 @@
   dependencies:
     storyblok-js-client "^5.3.5"
 
-"@storyblok/nuxt@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-5.0.2.tgz#84947cda91f6bc380b0e346981cd8540fe784a0c"
-  integrity sha512-XKnnvGD4VI/to3KMSvp6HzKIr5Wb/TVb6+95l6bX7N6NDrEpPJ8wqYbGq3I0j93uoUyEcdoLBNqLBOfC42jyXA==
+"@storyblok/nuxt@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-5.1.0.tgz#b75fac2a28f6226e24780d6e8d80f8cafd46d89f"
+  integrity sha512-Sf/lJkBGH0zOrL0tnItnGhjQLLvr9H5hSl1jGa/4F+3JOTKkjmANmlqH4HEkxjbSBjxjL15/c2DIcSJb6/HMlg==
   dependencies:
     "@nuxt/kit" "^3.0.0"
     "@storyblok/vue" "^7.0.0"

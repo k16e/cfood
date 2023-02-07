@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-    // ssr: false,
     modules: [
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
