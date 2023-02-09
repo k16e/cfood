@@ -8,9 +8,10 @@
         :is="tag"
         v-for="(route, idx) in list"
         :key="route.title + idx"
+        class="h-full flex"
         :class="{
-            'flex items-center h-full _is-desktop': desktop,
-            'w-full h-full flex _is-mobile': mobile
+            '_is-desktop flex items-center': desktop,
+            '_is-mobile last:col-span-2 sm:last:col-span-1': mobile
         }">
         <NuxtLink
             :to="route.to"
