@@ -11,6 +11,9 @@ export default defineNuxtConfig({
         '@nuxt/image-edge',
         ['@storyblok/nuxt', {
             accessToken: process.env.STORYBLOK_KEY,
+            bridge: true,
+            apiOptions: {},
+            useApiClient: true,
             cache: { clear: 'auto', type: 'memory' }
         }]
     ],
