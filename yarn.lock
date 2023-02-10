@@ -3766,10 +3766,10 @@ next-tick@^1.1.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
-nitropack@^2.1.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/nitropack/-/nitropack-2.1.2.tgz#b23078c3bd447f173eb253d7e82c034bc4a51f16"
-  integrity sha512-Z6hRUsvDI+tLFGmZugWukdatBc9eRyRTP1l5CqZg3CQWrDkr6fQb8nh2x8Zdp9UNqhoessrHiO/62pWsau3AUg==
+nitropack@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/nitropack/-/nitropack-2.2.1.tgz#8fec1dd5bd6732faea3b05b1ba63c9e26ea2b9fa"
+  integrity sha512-V7sYOqyNZFQ+Yp3S2Ks9VUiLDp7Fz3vdc4ULTAK+E0R5nMSq5MuoQZqH4BT0x8UHC30lo+fd3gXk2fCYzUft1g==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.3.0"
     "@netlify/functions" "^1.4.0"
@@ -5377,10 +5377,10 @@ unctx@^2.1.1:
     magic-string "^0.27.0"
     unplugin "^1.0.1"
 
-unenv@^1.0.3, unenv@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/unenv/-/unenv-1.1.0.tgz#a1bb71269a4b2de4908d73c2dfa096ab2f16349a"
-  integrity sha512-7jLgwQ5iDHVcDoW2rCJ1vB1jUw7zT+21LC+vWCs9SWWsycgk1d4SHvPUYRsu5wNuY7hqoArgjr4xQKmIkXyAmA==
+unenv@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/unenv/-/unenv-1.1.1.tgz#e04ae9c5278ee9a2af7af54f9c37ba6043f38baf"
+  integrity sha512-AfQ+sKCdeSPX/rp0tL9LZz3cAu1Mt0i9UADuN1MtbsITKDS2PqSx8LQUBMf8lKuziitIWXXwU6JXrmzARFVSRw==
   dependencies:
     defu "^6.1.2"
     mime "^3.0.0"
@@ -5396,7 +5396,7 @@ unhead@^1.0.21:
     "@unhead/schema" "1.0.21"
     hookable "^5.4.2"
 
-unimport@^2.1.0:
+unimport@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/unimport/-/unimport-2.2.4.tgz#3d0c7fb354e54ba277e58725aac73fbebabee0c7"
   integrity sha512-qMgmeEGqqrrmEtm0dqxMG37J6xBtrriqxq9hILvDb+e6l2F0yTnJomLoCCp0eghLR7bYGeBsUU5Y0oyiUYhViw==
@@ -5583,10 +5583,10 @@ vscode-uri@^3.0.2:
   resolved "https://registry.yarnpkg.com/vscode-uri/-/vscode-uri-3.0.7.tgz#6d19fef387ee6b46c479e5fb00870e15e58c1eb8"
   integrity sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==
 
-vue-bundle-renderer@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-bundle-renderer/-/vue-bundle-renderer-1.0.0.tgz#cb39ec8ab30f2e186ea17491a9dba545c123250f"
-  integrity sha512-43vCqTgaMXfHhtR8/VcxxWD1DgtzyvNc4wNyG5NKCIH19O1z5G9ZCRXTGEA2wifVec5PU82CkRLD2sTK9NkTdA==
+vue-bundle-renderer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-bundle-renderer/-/vue-bundle-renderer-1.0.1.tgz#989c96042d506070a41d86351c9287fb7d10bf9b"
+  integrity sha512-w1zRgff5lVJ5YAIkVSKuFjDyCgKdg/sPbcgZbosnMCoHblg0uThCKA2n/XWUGnw0Rh2+03UY/VtkwaYwMUSRyQ==
   dependencies:
     ufo "^1.0.1"
 

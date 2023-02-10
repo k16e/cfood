@@ -1,0 +1,16 @@
+.luna-block-heading { @apply !text-4xl sm:!text-5xl lg:!text-7xl !leading-none; }
+.luna-small-caps { @apply uppercase block text-xs font-medium tracking-wider text-gray-600; }
+
+.luna-prose {
+    @apply text-gray-200 prose-a:text-white hover:prose-a:text-yellow-500 focus:prose-a:text-yellow-500 prose-strong:text-white;
+}
+.luna-prose p:only-of-type { @apply m-0; }
+
+
+.luna-counter { @apply text-gray-900 h-full w-20 cursor-pointer outline-none flex items-center justify-center px-2; }
+.luna-input { @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3 lg:p-2; }
+.luna-label { @apply block mb-1.5 text-sm font-medium text-gray-700; }
+
+._is-disabled {
+    @apply cursor-not-allowed opacity-25;
+}
