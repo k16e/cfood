@@ -8,10 +8,5 @@
 </template>
 
 <script setup>
-const routes = [
-    { title: 'Products', to: '/products' },
-    { title: 'Research', to: '/research' },
-    { title: 'Studio', to: '/more/studio' },
-    { title: 'Meet c.food', to: '/about' }
-]
+const routes = useRouteList()
 </script>
