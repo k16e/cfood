@@ -1,5 +1,5 @@
 <template>
-    <Reveal>
+    <Reveal class="pb-24 sm:pb-28">
         <Container padX center padTGrow>
             <PageHeader
                 tag="h1" content="Your cart!"
@@ -94,6 +94,7 @@
             </ClientOnly>
         </Container>
     </Reveal>
+    <SiteFooter/>
 </template>
 
 <script setup>

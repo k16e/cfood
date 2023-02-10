@@ -11,7 +11,15 @@
 </template>
 
 <script setup>
-const app = useAppStore()
+import { useEventListener } from '@vueuse/core'
 
+const app = useAppStore()
+const { backToTop } = useBackToTop()
 const scrollToTop = () => scrollTo(0, 0)
+
+onMounted(() => {
+    useEventListener(document, 'scroll', () => {
+        backToTop(app)
+    })
+})
 </script>
