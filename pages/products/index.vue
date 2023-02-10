@@ -1,5 +1,5 @@
 <template>
-    <Reveal>
+    <Reveal class="pb-24 sm:pb-28">
         <Container center padX padTGrow>
             <PageHeader tag="h1" content="Our products">
                 <ClientOnly>
@@ -22,6 +22,7 @@
             </ul>
         </Container>
     </Reveal>
+    <SiteFooter/>
 </template>
 
 <script setup>

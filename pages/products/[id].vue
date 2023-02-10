@@ -1,7 +1,8 @@
 <template>
-    <Reveal>
+    <Reveal class="pb-24 sm:pb-28">
         <ProductsSingle :product="product[0]"/>
     </Reveal>
+    <SiteFooter/>
 </template>
 
 <script setup>

@@ -1,9 +1,11 @@
 const backToTop = (app) => {
-    const footer = document.getElementById('footer')
-    const footerHeight = Math.ceil(footer.getBoundingClientRect().height)
-    const root = document.documentElement
-    const footerVisible = footer.getAttribute('data-visible')
-    let divisor
+    const footer = document.getElementById('footer') || null
+    let footerHeight, root, footerVisible, divisor
+    if (footer) {
+        footerHeight = Math.ceil(footer.getBoundingClientRect().height)
+        root = document.documentElement
+        footerVisible = footer.getAttribute('data-visible')
+    }
 
     if (pageYOffset > 640) {
         app.showBackToTop = true
@@ -13,8 +15,10 @@ const backToTop = (app) => {
     }
     else app.showBackToTop = false
 
-    if (footerVisible === 'true') root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
-    else root.style.setProperty('--back-to-top-translate', 0)
+    if (footer) {
+        if (footerVisible === 'true') root.style.setProperty('--back-to-top-translate', ((footerHeight * -1) + divisor) + 'px')
+        else root.style.setProperty('--back-to-top-translate', 0)
+    } else return
 }
 
 const useBackToTop = () => {

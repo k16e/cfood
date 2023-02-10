@@ -1,5 +1,5 @@
 <template>
-    <Reveal>
+    <Reveal class="pb-24 sm:pb-28">
         <Container padX center padTGrow>
             <PageHeader
                 :centered="latest ? false : true"
@@ -22,6 +22,7 @@
 
         </Container>
     </Reveal>
+    <SiteFooter/>
     <div
         id="luna-countdown"
         class="luna-btn _is-borderless _is-square _is-widest _is-raised text-orange-700 fixed bottom-9 left-1/2 -translate-x-1/2 z-10 text-3xl font-display _is-raised">
