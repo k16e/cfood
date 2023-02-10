@@ -33,12 +33,7 @@
 
 <script setup>
 const app = useAppStore()
-const routes = [
-    { title: 'Products', to: '/products' },
-    { title: 'Research', to: '/research' },
-    { title: 'Studio', to: '/more/studio' },
-    { title: 'Meet c.food', to: '/about' }
-]
+const routes = useRouteList()
 
 const toggleNavMobile = () => {
     if (app.sheet) {
