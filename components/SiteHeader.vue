@@ -8,7 +8,7 @@
                     @click="$closeMobileNavIfOpen()"
                     class="flex items-center justify-center rounded-full mr-5 luna-turn-off-active">
                     <span v-text="'c.food home'" class="sr-only"/>
-                    <Logo/>
+                    <Logo class="w-14 h-14"/>
                 </NuxtLink>
                 <button
                     @click="toggleNavMobile"

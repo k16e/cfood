@@ -38,29 +38,29 @@
                                         <NuxtImg
                                             :src="blok.tiles[3].file.filename"
                                             :alt="blok.tiles[3].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                         <NuxtImg
                                             :src="blok.tiles[4].file.filename"
                                             :alt="blok.tiles[4].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                     </div>
                                     <div class="flex space-x-5 md:-mt-20 md:flex-col md:space-x-0 md:space-y-5 lg:space-y-7">
                                         <NuxtImg
                                             :src="blok.tiles[5].file.filename"
                                             :alt="blok.tiles[5].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                         <NuxtImg
                                             :src="blok.tiles[2].file.filename"
                                             :alt="blok.tiles[2].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                         <NuxtImg
                                             :src="blok.tiles[5].file.filename"
                                             :alt="blok.tiles[5].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                             class="hidden md:block"
                                         />
                                     </div>
@@ -68,12 +68,12 @@
                                         <NuxtImg
                                             :src="blok.tiles[1].file.filename"
                                             :alt="blok.tiles[1].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                         <NuxtImg
                                             :src="blok.tiles[0].file.filename"
                                             :alt="blok.tiles[0].file.alt"
-                                            preset="small"
+                                            preset="xsmall"
                                         />
                                     </div>
                                 </div>
