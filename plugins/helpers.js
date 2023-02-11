@@ -62,7 +62,8 @@ export default defineNuxtPlugin(nuxtApp => {
                 const app = useAppStore()
                 app.navMobile && app.removeOverlay()
             },
-            randomIntBetween: (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+            randomIntBetween: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
+            randomAlphNumNum: () => Date.now().toString(36) + Math.random().toString(36).substring(5)
         }
     }
 })

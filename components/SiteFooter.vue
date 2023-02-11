@@ -1,5 +1,5 @@
 <template>
-    <Reveal class="mt-auto">
+    <Reveal class="mt-auto" :key="$randomAlphNumNum()">
         <footer
             ref="footerRef"
             id="footer"
@@ -29,6 +29,7 @@
                     <p class="opacity-60 text-xs pt-3">
                         &copy; {{ $year() }} c.food Studio. All rights reserved.
                     </p>
+                    <small v-text="`<${ indicateRoute() }/>`" class="text-xs opacity-50"/>
                 </div>
             </Container>
         </footer>
@@ -40,6 +41,12 @@ import { useIntersectionObserver } from '@vueuse/core'
 
 const footerRef = ref(null)
 const isVisible = ref(false)
+
+const indicateRoute = () => {
+    const route = useRoute()
+    if (route.fullPath === '/') return '/home'
+    return (route.fullPath).replace(/\//i, '')
+}
 
 onMounted(() => {
     useIntersectionObserver(footerRef,
