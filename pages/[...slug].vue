@@ -12,12 +12,11 @@
 const route = useRoute()
 const path = route.path === '/' ? 'home' : (route.path).substring(1)
 const config = useRuntimeConfig()
-const loading = ref(false)
+const loading = ref(true)
 
 const story = async () => {
     let content
     try {
-        loading.value = true
         await useAsyncStoryblok(path, {
             version: config.storyblokVersion,
             resolve_links: 'story'
