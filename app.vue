@@ -20,7 +20,8 @@ const app = useAppStore()
 
 useHead({
     htmlAttrs: {
-        style: () => app.overlay && 'overflow-y: hidden'
+        style: () => app.overlay && 'overflow-y: hidden',
+        lang: 'en'
     }
 })
 </script>
