@@ -34,6 +34,12 @@ My shorthand:
 `git push -d origin branch-name; git branch -d branch-name`
 
 
+### How to rename a branch locally/remotely
+In one fell swoop:
+
+`git branch -m old-name new-name; git push origin -d old-name; git push origin -u new-name;`
+
+
 ## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
@@ -52,3 +58,4 @@ My shorthand:
 15. [-u is shorthand for --set-upstream first push to create matching local branch on remote](https://stackoverflow.com/questions/18031946/what-does-set-upstream-do#18032014)
 16. [How to "git pull" from master into the development branch](https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch#20103414)
 17. [How do I delete a Git branch locally and remotely?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515)
+18. [How to Rename a Branch in Git](https://www.howtogeek.com/851425/git-rename-branch/)
