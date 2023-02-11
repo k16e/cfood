@@ -3,13 +3,7 @@
         <Section>
             <div class="overflow-hidden pt-32 md:pt-16 z-[1] relative">
                 <Wave :stroke="false" :bottom="'revert'" class="z-[1]"/>
-                <Wave
-                    :stroke="false"
-                    :top="'revert'"
-                    flip
-                    :maxHeight="'max-h-[104px]'"
-                    class="z-[3]"
-                />
+                <Wave :stroke="false" :top="'revert'" :maxHeight="'max-h-[104px]'" class="z-[3]" flip/>
                 <div class="bg-gradient-to-r from-orange-600 to-orange-800">
                     <Container center padX>
                         <div class="relative min-h-[528px] md:min-h-[680px] flex items-center">
