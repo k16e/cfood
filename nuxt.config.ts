@@ -50,7 +50,7 @@ export default defineNuxtConfig({
             'https://a.storyblok.com'
         ],
         presets: {
-            thumbnail: { modifiers: { width: 360, height: 360 } },
+            thumbnail: { modifiers: { width: 150, height: 150 } },
             medium: { modifiers: { width: 768, height: 768 } },
             small: { modifiers: { width: 576, height: 576 } },
         },
