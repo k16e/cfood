@@ -44,7 +44,7 @@ const isVisible = ref(false)
 
 const indicateRoute = () => {
     const route = useRoute()
-    if (route.fullPath === '/') return '/home'
+    if (route.fullPath === '/') return 'home'
     return (route.fullPath).replace(/\//i, '')
 }
 
