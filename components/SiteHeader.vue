@@ -12,7 +12,8 @@
                 </NuxtLink>
                 <button
                     @click="toggleNavMobile"
-                    class="luna-btn _is-square flex lg:hidden">
+                    class="luna-btn _is-square flex lg:hidden"
+                    aria-label="Toggle navigation on small screen (mobile)">
                     <Icon name="material-symbols:menu-rounded" size="22" class="text-orange-700"/>
                 </button>
             </div>

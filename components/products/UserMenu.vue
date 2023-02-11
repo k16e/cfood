@@ -1,7 +1,8 @@
 <template>
     <button
         @click="$closeMobileNavIfOpen()"
-        class="luna-btn _is-padless border-none relative">
+        class="luna-btn _is-padless border-none relative"
+        aria-label="Toggle user menu">
         <Icon name="ri:user-smile-fill" size="32" class="text-orange-700"/>
         <span class="flex items-center">
             <span v-text="`Your account`" class="hidden lg:block ml-1"/>
