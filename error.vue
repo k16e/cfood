@@ -5,7 +5,7 @@
                 {{ error.statusCode }}!
             </Heading>
             <p class="sm:text-lg">
-                Hmmm... there must be an error somewhere. Please check that the typed correctly and refresh or use the button below
+                Hmmm... there's an error somewhere. Please check and refresh or use the button below
             </p>
             <div class="mt-12">
                 <button
