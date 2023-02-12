@@ -6,7 +6,9 @@
                     tag="h1" content="Sign in to your account!"
                     link="" linkIcon=""
                 />
-                <form action="#" method="POST">
+                <form
+                    ref="form"
+                    @submit.prevent="handleSubmit">
                     <div class="grid grid-cols-1 gap-5 mb-3">
                         <p>
                             <label for="email" class="luna-label">Email:</label>
@@ -39,8 +41,15 @@
 </template>
 
 <script setup>
+const form = ref(null)
 const customer = {
     email: ref(''),
     password: ref('')
+}
+
+const handleSubmit = () => {
+    console.table(email.value, password.value)
+
+    form.value.reset()
 }
 </script>
