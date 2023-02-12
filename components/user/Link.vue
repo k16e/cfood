@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-        to="/customer/account"
+        to="/customer/sign-in"
         @click="$closeMobileNavIfOpen()"
         class="luna-btn _is-padless _is-borderless"
         aria-label="Access to your account">
