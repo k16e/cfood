@@ -3,7 +3,7 @@
         <div class="flex min-h-full items-center justify-center px-4 sm:px-6 lg:px-8">
             <div class="w-full max-w-md space-y-8">
                 <PageHeader
-                    tag="h1" content="Get a c.food account!"
+                    tag="h1" content="Get a c.food!"
                     link="" linkIcon=""
                 />
                 <form
