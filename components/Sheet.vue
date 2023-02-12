@@ -8,7 +8,7 @@
                 max-height="max-h-[64px]"
                 :stroke="false"
                 :fill="`#fff`"
-                flip-forward
+                flip
                 allowPointerEvents
             />
             <Transition name="flip" appear>
