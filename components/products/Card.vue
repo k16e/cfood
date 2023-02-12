@@ -4,7 +4,7 @@
             :to="`/products/${$slugify(product.name)}-${product.sku}`"
             class="flex flex-col rounded-xl h-full">
             <figure class="p-5 flex items-center justify-center">
-                <NuxtImg :src="product.image" :alt="product.name" preset="thumbnail"/>
+                <NuxtImg :src="product.image" :alt="product.name" preset="small"/>
             </figure>
             <div class="p-3 border-t border-gray-100 h-full flex flex-col justify-between">
                 <div class="pr-14 mb-9 sm:mb-12">
