@@ -27,7 +27,7 @@
         <div class="flex items-center space-x-3 translate-y-[-5px] font-medium">
             <ProductsWishlistLink/>
             <ProductsCartLink/>
-            <ProductsUserMenu/>
+            <UserLink/>
         </div>
     </Container>
 </template>
