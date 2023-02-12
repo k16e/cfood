@@ -44,14 +44,13 @@
 
 <script setup>
 const form = ref(null)
+const { error, signUp } = useSignUp()
 const customer = {
     email: ref(''),
     password: ref('')
 }
 
-const handleSubmit = () => {
-    console.table(email.value, password.value)
-
-    form.value.reset()
+const handleSubmit = async () => {
+    await signUp(form.value, customer.email.value, customer.password.value)
 }
 </script>
