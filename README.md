@@ -59,3 +59,4 @@ In one fell swoop:
 16. [How to "git pull" from master into the development branch](https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch#20103414)
 17. [How do I delete a Git branch locally and remotely?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515)
 18. [How to Rename a Branch in Git](https://www.howtogeek.com/851425/git-rename-branch/)
+19. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
