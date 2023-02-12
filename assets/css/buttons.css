@@ -17,6 +17,6 @@
     &._is-raised { @apply shadow-md; }
     &._is-borderless { @apply border-none; }
     &._is-block {
-        @apply w-full rounded-md border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm focus:bg-orange-600 hover:bg-orange-600;
+        @apply w-full rounded-md border-transparent bg-orange-700 py-3 px-4 font-medium text-white shadow-sm focus:bg-orange-900 hover:bg-orange-900;
     }
 }
