@@ -40,6 +40,12 @@ In one fell swoop:
 `git branch -m old-name new-name; git push origin -d old-name; git push origin -u new-name;`
 
 
+### Nuxt 3 authentication with Supabase
+At the time when doing this was fuzzy, Feb 12, 2023, [this tutorial](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/) came in handy, with good code samples how to authenticate "users" into Nuxt 3 app with supabase, and then publishing such "profiles" to own table on supabase.
+
+At this same time, I intend to research more on the subject to be sure it can handle my brief fully -- as customers create account at the cfood.studio, their accounts should be pushed to the customers table on supabase. Of course, when they actually order, they'll be "upserted" to same table and their order to the orders table, these actions only happening as they can now be authenticated having already registered (and are signed in when they purchase).
+
+
 ## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
@@ -59,3 +65,5 @@ In one fell swoop:
 16. [How to "git pull" from master into the development branch](https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch#20103414)
 17. [How do I delete a Git branch locally and remotely?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515)
 18. [How to Rename a Branch in Git](https://www.howtogeek.com/851425/git-rename-branch/)
+19. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
+20. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
