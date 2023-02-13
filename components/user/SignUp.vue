@@ -31,19 +31,22 @@
                             <input v-model="customer.password.value" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
                         </p>
                     </div>
-
                     <div class="mt-9">
                         <button
                             type="submit"
                             class="luna-btn _is-block relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <Icon name="ic:round-lock-person" class="h-5 w-5 text-orange-400 group-hover:text-orange-100" aria-hidden="true" />
-                            </span>
-                            Create an account
+                            <Transition name="slide-up" mode="out-in" appear>
+                                <span v-if="formStatus.sending" class="absolute top-1/2 left-3 -translate-y-1/2">
+                                    <Spinner/>
+                                </span>
+                                <span v-else class="absolute top-1/2 left-3 -translate-y-1/2">
+                                    <Icon name="ic:round-lock-person" class="h-5 w-5 text-orange-300 group-hover:text-orange-50" aria-hidden="true" />
+                                </span>
+                            </Transition>
+                            <span v-text="'Create an account'"/>
                         </button>
                     </div>
                 </form>
-
                 <p class="text-sm text-center">
                     <NuxtLink to="/customer/sign-in" class="font-medium text-orange-700 hover:text-orange-500 p-3 rounded-full">
                         Have an account? Sign in instead!
@@ -56,6 +59,7 @@
 
 <script setup>
 const form = ref(null)
+const formStatus = useFormsStore()
 
 const { signUp } = useSignUp()
 const customer = {
