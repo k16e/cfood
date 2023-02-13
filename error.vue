@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col justify-between min-h-screen">
         <Container center padX max-width="max-w-xl" class="flex-1 flex flex-col items-center justify-center text-center relative z-10">
             <Heading tag="h1" font="font-sans" weight="font-bold" class="!text-9xl">
                 {{ error.statusCode }}!
@@ -16,10 +16,7 @@
                 </button>
             </div>
         </Container>
-        <footer class="relative pt-16 lg:pt-24 pb-3 bg-gradient-to-r from-orange-600 to-orange-800 flex flex-col items-center">
-            <Wave top="top-[-64px]" :stroke="false"/>
-            <SiteFooter/>
-        </footer>
+        <SiteFooter/>
     </div>
 </template>
 
