@@ -12,11 +12,11 @@
                     <div class="grid grid-cols-1 gap-5 sm:gap-7 mb-3">
                         <p>
                             <label for="email" class="luna-label">Email:</label>
-                            <input v-model="customer.email.value" type="email" id="email" autocomplete="email" required placeholder="Email address" class="luna-input"/>
+                            <input v-model="customer.email" type="email" id="email" autocomplete="email" required placeholder="Email address" class="luna-input"/>
                         </p>
                         <p>
                             <label for="password" class="luna-label">Password:</label>
-                            <input v-model="customer.password.value" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
+                            <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
                         </p>
                     </div>
 
@@ -25,13 +25,16 @@
                     </div>
 
                     <div class="mt-9">
-                        <button
-                            type="submit"
-                            class="luna-btn _is-block relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <Icon name="ic:round-lock-person" class="h-5 w-5 text-orange-400 group-hover:text-orange-100" aria-hidden="true" />
-                            </span>
-                            Sign in
+                        <button type="submit" class="luna-btn _is-block relative">
+                            <Transition name="slide-up" appear>
+                                <span v-if="formStatus.sending" class="absolute top-1/2 left-3 -translate-y-1/2">
+                                    <Spinner/>
+                                </span>
+                                <span v-else class="absolute top-1/2 left-3 -translate-y-1/2">
+                                    <Icon name="ic:round-lock-person" class="h-5 w-5 text-orange-300 group-hover:text-orange-50" aria-hidden="true" />
+                                </span>
+                            </Transition>
+                            <span v-text="'Sign in!'"/>
                         </button>
                     </div>
                 </form>
@@ -48,14 +51,35 @@
 
 <script setup>
 const form = ref(null)
-const customer = {
-    email: ref(''),
-    password: ref('')
+const client = useSupabaseAuthClient()
+const router = useRouter()
+const user = useSupabaseUser()
+const formStatus = useFormsStore()
+
+const customer = reactive({
+    email: '',
+    password: ''
+})
+
+const handleSubmit = async () => {
+    const { email, password } = customer
+    try {
+        formStatus.sending = true
+        const { error } = await client.auth.signInWithPassword({ email, password })
+    } catch (error) {
+        formStatus.errorMessage = err
+        console.log(error)
+    } finally {
+        formStatus.sent = true
+        formStatus.sending = false
+        form.value.reset()
+        router.push('/customer/account')
+    }
 }
 
-const handleSubmit = () => {
-    console.table(email.value, password.value)
-
-    form.value.reset()
-}
+watchEffect(async () => {
+    if (user.value) {
+        await router.push('/customer/account')
+    }
+})
 </script>

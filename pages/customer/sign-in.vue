@@ -4,7 +4,3 @@
     </Reveal>
     <SiteFooter/>
 </template>
-
-<script setup>
-
-</script>

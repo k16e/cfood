@@ -12,6 +12,7 @@
             :autocomplete="autocomplete"
             :required="required"
             :value="modelValue"
+            :pattern="pattern"
             @input="$emit('update:modelValue', $event.target.value)"
             class="luna-input"
         />
@@ -19,7 +20,7 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
     labelFor: { type: String, default: '' },
     labelText: { type: String, default: '' },
 
@@ -29,7 +30,8 @@ defineProps({
     modelValue: { type: String },
     placeholder: { type: String, default: '' },
     autocomplete: { type: String, default: '' },
+    pattern: { type: String },
     required: { type: Boolean, default: false }
 })
-defineEmits(['update:modelValue'])
+const emits = defineEmits(['update:modelValue'])
 </script>

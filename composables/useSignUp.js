@@ -1,4 +1,4 @@
-const signUp = async (form, customer, client, formStatus) => {
+const signUp = async (form, customer, client, formStatus, router, config) => {
     try {
         formStatus.sending = true
         const { error } = await client.auth.signUp({
@@ -10,16 +10,18 @@ const signUp = async (form, customer, client, formStatus) => {
                     last_name: customer.last_name,
                     email: customer.email,
                     phone: customer.phone,
-                }
+                },
+                emailRedirectTo: config.baseUrl + '/customer/account'
             }
         })
-    } catch (err) {
-        formStatus.errorMessage = err
+    } catch (error) {
+        formStatus.errorMessage = error
+        console.log(error)
     } finally {
         formStatus.sent = true
         formStatus.sending = false
-        console.log(customer)
         form.value.reset()
+        router.push({ path: '/customer/account' })
     }
 }
 
