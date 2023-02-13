@@ -21,6 +21,7 @@ const signUp = async (form, customer) => {
     } finally {
         formStatus.sent = true
         formStatus.sending = false
+        console.log(customer)
         form.value.reset()
     }
 }

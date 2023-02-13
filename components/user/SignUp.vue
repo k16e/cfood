@@ -10,26 +10,31 @@
                     ref="form"
                     @submit.prevent="handleSubmit()">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
-                        <p>
-                            <label for="first_name" class="luna-label">First name:</label>
-                            <input v-model="customer.first_name" required type="text" id="first_name" autocomplete="given-name" class="luna-input"/>
-                        </p>
-                        <p>
-                            <label for="last_name" class="luna-label">Last name:</label>
-                            <input v-model="customer.last_name" required type="text" id="last_name" autocomplete="given-name" class="luna-input"/>
-                        </p>
-                        <p>
-                            <label for="email" class="luna-label">Enter email:</label>
-                            <input v-model="customer.email" type="email" id="email" autocomplete="email" required placeholder="Email address" class="luna-input"/>
-                        </p>
-                        <p>
-                            <label for="phone" class="luna-label">Phone number:</label>
-                            <input v-model="customer.phone" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
-                        </p>
-                        <p>
-                            <label for="password" class="luna-label">Choose password:</label>
-                            <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
-                        </p>
+                        <FormInput
+                            labelFor="first_name" labelText="First name:"
+                            type="text" id="first_name" name="first_name" placeholder="First name" required
+                            v-model="customer.first_name"
+                        />
+                        <FormInput
+                            labelFor="last_name" labelText="Last name:"
+                            type="text" id="last_name" name="last_name" placeholder="Last name" required
+                            v-model="customer.last_name"
+                        />
+                        <FormInput
+                            labelFor="email" labelText="Email:"
+                            type="email" id="email" name="email" placeholder="Your email" required
+                            v-model="customer.email"
+                        />
+                        <FormInput
+                            labelFor="phone" labelText="Phone number:"
+                            type="text" id="phone" name="phone" placeholder="Phone number" required
+                            v-model="customer.phone"
+                        />
+                        <FormInput
+                            labelFor="password" labelText="Password:"
+                            type="password" id="password" name="password" placeholder="********" required
+                            v-model="customer.password"
+                        />
                     </div>
                     <div class="mt-9">
                         <button
