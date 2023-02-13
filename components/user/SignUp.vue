@@ -8,34 +8,34 @@
                 />
                 <form
                     ref="form"
-                    @submit.prevent="handleSubmit">
+                    @submit.prevent="handleSubmit()">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                         <p>
                             <label for="first_name" class="luna-label">First name:</label>
-                            <input v-model="customer.first_name.value" required type="text" id="first_name" autocomplete="given-name" class="luna-input"/>
+                            <input v-model="customer.first_name" required type="text" id="first_name" autocomplete="given-name" class="luna-input"/>
                         </p>
                         <p>
                             <label for="last_name" class="luna-label">Last name:</label>
-                            <input v-model="customer.last_name.value" required type="text" id="last_name" autocomplete="given-name" class="luna-input"/>
+                            <input v-model="customer.last_name" required type="text" id="last_name" autocomplete="given-name" class="luna-input"/>
                         </p>
                         <p>
                             <label for="email" class="luna-label">Enter email:</label>
-                            <input v-model="customer.email.value" type="email" id="email" autocomplete="email" required placeholder="Email address" class="luna-input"/>
+                            <input v-model="customer.email" type="email" id="email" autocomplete="email" required placeholder="Email address" class="luna-input"/>
                         </p>
                         <p>
                             <label for="phone" class="luna-label">Phone number:</label>
-                            <input v-model="customer.phone.value" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
+                            <input v-model="customer.phone" required type="text" id="phone" autocomplete="tel" class="luna-input"/>
                         </p>
                         <p>
                             <label for="password" class="luna-label">Choose password:</label>
-                            <input v-model="customer.password.value" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
+                            <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
                         </p>
                     </div>
                     <div class="mt-9">
                         <button
                             type="submit"
                             class="luna-btn _is-block relative">
-                            <Transition name="slide-up" mode="out-in" appear>
+                            <Transition name="slide-up">
                                 <span v-if="formStatus.sending" class="absolute top-1/2 left-3 -translate-y-1/2">
                                     <Spinner/>
                                 </span>
@@ -62,15 +62,13 @@ const form = ref(null)
 const formStatus = useFormsStore()
 
 const { signUp } = useSignUp()
-const customer = {
-    first_name: ref(''),
-    last_name: ref(''),
-    email: ref(''),
-    phone: ref(''),
-    password: ref('')
-}
+const customer = reactive({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    password: ''
+})
 
-const handleSubmit = async () => {
-    await signUp(form, customer)
-}
+const handleSubmit = () => signUp(form, customer)
 </script>
