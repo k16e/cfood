@@ -6,9 +6,7 @@
                     tag="h1" content="Get a c.food!"
                     link="" linkIcon=""
                 />
-                <form
-                    ref="form"
-                    @submit.prevent="handleSubmit()">
+                <form ref="form" @submit.prevent="handleSubmit()">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-3">
                         <FormInput
                             labelFor="first_name" labelText="First name:"
@@ -37,10 +35,8 @@
                         />
                     </div>
                     <div class="mt-9">
-                        <button
-                            type="submit"
-                            class="luna-btn _is-block relative">
-                            <Transition name="slide-up">
+                        <button type="submit" class="luna-btn _is-block relative">
+                            <Transition name="slide-up" appear>
                                 <span v-if="formStatus.sending" class="absolute top-1/2 left-3 -translate-y-1/2">
                                     <Spinner/>
                                 </span>
