@@ -35,7 +35,8 @@ export default defineNuxtConfig({
         supabaseUrl: process.env.SUPABASE_URL,
         public: {
             paystackKey: process.env.PAYSTACK_KEY,
-            storyblokVersion: process.env.STORYBLOK_VERSION
+            storyblokVersion: process.env.STORYBLOK_VERSION,
+            baseUrl: process.env.BASE_URL
         }
     },
     lodash: {

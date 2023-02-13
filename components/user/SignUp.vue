@@ -63,6 +63,8 @@
 const form = ref(null)
 const client = useSupabaseAuthClient()
 const formStatus = useFormsStore()
+const router = useRouter()
+const config = useRuntimeConfig()
 
 const customer = reactive({
     first_name: '',
@@ -73,5 +75,5 @@ const customer = reactive({
 })
 
 const { signUp } = useSignUp()
-const handleSubmit = () => signUp(form, customer, client, formStatus)
+const handleSubmit = () => signUp(form, customer, client, formStatus, router, config)
 </script>
