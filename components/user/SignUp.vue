@@ -29,8 +29,9 @@
                             v-model="customer.phone"
                         />
                         <FormInput
-                            labelFor="password" labelText="Password:"
-                            type="password" id="password" name="password" placeholder="********" required
+                            labelFor="password" labelText="Password: (strong only)"
+                            type="password" id="password" name="password" placeholder="********" autocomplete="off" required
+                            :pattern="$strongPassword()"
                             v-model="customer.password"
                         />
                     </div>

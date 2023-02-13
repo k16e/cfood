@@ -63,7 +63,8 @@ export default defineNuxtPlugin(nuxtApp => {
                 app.navMobile && app.removeOverlay()
             },
             randomIntBetween: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
-            randomAlphNumNum: () => Date.now().toString(36) + Math.random().toString(36).substring(5)
+            randomAlphNumNum: () => Date.now().toString(36) + Math.random().toString(36).substring(5),
+            strongPassword: () => '^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$'
         }
     }
 })
