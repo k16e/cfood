@@ -46,6 +46,11 @@ At the time when doing this was fuzzy, Feb 12, 2023, [this tutorial](https://vue
 At this same time, I intend to research more on the subject to be sure it can handle my brief fully -- as customers create account at the cfood.studio, their accounts should be pushed to the customers table on supabase. Of course, when they actually order, they'll be "upserted" to same table and their order to the orders table, these actions only happening as they can now be authenticated having already registered (and are signed in when they purchase).
 
 
+## Key learnings or lessons learned
+### Calling a composable that async/awaits itself inside own composable may error
+And it was reading through comments [here (Error thrown nuxt instance unavailable, when use useState after useFetch in composable)](https://github.com/nuxt/nuxt/issues/14068) that helped me fix my own errors regarding this one
+
+
 ## References & credits
 1. [Build and deploy a static online shop with Nuxt3 using Pinia Store and Stripe Checkout to Firebase](https://keith-mifsud.me/blog/build-and-deploy-nuxt3-static-site-with-pinia-and-stripe-checkout-on-firebase)
 2. [Seed, simplicity of cart page as inspiration](https://seed.com/cart?cart=syn-wk)
@@ -67,3 +72,4 @@ At this same time, I intend to research more on the subject to be sure it can ha
 18. [How to Rename a Branch in Git](https://www.howtogeek.com/851425/git-rename-branch/)
 19. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
 20. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
+21. [Error thrown nuxt instance unavailable, when use useState after useFetch in composable](https://github.com/nuxt/nuxt/issues/14068)
