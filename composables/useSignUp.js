@@ -1,7 +1,4 @@
-const client = useSupabaseAuthClient()
-const formStatus = useFormsStore()
-
-const signUp = async (form, customer) => {
+const signUp = async (form, customer, client, formStatus) => {
     try {
         formStatus.sending = true
         const { error } = await client.auth.signUp({
