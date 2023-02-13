@@ -14,8 +14,9 @@ const signUp = async (form, customer, client, formStatus, router, config) => {
                 emailRedirectTo: config.baseUrl + '/customer/account'
             }
         })
-    } catch (err) {
-        formStatus.errorMessage = err
+    } catch (error) {
+        formStatus.errorMessage = error
+        console.log(error)
     } finally {
         formStatus.sent = true
         formStatus.sending = false
