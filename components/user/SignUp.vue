@@ -64,9 +64,9 @@
 
 <script setup>
 const form = ref(null)
+const client = useSupabaseAuthClient()
 const formStatus = useFormsStore()
 
-const { signUp } = useSignUp()
 const customer = reactive({
     first_name: '',
     last_name: '',
@@ -75,5 +75,6 @@ const customer = reactive({
     password: ''
 })
 
-const handleSubmit = () => signUp(form, customer)
+const { signUp } = useSignUp()
+const handleSubmit = () => signUp(form, customer, client, formStatus)
 </script>
