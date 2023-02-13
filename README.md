@@ -45,6 +45,9 @@ At the time when doing this was fuzzy, Feb 12, 2023, [this tutorial](https://vue
 
 At this same time, I intend to research more on the subject to be sure it can handle my brief fully -- as customers create account at the cfood.studio, their accounts should be pushed to the customers table on supabase. Of course, when they actually order, they'll be "upserted" to same table and their order to the orders table, these actions only happening as they can now be authenticated having already registered (and are signed in when they purchase).
 
+### How do I ensure password is a certain length and mix of characters javascript
+My answer, of course, came from this Stack Overflow link, [Javascript regular expression password validation having special characters](https://stackoverflow.com/questions/12090077/javascript-regular-expression-password-validation-having-special-characters). But, from the same search, this other resource here at, [Regex for password must contain at least eight characters, at least one number and both lower and uppercase letters and special characters](https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a#21456918) seems to be chockfull of options for this kind of stuff. Thanks to all on SO for contributing!
+
 
 ## Key learnings or lessons learned
 ### Calling a composable that async/awaits itself inside own composable may error
