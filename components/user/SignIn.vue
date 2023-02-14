@@ -21,7 +21,11 @@
                     </div>
 
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-orange-700 hover:text-orange-500">Forgot your password?</a>
+                        <NuxtLink
+                            to="/customer/forgot"
+                            v-text="'Forgot your password?'"
+                            class="font-medium text-orange-700 hover:text-orange-500"
+                        />
                     </div>
 
                     <div class="mt-9">
@@ -67,7 +71,7 @@ const handleSubmit = async () => {
         formStatus.sending = true
         const { error } = await client.auth.signInWithPassword({ email, password })
     } catch (error) {
-        formStatus.errorMessage = err
+        formStatus.errorMessage = error
         console.log(error)
     } finally {
         formStatus.sent = true
