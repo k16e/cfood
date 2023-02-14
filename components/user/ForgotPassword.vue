@@ -66,4 +66,13 @@ const handleSubmit = async () => {
         form.value.reset()
     }
 }
+
+onMounted(() => {
+    formStatus.sent = false
+    formStatus.sending = false
+})
+onUpdated(() => {
+    formStatus.sent = false
+    formStatus.sending = false
+})
 </script>
