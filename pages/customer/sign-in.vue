@@ -7,6 +7,6 @@
 
 <script setup>
 definePageMeta({
-    middleware: 'signed-in'
+    middleware: 'auth-signed-in'
 })
 </script>
