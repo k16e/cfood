@@ -30,7 +30,7 @@
                                     <Icon name="ic:round-lock-person" class="h-5 w-5 text-orange-300 group-hover:text-orange-50" aria-hidden="true" />
                                 </span>
                             </Transition>
-                            <span v-text="'Send password reset link'"/>
+                            <span v-text="'Reset password'"/>
                         </button>
                     </div>
                 </form>
