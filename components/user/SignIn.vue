@@ -72,15 +72,15 @@ const handleSubmit = async () => {
     formStatus.sending = true
     const { email, password } = customer
     const { data, error } = await client.auth.signInWithPassword({ email, password })
-    if (data.user == null) {
-        formStatus.errorMessage = `You don't have an account yet. Use link below to get one.`
-        formStatus.sent = true
-        formStatus.sending = false
-    } else if (error) {
+    if (error) {
         formStatus.sent = true
         formStatus.sending = false
         formStatus.errorMessage = `Your email or password may be incorrect.`
         console.log(error)
+    } else if (data.user == null) {
+        formStatus.errorMessage = `You don't have an account yet. Use link below to get one.`
+        formStatus.sent = true
+        formStatus.sending = false
     } else {
         formStatus.sent = true
         formStatus.sending = false
