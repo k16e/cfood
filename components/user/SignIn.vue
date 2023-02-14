@@ -15,14 +15,15 @@
                         <p>
                             <label for="password" class="luna-label">Password:</label>
                             <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
+                            <span v-if="formStatus.errorMessage">{{ formStatus.errorMessage }}</span>
                         </p>
                     </div>
                     <div class="text-sm">
                         <NuxtLink
                             to="/customer/password-forgot"
-                            v-text="'Forgot your password?'"
-                            class="font-medium text-orange-700 hover:text-orange-500"
-                        />
+                            class="font-medium text-orange-700 hover:text-orange-500">
+                            Forgot your password?
+                        </NuxtLink>
                     </div>
 
                     <div class="mt-9">
@@ -63,19 +64,31 @@ const customer = reactive({
 })
 
 const handleSubmit = async () => {
+    formStatus.sending = true
     const { email, password } = customer
-    try {
-        formStatus.sending = true
-        const { error } = await client.auth.signInWithPassword({ email, password })
-    } catch (error) {
-        formStatus.errorMessage = error
-        console.log(error)
-    } finally {
+    const { error } = await client.auth.signInWithPassword({ email, password })
+    if (!error) {
         formStatus.sent = true
         formStatus.sending = false
         form.value.reset()
         router.push('/customer/account')
     }
+    formStatus.errorMessage = error
+    console.log(error)
+
+    // try {
+    //     formStatus.sending = true
+    //     const { error } = await client.auth.signInWithPassword({ email, password })
+    // } catch (error) {
+    //     formStatus.errorMessage = error
+    //     error.value = error
+    //     console.log(error)
+    // } finally {
+    //     formStatus.sent = true
+    //     formStatus.sending = false
+    //     form.value.reset()
+    //     router.push('/customer/account')
+    // }
 }
 
 watchEffect(async () => {
