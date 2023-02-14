@@ -15,7 +15,9 @@
                         <p>
                             <label for="password" class="luna-label">Password:</label>
                             <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
-                            <span v-if="formStatus.errorMessage">{{ formStatus.errorMessage }}</span>
+                            <span v-if="formStatus.errorMessage" class="text-red-500 block mt-1 text-sm tracking-tight italic">
+                                Your email or password may be incorrect.
+                            </span>
                         </p>
                     </div>
                     <div class="text-sm">
