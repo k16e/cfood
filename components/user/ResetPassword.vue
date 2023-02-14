@@ -42,14 +42,14 @@ const router = useRouter()
 const config = useRuntimeConfig()
 
 const customer = reactive({
-    email: '',
+    password: '',
 })
 
 const handleSubmit = async () => {
-    const { email } = customer
+    const { password } = customer
     try {
         formStatus.sending = true
-        const { data, error } = await client.auth.resetPasswordForEmail(email)
+        const { data, error } = await supabase.auth.updateUser({ password })
     } catch (error) {
         formStatus.errorMessage = error
         console.log(error)
