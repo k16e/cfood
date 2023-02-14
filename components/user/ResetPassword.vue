@@ -9,6 +9,11 @@
                 <form ref="form" @submit.prevent="handleSubmit()">
                     <div class="grid grid-cols-1 gap-5">
                         <FormInput
+                            labelFor="email" labelText="Your email:"
+                            type="email" id="email" name="email" placeholder="Your email" required
+                            v-model="customer.email"
+                        />
+                        <FormInput
                             labelFor="password" labelText="New password: (strong only)"
                             type="password" id="password" name="password" placeholder="********" autocomplete="off" required
                             :pattern="$strongPassword()"
@@ -42,14 +47,15 @@ const router = useRouter()
 const config = useRuntimeConfig()
 
 const customer = reactive({
-    password: '',
+    email: '',
+    password: ''
 })
 
 const handleSubmit = async () => {
     const { password } = customer
     try {
         formStatus.sending = true
-        const { data, error } = await supabase.auth.updateUser({ password })
+        const { data, error } = await supabase.auth.updateUser({ email, password })
     } catch (error) {
         formStatus.errorMessage = error
         console.log(error)
