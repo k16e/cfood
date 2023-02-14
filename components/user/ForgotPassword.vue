@@ -6,7 +6,7 @@
                     tag="h1" content="Reset your password!"
                     link="" linkIcon=""
                 />
-                <form ref="form" @submit.prevent="handleSubmit()">
+                <form v-if="!formStatus.sent" ref="form" @submit.prevent="handleSubmit()">
                     <div class="grid grid-cols-1 gap-5">
                         <FormInput
                             labelFor="email" labelText="Your email:"
@@ -28,6 +28,12 @@
                         </button>
                     </div>
                 </form>
+                <Transition name="slide-up" mode="out-in">
+                    <p v-if="formStatus.sent" class="text-xl max-w-2xl">
+                        Please check your email for a link to reset your password.
+                        <NuxtLink to="/products">Continue shopping.</NuxtLink>
+                    </p>
+                </Transition>
             </div>
         </div>
     </Container>
@@ -58,7 +64,6 @@ const handleSubmit = async () => {
         formStatus.sent = true
         formStatus.sending = false
         form.value.reset()
-        router.push('/customer/sign-in')
     }
 }
 </script>
