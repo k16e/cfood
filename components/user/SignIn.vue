@@ -22,7 +22,7 @@
 
                     <div class="text-sm">
                         <NuxtLink
-                            to="/customer/forgot"
+                            to="/customer/password-forgot"
                             v-text="'Forgot your password?'"
                             class="font-medium text-orange-700 hover:text-orange-500"
                         />

@@ -48,7 +48,9 @@ const handleSubmit = async () => {
     const { email } = customer
     try {
         formStatus.sending = true
-        const { data, error } = await client.auth.resetPasswordForEmail(email)
+        const { data, error } = await client.auth.resetPasswordForEmail(email, {
+            redirectTo: config.baseUrl + '/customer/password-reset'
+        })
     } catch (error) {
         formStatus.errorMessage = error
         console.log(error)
