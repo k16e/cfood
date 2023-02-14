@@ -6,9 +6,7 @@
                     tag="h1" content="Sign in!"
                     link="" linkIcon=""
                 />
-                <form
-                    ref="form"
-                    @submit.prevent="handleSubmit">
+                <form ref="form" @submit.prevent="handleSubmit">
                     <div class="grid grid-cols-1 gap-5 sm:gap-7 mb-3">
                         <p>
                             <label for="email" class="luna-label">Email:</label>
@@ -19,7 +17,6 @@
                             <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
                         </p>
                     </div>
-
                     <div class="text-sm">
                         <NuxtLink
                             to="/customer/password-forgot"
