@@ -5,6 +5,6 @@
 
 <script setup>
 definePageMeta({
-    middleware: 'auth'
+    middleware: 'auth-signed-out'
 })
 </script>

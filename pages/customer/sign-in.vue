@@ -4,3 +4,9 @@
     </Reveal>
     <SiteFooter/>
 </template>
+
+<script setup>
+definePageMeta({
+    middleware: 'auth-signed-in'
+})
+</script>
