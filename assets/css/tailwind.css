@@ -7,5 +7,6 @@
 @import '@/assets/css/transitions.css';
 @import '@/assets/css/type.css';
 @import '@/assets/css/theme.css';
+@import '@/assets/css/branding.css';
 
 @import 'tailwindcss/utilities';
