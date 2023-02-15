@@ -1,0 +1,6 @@
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+    @apply relative text-inherit !no-underline focus:text-[var(--color-accent)] hover:text-[var(--color-accent)] focus:ring-offset-1 focus:rounded-full focus:ring-[var(--color-accent)];
+    &::after {
+        @apply content-[''] absolute z-[-1] inset-x-0 h-4 -bottom-3 bg-[url('/svg/underline.svg')] bg-contain bg-no-repeat bg-inherit;
+    }
+}
