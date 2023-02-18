@@ -76,3 +76,4 @@ And it was reading through comments [here (Error thrown nuxt instance unavailabl
 19. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
 20. [Nuxt 3 authentication with Supabase](https://vuenoob.com/tutorial/nuxt-3-authentication-with-supabase/)
 21. [Error thrown nuxt instance unavailable, when use useState after useFetch in composable](https://github.com/nuxt/nuxt/issues/14068)
+22. [More Tailwind configs grabbable samples](https://github.com/ndragun92-frontend-mentor/rock-paper-scissors-game/blob/main/tailwind.config.js)
