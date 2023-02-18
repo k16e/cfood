@@ -1,3 +1,5 @@
-.luna-gradient {
-    @apply bg-gradient-to-r from-orange-600 to-orange-800;
+@layer components {
+    .luna-gradient {
+        @apply bg-gradient-to-r from-orange-600 to-orange-800;
+    }
 }
