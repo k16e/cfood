@@ -66,5 +66,8 @@ export default defineNuxtConfig({
     },
     routeRules: {
         '/shop': { redirect: '/products' }
+    },
+    experimental: {
+        emitRouteChunkError: 'reload'
     }
 })
