@@ -7,7 +7,7 @@ const route = useRoute()
 const path = route.path === '/' ? 'home' : (route.path).substring(1)
 const config = useRuntimeConfig()
 
-const story = await useAsyncStoryblok(path, {
+const story = await useStoryblok(path, {
     version: config.storyblokVersion,
     resolve_links: 'story'
 })
