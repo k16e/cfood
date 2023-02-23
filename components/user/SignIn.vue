@@ -16,7 +16,7 @@
                             <label for="password" class="luna-label">Password:</label>
                             <input v-model="customer.password" type="password" id="password" autocomplete="current-password" required placeholder="Password" class="luna-input"/>
                             <span v-if="formStatus.errorMessage" class="text-red-500 block mt-1 text-sm tracking-tight italic">
-                                Your email or password may be incorrect.
+                                {{ formStatus.errorMessage }}
                             </span>
                         </p>
                     </div>
@@ -66,17 +66,28 @@ const customer = reactive({
 })
 
 const handleSubmit = async () => {
+    const inputs = form.value.querySelectorAll('input')
+    inputs.forEach(input => input.addEventListener('focus', () => formStatus.errorMessage = ''))
+
     formStatus.sending = true
     const { email, password } = customer
-    const { error } = await client.auth.signInWithPassword({ email, password })
-    if (!error) {
+    const { data, error } = await client.auth.signInWithPassword({ email, password })
+    if (error) {
+        formStatus.sent = true
+        formStatus.sending = false
+        formStatus.errorMessage = `Your email or password may be incorrect.`
+        console.log(error)
+    } else if (data.user == null) {
+        formStatus.errorMessage = `You don't have an account yet. Use link below to get one.`
+        formStatus.sent = true
+        formStatus.sending = false
+    } else {
         formStatus.sent = true
         formStatus.sending = false
         form.value.reset()
         router.push('/customer/account')
     }
-    formStatus.errorMessage = error
-    console.log(error)
+
 
     // try {
     //     formStatus.sending = true
