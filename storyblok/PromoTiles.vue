@@ -6,8 +6,8 @@
                 <Wave :stroke="false" :top="'revert'" :maxHeight="'max-h-[104px]'" class="z-[3]" flip/>
                 <div class="luna-gradient">
                     <Container center padX>
-                        <div class="relative min-h-[528px] md:min-h-[680px] flex items-center">
-                            <div class="text-center flex flex-col items-center w-full md:text-left md:block md:-translate-y-7">
+                        <div class="relative min-h-[544px] md:min-h-[704px] flex items-center">
+                            <div class="text-center flex flex-col items-center w-full md:text-left md:block -translate-y-7">
                                 <Heading
                                     tag="h2"
                                     font="font-sans"
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
 
-                            <div class="absolute -top-24 left-[50%] -translate-x-[50%] md:top-7 md:translate-x-0 z-[2] lg:translate-y-1.5">
+                            <div class="absolute -top-24 left-[50%] -translate-x-[45%] md:top-7 md:translate-x-24 z-[2] lg:translate-y-1.5">
                                 <div class="ml-9 flex min-w-max space-x-5 md:ml-3 lg:space-x-7">
                                     <div class="flex space-x-5 md:flex-col md:space-x-0 md:space-y-5 lg:space-y-7">
                                         <NuxtImg
@@ -85,6 +85,6 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-img { @apply h-48 w-48 rounded-2xl object-cover md:h-64 md:w-64 flex-shrink-0; }
+img { @apply h-40 w-40 rounded-2xl object-cover md:h-56 md:w-56 lg:h-64 lg:w-64 flex-shrink-0; }
 img + img { @apply mt-7 md:mt-0; }
 </style>

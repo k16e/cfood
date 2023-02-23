@@ -12,9 +12,10 @@ export default defineNuxtConfig({
         ['@storyblok/nuxt', {
             accessToken: process.env.STORYBLOK_KEY,
             bridge: true,
-            apiOptions: {},
-            useApiClient: true,
-            cache: { clear: 'auto', type: 'memory' }
+            apiOptions: {
+                cache: { type: 'memory' }
+            },
+            useApiClient: true
         }]
     ],
     app: {

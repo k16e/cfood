@@ -4,7 +4,7 @@
 
 <script setup>
 const route = useRoute()
-const path = route.path === '/' ? 'home' : (route.path).substring(1)
+const path = route.path === '/' ? 'home' : route.path.substring(1)
 const config = useRuntimeConfig()
 
 const story = await useAsyncStoryblok(path, {
