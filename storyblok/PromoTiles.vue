@@ -26,7 +26,8 @@
                                 </div>
                             </div>
 
-                            <div class="absolute -top-24 left-[50%] -translate-x-[45%] md:top-7 md:translate-x-24 z-[2] lg:translate-y-1.5">
+                            <div
+                                class="absolute -top-24 left-[50%] -translate-x-[45%] md:top-7 md:translate-x-24 z-[2] lg:translate-y-1.5">
                                 <div class="ml-9 flex min-w-max space-x-5 md:ml-3 lg:space-x-7">
                                     <div class="flex space-x-5 md:flex-col md:space-x-0 md:space-y-5 lg:space-y-7">
                                         <NuxtImg
