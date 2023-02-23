@@ -20,13 +20,13 @@
     "@types/node": "^18.11.18",
     "markdown-it": "^13.0.1",
     "nuxt": "^3.2.2",
-    "nuxt-icon": "^0.1.8",
+    "nuxt-icon": "^0.3.2",
     "nuxt-lodash": "^2.4.1",
     "postcss-import": "^15.1.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
-    "@storyblok/nuxt": "^5.0.0",
+    "@storyblok/nuxt": "^5.1.0",
     "@supabase/supabase-js": "^2.2.2",
     "@vueuse/nuxt": "^9.10.0",
     "pinia": "^2.0.28",
